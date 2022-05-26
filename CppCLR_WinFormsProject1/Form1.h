@@ -1,4 +1,5 @@
 ﻿#pragma once
+// https://github.com/Alsweider
 
 double rp = 0;
 double la = 0;
@@ -33,6 +34,7 @@ namespace CppCLRWinFormsProject {
 			//
 			//TODO: Add the constructor code here
 			//
+			this->Text = "Pulsrechner (v0.0.2)";
 			
 		}
 
@@ -244,7 +246,7 @@ namespace CppCLRWinFormsProject {
 			this->radioButton1->AutoSize = true;
 			this->radioButton1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->radioButton1->Location = System::Drawing::Point(9, 47);
+			this->radioButton1->Location = System::Drawing::Point(5, 47);
 			this->radioButton1->Name = L"radioButton1";
 			this->radioButton1->Size = System::Drawing::Size(207, 20);
 			this->radioButton1->TabIndex = 1;
@@ -260,7 +262,7 @@ namespace CppCLRWinFormsProject {
 			this->radioButton2->AutoSize = true;
 			this->radioButton2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->radioButton2->Location = System::Drawing::Point(9, 24);
+			this->radioButton2->Location = System::Drawing::Point(5, 24);
 			this->radioButton2->Name = L"radioButton2";
 			this->radioButton2->Size = System::Drawing::Size(226, 20);
 			this->radioButton2->TabIndex = 0;
@@ -460,9 +462,8 @@ namespace CppCLRWinFormsProject {
 			// 
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Inherit;
 			this->AutoSize = true;
-			this->AutoSizeMode = System::Windows::Forms::AutoSizeMode::GrowAndShrink;
 			this->BackColor = System::Drawing::Color::DarkSeaGreen;
-			this->ClientSize = System::Drawing::Size(332, 380);
+			this->ClientSize = System::Drawing::Size(327, 380);
 			this->Controls->Add(this->groupBox3);
 			this->Controls->Add(this->label5);
 			this->Controls->Add(this->label2);
@@ -500,12 +501,52 @@ namespace CppCLRWinFormsProject {
 
 	//	if (textBoxRuhepuls->Text && textBoxLebensalter->Text && ausdauerkategorie != 0 && fitnesskategorie != 0) {
 		if (textBoxRuhepuls->Text&& textBoxLebensalter->Text){
-			if (radioButton2->Checked || radioButton1->Checked) {
+
+			double ruhepuls = 0;
+			double lebensalter = 0;
+
+			try {
+				ruhepuls = Convert::ToDouble(textBoxRuhepuls->Text);
+				lebensalter = Convert::ToDouble(textBoxLebensalter->Text);
+			}
+			catch (Exception^ e)
+			{
+				Console::WriteLine(e->ToString());
+
+				Console::WriteLine("An error occurred.");
+				Console::WriteLine(e->Message);
+				Console::WriteLine(e->StackTrace);
+			}
+
+			if (ruhepuls <= 0 || lebensalter <= 0) {
+				herz->Enabled = false;
+				herz->Visible = false;
+				labelErgebnis->BackColor = Color::Yellow;
+				labelErgebnis->Text = "Eingabewert zu niedrig";
+			} else if (radioButton2->Checked || radioButton1->Checked) {
 				if (radioButton3->Checked || radioButton4->Checked || radioButton5->Checked || radioButton6->Checked || radioButton7->Checked) {
 					if(ausdauerkategorie >0 && fitnesskategorie>0){
 
+
 						try
 						{
+							
+
+							
+							
+
+								zwischenergebnis = ruhepuls + (220 - ausdauerkategorie * lebensalter - ruhepuls) * fitnesskategorie;
+
+								zwischenergebnis = Math::Round(zwischenergebnis, 2);
+								labelErgebnis->Font = gcnew System::Drawing::Font("Microsoft Sans Serif", 10, FontStyle::Bold, GraphicsUnit::Point);
+
+
+								labelErgebnis->Text = Convert::ToString(zwischenergebnis);
+								herz->Enabled = true;
+								herz->Visible = true;
+								labelErgebnis->BackColor = Color::Green;
+							
+							/*
 							zwischenergebnis = Convert::ToDouble(
 								textBoxRuhepuls->Text) + (220 - ausdauerkategorie * Convert::ToDouble(textBoxLebensalter->Text) - Convert::ToDouble(
 									textBoxRuhepuls->Text)) * fitnesskategorie;
@@ -518,7 +559,9 @@ namespace CppCLRWinFormsProject {
 							herz->Enabled = true;
 							herz->Visible = true;
 							labelErgebnis->BackColor = Color::Green;
+							*/
 						}
+						
 						catch (Exception^ e)
 						{
 							Console::WriteLine(e->ToString());
