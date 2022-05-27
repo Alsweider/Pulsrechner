@@ -103,6 +103,7 @@ namespace CppCLRWinFormsProject {
 	private: System::Windows::Forms::Label^ label6;
 	private: System::Windows::Forms::Label^ label15;
 	private: System::Windows::Forms::Label^ label14;
+	private: System::Windows::Forms::GroupBox^ groupBox6;
 
 
 
@@ -168,27 +169,29 @@ namespace CppCLRWinFormsProject {
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->label13 = (gcnew System::Windows::Forms::Label());
 			this->button2 = (gcnew System::Windows::Forms::Button());
+			this->radioButton10 = (gcnew System::Windows::Forms::RadioButton());
+			this->radioButton9 = (gcnew System::Windows::Forms::RadioButton());
+			this->radioButton8 = (gcnew System::Windows::Forms::RadioButton());
+			this->label14 = (gcnew System::Windows::Forms::Label());
+			this->label15 = (gcnew System::Windows::Forms::Label());
+			this->groupBox4 = (gcnew System::Windows::Forms::GroupBox());
 			this->groupBox3 = (gcnew System::Windows::Forms::GroupBox());
 			this->tabControl1 = (gcnew System::Windows::Forms::TabControl());
 			this->tabLagerstrom = (gcnew System::Windows::Forms::TabPage());
 			this->tabKarvonen = (gcnew System::Windows::Forms::TabPage());
 			this->groupBox5 = (gcnew System::Windows::Forms::GroupBox());
-			this->groupBox4 = (gcnew System::Windows::Forms::GroupBox());
-			this->radioButton10 = (gcnew System::Windows::Forms::RadioButton());
-			this->radioButton9 = (gcnew System::Windows::Forms::RadioButton());
-			this->radioButton8 = (gcnew System::Windows::Forms::RadioButton());
 			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
-			this->label14 = (gcnew System::Windows::Forms::Label());
-			this->label15 = (gcnew System::Windows::Forms::Label());
+			this->groupBox6 = (gcnew System::Windows::Forms::GroupBox());
 			this->groupBox1->SuspendLayout();
 			this->groupBox2->SuspendLayout();
+			this->groupBox4->SuspendLayout();
 			this->groupBox3->SuspendLayout();
 			this->tabControl1->SuspendLayout();
 			this->tabLagerstrom->SuspendLayout();
 			this->tabKarvonen->SuspendLayout();
 			this->groupBox5->SuspendLayout();
-			this->groupBox4->SuspendLayout();
+			this->groupBox6->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// berechnen
@@ -461,7 +464,7 @@ namespace CppCLRWinFormsProject {
 			this->label2->AutoSize = true;
 			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label2->Location = System::Drawing::Point(6, 351);
+			this->label2->Location = System::Drawing::Point(9, 360);
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(274, 13);
 			this->label2->TabIndex = 11;
@@ -547,9 +550,9 @@ namespace CppCLRWinFormsProject {
 				static_cast<System::Byte>(0)));
 			this->label9->Location = System::Drawing::Point(3, 143);
 			this->label9->Name = L"label9";
-			this->label9->Size = System::Drawing::Size(295, 26);
+			this->label9->Size = System::Drawing::Size(283, 13);
 			this->label9->TabIndex = 9;
-			this->label9->Text = L"Formel: Trainingspuls = Ruhepuls + (Maximalpuls - Ruhepuls) \r\n* Trainingsart";
+			this->label9->Text = L"Formel: Ruhepuls + (Maximalpuls - Ruhepuls) * Trainingsart";
 			this->toolTip1->SetToolTip(this->label9, L"Karvonen-Formel nach Martti J. Karvonen");
 			// 
 			// label10
@@ -600,7 +603,7 @@ namespace CppCLRWinFormsProject {
 			this->button1->BackColor = System::Drawing::Color::Gainsboro;
 			this->button1->Font = (gcnew System::Drawing::Font(L"Carolingia", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->button1->Location = System::Drawing::Point(9, 221);
+			this->button1->Location = System::Drawing::Point(6, 312);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(101, 36);
 			this->button1->TabIndex = 12;
@@ -627,7 +630,7 @@ namespace CppCLRWinFormsProject {
 			this->button2->BackColor = System::Drawing::Color::Gainsboro;
 			this->button2->Font = (gcnew System::Drawing::Font(L"Carolingia", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->button2->Location = System::Drawing::Point(116, 221);
+			this->button2->Location = System::Drawing::Point(113, 312);
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(101, 36);
 			this->button2->TabIndex = 13;
@@ -635,6 +638,89 @@ namespace CppCLRWinFormsProject {
 			this->toolTip1->SetToolTip(this->button2, L"Programm beenden");
 			this->button2->UseVisualStyleBackColor = false;
 			this->button2->Click += gcnew System::EventHandler(this, &Form1::button2_Click);
+			// 
+			// radioButton10
+			// 
+			this->radioButton10->AutoSize = true;
+			this->radioButton10->Location = System::Drawing::Point(7, 66);
+			this->radioButton10->Name = L"radioButton10";
+			this->radioButton10->Size = System::Drawing::Size(164, 20);
+			this->radioButton10->TabIndex = 2;
+			this->radioButton10->TabStop = true;
+			this->radioButton10->Text = L"Kraftausdauer (intensiv)";
+			this->toolTip1->SetToolTip(this->radioButton10, L"für intensives Ausdauertraining: 0,8");
+			this->radioButton10->UseVisualStyleBackColor = true;
+			this->radioButton10->CheckedChanged += gcnew System::EventHandler(this, &Form1::radioButton10_CheckedChanged);
+			// 
+			// radioButton9
+			// 
+			this->radioButton9->AutoSize = true;
+			this->radioButton9->Location = System::Drawing::Point(7, 43);
+			this->radioButton9->Name = L"radioButton9";
+			this->radioButton9->Size = System::Drawing::Size(143, 20);
+			this->radioButton9->TabIndex = 1;
+			this->radioButton9->TabStop = true;
+			this->radioButton9->Text = L"Ausdauer (extensiv)";
+			this->toolTip1->SetToolTip(this->radioButton9, L"für extensives Ausdauertraining: 0,6");
+			this->radioButton9->UseVisualStyleBackColor = true;
+			this->radioButton9->CheckedChanged += gcnew System::EventHandler(this, &Form1::radioButton9_CheckedChanged);
+			// 
+			// radioButton8
+			// 
+			this->radioButton8->AutoSize = true;
+			this->radioButton8->Location = System::Drawing::Point(7, 20);
+			this->radioButton8->Name = L"radioButton8";
+			this->radioButton8->Size = System::Drawing::Size(122, 20);
+			this->radioButton8->TabIndex = 0;
+			this->radioButton8->TabStop = true;
+			this->radioButton8->Text = L"Anfängertraining";
+			this->toolTip1->SetToolTip(this->radioButton8, L"für Untrainierte: 0,5");
+			this->radioButton8->UseVisualStyleBackColor = true;
+			this->radioButton8->CheckedChanged += gcnew System::EventHandler(this, &Form1::radioButton8_CheckedChanged);
+			// 
+			// label14
+			// 
+			this->label14->AutoSize = true;
+			this->label14->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F));
+			this->label14->Location = System::Drawing::Point(28, 18);
+			this->label14->Name = L"label14";
+			this->label14->Size = System::Drawing::Size(231, 52);
+			this->label14->TabIndex = 15;
+			this->label14->Text = L"Vor dem Messen der maximalen Herzfrequenz \r\nwird eine ärztliche Tauglichkeitsunte"
+				L"rsuchung \r\nempfohlen, um sicherzustellen, dass der Körper \r\nden Belastungen stan"
+				L"dhält.";
+			this->toolTip1->SetToolTip(this->label14, L"Beim Testen des Maximalpulses, etwa mit einem Ergometertest,\r\nist der Körper eine"
+				L"r hohen Belastung ausgesetzt, die vor allem \r\nbei unerkannten Krankheiten lebens"
+				L"gefährliche Folgen haben kann.");
+			// 
+			// label15
+			// 
+			this->label15->AutoSize = true;
+			this->label15->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label15->ForeColor = System::Drawing::Color::Red;
+			this->label15->Location = System::Drawing::Point(5, 29);
+			this->label15->Name = L"label15";
+			this->label15->Size = System::Drawing::Size(25, 20);
+			this->label15->TabIndex = 16;
+			this->label15->Text = L"⚠";
+			this->toolTip1->SetToolTip(this->label15, L"Beim Testen des Maximalpulses, etwa mit einem Ergometertest,\r\nist der Körper eine"
+				L"r hohen Belastung ausgesetzt, die vor allem \r\nbei unerkannten Krankheiten lebens"
+				L"gefährliche Folgen haben kann.");
+			// 
+			// groupBox4
+			// 
+			this->groupBox4->Controls->Add(this->radioButton10);
+			this->groupBox4->Controls->Add(this->radioButton9);
+			this->groupBox4->Controls->Add(this->radioButton8);
+			this->groupBox4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.25F));
+			this->groupBox4->Location = System::Drawing::Point(94, 44);
+			this->groupBox4->Name = L"groupBox4";
+			this->groupBox4->Size = System::Drawing::Size(200, 90);
+			this->groupBox4->TabIndex = 8;
+			this->groupBox4->TabStop = false;
+			this->groupBox4->Text = L"Trainingsart";
+			this->toolTip1->SetToolTip(this->groupBox4, L"Intensitätsfaktor (Belastungsintensität)");
 			// 
 			// groupBox3
 			// 
@@ -685,8 +771,7 @@ namespace CppCLRWinFormsProject {
 			// 
 			this->tabKarvonen->BackColor = System::Drawing::Color::DarkSeaGreen;
 			this->tabKarvonen->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
-			this->tabKarvonen->Controls->Add(this->label15);
-			this->tabKarvonen->Controls->Add(this->label14);
+			this->tabKarvonen->Controls->Add(this->groupBox6);
 			this->tabKarvonen->Controls->Add(this->button1);
 			this->tabKarvonen->Controls->Add(this->label13);
 			this->tabKarvonen->Controls->Add(this->button2);
@@ -710,63 +795,11 @@ namespace CppCLRWinFormsProject {
 			this->groupBox5->Controls->Add(this->label10);
 			this->groupBox5->Controls->Add(this->label11);
 			this->groupBox5->Controls->Add(this->label12);
-			this->groupBox5->Location = System::Drawing::Point(9, 174);
+			this->groupBox5->Location = System::Drawing::Point(9, 169);
 			this->groupBox5->Name = L"groupBox5";
 			this->groupBox5->Size = System::Drawing::Size(285, 41);
 			this->groupBox5->TabIndex = 10;
 			this->groupBox5->TabStop = false;
-			// 
-			// groupBox4
-			// 
-			this->groupBox4->Controls->Add(this->radioButton10);
-			this->groupBox4->Controls->Add(this->radioButton9);
-			this->groupBox4->Controls->Add(this->radioButton8);
-			this->groupBox4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.25F));
-			this->groupBox4->Location = System::Drawing::Point(94, 44);
-			this->groupBox4->Name = L"groupBox4";
-			this->groupBox4->Size = System::Drawing::Size(200, 90);
-			this->groupBox4->TabIndex = 8;
-			this->groupBox4->TabStop = false;
-			this->groupBox4->Text = L"Trainingsart";
-			// 
-			// radioButton10
-			// 
-			this->radioButton10->AutoSize = true;
-			this->radioButton10->Location = System::Drawing::Point(7, 66);
-			this->radioButton10->Name = L"radioButton10";
-			this->radioButton10->Size = System::Drawing::Size(164, 20);
-			this->radioButton10->TabIndex = 2;
-			this->radioButton10->TabStop = true;
-			this->radioButton10->Text = L"Kraftausdauer (intensiv)";
-			this->toolTip1->SetToolTip(this->radioButton10, L"für intensives Ausdauertraining: 0,8");
-			this->radioButton10->UseVisualStyleBackColor = true;
-			this->radioButton10->CheckedChanged += gcnew System::EventHandler(this, &Form1::radioButton10_CheckedChanged);
-			// 
-			// radioButton9
-			// 
-			this->radioButton9->AutoSize = true;
-			this->radioButton9->Location = System::Drawing::Point(7, 43);
-			this->radioButton9->Name = L"radioButton9";
-			this->radioButton9->Size = System::Drawing::Size(143, 20);
-			this->radioButton9->TabIndex = 1;
-			this->radioButton9->TabStop = true;
-			this->radioButton9->Text = L"Ausdauer (extensiv)";
-			this->toolTip1->SetToolTip(this->radioButton9, L"für extensives Ausdauertraining: 0,6");
-			this->radioButton9->UseVisualStyleBackColor = true;
-			this->radioButton9->CheckedChanged += gcnew System::EventHandler(this, &Form1::radioButton9_CheckedChanged);
-			// 
-			// radioButton8
-			// 
-			this->radioButton8->AutoSize = true;
-			this->radioButton8->Location = System::Drawing::Point(7, 20);
-			this->radioButton8->Name = L"radioButton8";
-			this->radioButton8->Size = System::Drawing::Size(122, 20);
-			this->radioButton8->TabIndex = 0;
-			this->radioButton8->TabStop = true;
-			this->radioButton8->Text = L"Anfängertraining";
-			this->toolTip1->SetToolTip(this->radioButton8, L"für Untrainierte: 0,5");
-			this->radioButton8->UseVisualStyleBackColor = true;
-			this->radioButton8->CheckedChanged += gcnew System::EventHandler(this, &Form1::radioButton8_CheckedChanged);
 			// 
 			// textBox3
 			// 
@@ -783,33 +816,18 @@ namespace CppCLRWinFormsProject {
 			this->textBox1->Size = System::Drawing::Size(82, 20);
 			this->textBox1->TabIndex = 4;
 			// 
-			// label14
+			// groupBox6
 			// 
-			this->label14->AutoSize = true;
-			this->label14->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F));
-			this->label14->Location = System::Drawing::Point(31, 283);
-			this->label14->Name = L"label14";
-			this->label14->Size = System::Drawing::Size(252, 52);
-			this->label14->TabIndex = 15;
-			this->label14->Text = L"Sicherheitshinweis: Vor dem Messen der maximalen \r\nHerzfrequenz wird eine ärztlic"
-				L"he Tauglichkeits-\r\nuntersuchung empfohlen, um sicherzustellen,\r\ndass der Körper "
-				L"den Belastungen standhält.";
-			this->toolTip1->SetToolTip(this->label14, L"Beim Testen des Maximalpulses, etwa mit einem Ergometertest,\r\nist der Körper eine"
-				L"r hohen Belastung ausgesetzt, die vor allem \r\nbei unerkannten Krankheiten lebens"
-				L"gefährliche Folgen haben kann.");
-			// 
-			// label15
-			// 
-			this->label15->AutoSize = true;
-			this->label15->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label15->ForeColor = System::Drawing::Color::Red;
-			this->label15->Location = System::Drawing::Point(6, 292);
-			this->label15->Name = L"label15";
-			this->label15->Size = System::Drawing::Size(25, 20);
-			this->label15->TabIndex = 16;
-			this->label15->Text = L"⚠";
-			this->toolTip1->SetToolTip(this->label15, L"Beim Testen des Maximalpulses, etwa mit einem Ergometertest,\r\nist der Körper eine"
+			this->groupBox6->Controls->Add(this->label15);
+			this->groupBox6->Controls->Add(this->label14);
+			this->groupBox6->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.25F));
+			this->groupBox6->Location = System::Drawing::Point(6, 223);
+			this->groupBox6->Name = L"groupBox6";
+			this->groupBox6->Size = System::Drawing::Size(288, 78);
+			this->groupBox6->TabIndex = 17;
+			this->groupBox6->TabStop = false;
+			this->groupBox6->Text = L"Sicherheitshinweis";
+			this->toolTip1->SetToolTip(this->groupBox6, L"Beim Testen des Maximalpulses, etwa mit einem Ergometertest,\r\nist der Körper eine"
 				L"r hohen Belastung ausgesetzt, die vor allem \r\nbei unerkannten Krankheiten lebens"
 				L"gefährliche Folgen haben kann.");
 			// 
@@ -817,7 +835,8 @@ namespace CppCLRWinFormsProject {
 			// 
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Inherit;
 			this->AutoSize = true;
-			this->BackColor = System::Drawing::Color::DarkSeaGreen;
+			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(207)), static_cast<System::Int32>(static_cast<System::Byte>(235)),
+				static_cast<System::Int32>(static_cast<System::Byte>(224)));
 			this->ClientSize = System::Drawing::Size(331, 408);
 			this->Controls->Add(this->tabControl1);
 			this->Name = L"Form1";
@@ -827,6 +846,8 @@ namespace CppCLRWinFormsProject {
 			this->groupBox1->PerformLayout();
 			this->groupBox2->ResumeLayout(false);
 			this->groupBox2->PerformLayout();
+			this->groupBox4->ResumeLayout(false);
+			this->groupBox4->PerformLayout();
 			this->groupBox3->ResumeLayout(false);
 			this->groupBox3->PerformLayout();
 			this->tabControl1->ResumeLayout(false);
@@ -836,8 +857,8 @@ namespace CppCLRWinFormsProject {
 			this->tabKarvonen->PerformLayout();
 			this->groupBox5->ResumeLayout(false);
 			this->groupBox5->PerformLayout();
-			this->groupBox4->ResumeLayout(false);
-			this->groupBox4->PerformLayout();
+			this->groupBox6->ResumeLayout(false);
+			this->groupBox6->PerformLayout();
 			this->ResumeLayout(false);
 
 		}
