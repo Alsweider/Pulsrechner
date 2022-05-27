@@ -1,5 +1,5 @@
 # Pulsrechner
-Ausdauer-Trainingspuls-Berechnung nach der Formel von [Dieter Lagerstrøm](http://www.medizinfo.de/sportmedizin/tipps/trainingspuls.shtml) mit graphischer Benutzeroberfläche für Windows. 
+Ausdauer-Trainingspuls-Berechnung nach den Formeln von [Dieter Lagerstrøm](http://www.medizinfo.de/sportmedizin/tipps/trainingspuls.shtml) und [Martti J. Karvonen](https://de.wikipedia.org/wiki/Karvonen-Formel) mit graphischer Benutzeroberfläche für Windows. 
 
 Neuste Version herunterladen: https://github.com/Alsweider/Pulsrechner/releases/latest
 
