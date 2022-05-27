@@ -3,4 +3,6 @@ Ausdauer-Trainingspuls-Berechnung nach der Formel von [Dieter Lagerstrøm](http:
 
 Neuste Version herunterladen: https://github.com/Alsweider/Pulsrechner/releases/latest
 
-![2022-05-26 09_36_05-Pulsrechner (v0 0 2)](https://user-images.githubusercontent.com/30653982/170445482-23d8d748-6fec-4a02-ac52-a920296c7f06.jpg)
+![2022-05-27 07_07_14-Pulsrechner (v0 1 0)](https://user-images.githubusercontent.com/30653982/170633783-bc54a215-3983-4260-8c21-a61abaaf329f.jpg)
+![2022-05-27 07_11_24-Pulsrechner (v0 1 0)](https://user-images.githubusercontent.com/30653982/170633748-042977e5-43b4-4564-8e72-d9481295c7ea.jpg)
+
