@@ -7,6 +7,11 @@ double ausdauerkategorie = 0; //Lagerström
 double fitnesskategorie = 0; //Lagerström
 double trainingsart = 0; //Karvonen
 
+//Maximalpuls:
+double ergebnisTanaka = 0;
+double ergebnisSpanaus = 0;
+double ergebnisEdwards = 0;
+
 
 
 
@@ -35,7 +40,7 @@ namespace CppCLRWinFormsProject {
 			//
 			//TODO: Add the constructor code here
 			//
-			this->Text = "Pulsrechner (v0.1.1)";
+			this->Text = "Pulsrechner (v0.2.0)";
 			
 		}
 
@@ -104,6 +109,43 @@ namespace CppCLRWinFormsProject {
 	private: System::Windows::Forms::Label^ label15;
 	private: System::Windows::Forms::Label^ label14;
 	private: System::Windows::Forms::GroupBox^ groupBox6;
+	private: System::Windows::Forms::TabPage^ tabPageMaxpuls;
+	private: System::Windows::Forms::GroupBox^ groupBox9;
+	private: System::Windows::Forms::RadioButton^ radioButton12;
+	private: System::Windows::Forms::RadioButton^ radioButton11;
+	private: System::Windows::Forms::Label^ label23;
+	private: System::Windows::Forms::TextBox^ textBox4;
+	private: System::Windows::Forms::Label^ label22;
+	private: System::Windows::Forms::Button^ button3;
+	private: System::Windows::Forms::Button^ button4;
+	private: System::Windows::Forms::GroupBox^ groupBox8;
+	private: System::Windows::Forms::Label^ label19;
+	private: System::Windows::Forms::Label^ label20;
+	private: System::Windows::Forms::Label^ label21;
+	private: System::Windows::Forms::GroupBox^ groupBox7;
+	private: System::Windows::Forms::Label^ label16;
+	private: System::Windows::Forms::Label^ label17;
+	private: System::Windows::Forms::Label^ label18;
+	private: System::Windows::Forms::Label^ label25;
+	private: System::Windows::Forms::Label^ label24;
+	private: System::Windows::Forms::Label^ label27;
+	private: System::Windows::Forms::Label^ label26;
+	private: System::Windows::Forms::Label^ label28;
+	private: System::Windows::Forms::Label^ label32;
+	private: System::Windows::Forms::Label^ label33;
+	private: System::Windows::Forms::GroupBox^ groupBox10;
+	private: System::Windows::Forms::Label^ label29;
+	private: System::Windows::Forms::Label^ label30;
+	private: System::Windows::Forms::Label^ label31;
+private: System::Windows::Forms::Label^ label34;
+private: System::Windows::Forms::TextBox^ textBox5;
+private: System::Windows::Forms::GroupBox^ groupBox11;
+private: System::Windows::Forms::RadioButton^ radioButton15;
+private: System::Windows::Forms::RadioButton^ radioButton14;
+private: System::Windows::Forms::RadioButton^ radioButton13;
+
+
+
 
 
 
@@ -176,6 +218,33 @@ namespace CppCLRWinFormsProject {
 			this->label15 = (gcnew System::Windows::Forms::Label());
 			this->groupBox4 = (gcnew System::Windows::Forms::GroupBox());
 			this->groupBox6 = (gcnew System::Windows::Forms::GroupBox());
+			this->label16 = (gcnew System::Windows::Forms::Label());
+			this->label17 = (gcnew System::Windows::Forms::Label());
+			this->label18 = (gcnew System::Windows::Forms::Label());
+			this->label19 = (gcnew System::Windows::Forms::Label());
+			this->label20 = (gcnew System::Windows::Forms::Label());
+			this->label21 = (gcnew System::Windows::Forms::Label());
+			this->button3 = (gcnew System::Windows::Forms::Button());
+			this->button4 = (gcnew System::Windows::Forms::Button());
+			this->label22 = (gcnew System::Windows::Forms::Label());
+			this->label24 = (gcnew System::Windows::Forms::Label());
+			this->label25 = (gcnew System::Windows::Forms::Label());
+			this->label26 = (gcnew System::Windows::Forms::Label());
+			this->label27 = (gcnew System::Windows::Forms::Label());
+			this->label28 = (gcnew System::Windows::Forms::Label());
+			this->groupBox9 = (gcnew System::Windows::Forms::GroupBox());
+			this->radioButton12 = (gcnew System::Windows::Forms::RadioButton());
+			this->radioButton11 = (gcnew System::Windows::Forms::RadioButton());
+			this->label23 = (gcnew System::Windows::Forms::Label());
+			this->label29 = (gcnew System::Windows::Forms::Label());
+			this->label30 = (gcnew System::Windows::Forms::Label());
+			this->label31 = (gcnew System::Windows::Forms::Label());
+			this->label32 = (gcnew System::Windows::Forms::Label());
+			this->label33 = (gcnew System::Windows::Forms::Label());
+			this->label34 = (gcnew System::Windows::Forms::Label());
+			this->radioButton15 = (gcnew System::Windows::Forms::RadioButton());
+			this->radioButton14 = (gcnew System::Windows::Forms::RadioButton());
+			this->radioButton13 = (gcnew System::Windows::Forms::RadioButton());
 			this->groupBox3 = (gcnew System::Windows::Forms::GroupBox());
 			this->tabControl1 = (gcnew System::Windows::Forms::TabControl());
 			this->tabLagerstrom = (gcnew System::Windows::Forms::TabPage());
@@ -183,15 +252,28 @@ namespace CppCLRWinFormsProject {
 			this->groupBox5 = (gcnew System::Windows::Forms::GroupBox());
 			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
+			this->tabPageMaxpuls = (gcnew System::Windows::Forms::TabPage());
+			this->groupBox11 = (gcnew System::Windows::Forms::GroupBox());
+			this->textBox5 = (gcnew System::Windows::Forms::TextBox());
+			this->groupBox10 = (gcnew System::Windows::Forms::GroupBox());
+			this->textBox4 = (gcnew System::Windows::Forms::TextBox());
+			this->groupBox8 = (gcnew System::Windows::Forms::GroupBox());
+			this->groupBox7 = (gcnew System::Windows::Forms::GroupBox());
 			this->groupBox1->SuspendLayout();
 			this->groupBox2->SuspendLayout();
 			this->groupBox4->SuspendLayout();
 			this->groupBox6->SuspendLayout();
+			this->groupBox9->SuspendLayout();
 			this->groupBox3->SuspendLayout();
 			this->tabControl1->SuspendLayout();
 			this->tabLagerstrom->SuspendLayout();
 			this->tabKarvonen->SuspendLayout();
 			this->groupBox5->SuspendLayout();
+			this->tabPageMaxpuls->SuspendLayout();
+			this->groupBox11->SuspendLayout();
+			this->groupBox10->SuspendLayout();
+			this->groupBox8->SuspendLayout();
+			this->groupBox7->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// berechnen
@@ -727,15 +809,363 @@ namespace CppCLRWinFormsProject {
 			this->groupBox6->Controls->Add(this->label15);
 			this->groupBox6->Controls->Add(this->label14);
 			this->groupBox6->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.25F));
-			this->groupBox6->Location = System::Drawing::Point(6, 223);
+			this->groupBox6->Location = System::Drawing::Point(9, 228);
 			this->groupBox6->Name = L"groupBox6";
-			this->groupBox6->Size = System::Drawing::Size(288, 78);
+			this->groupBox6->Size = System::Drawing::Size(285, 78);
 			this->groupBox6->TabIndex = 17;
 			this->groupBox6->TabStop = false;
 			this->groupBox6->Text = L"Sicherheitshinweis";
 			this->toolTip1->SetToolTip(this->groupBox6, L"Beim Testen des Maximalpulses, etwa mit einem Ergometertest,\r\nist der Körper eine"
 				L"r hohen Belastung ausgesetzt, die vor allem \r\nbei unerkannten Krankheiten lebens"
 				L"gefährliche Folgen haben kann.");
+			// 
+			// label16
+			// 
+			this->label16->AutoSize = true;
+			this->label16->Enabled = false;
+			this->label16->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label16->ForeColor = System::Drawing::Color::Crimson;
+			this->label16->Location = System::Drawing::Point(174, 12);
+			this->label16->Name = L"label16";
+			this->label16->Size = System::Drawing::Size(32, 22);
+			this->label16->TabIndex = 2;
+			this->label16->Text = L"♥";
+			this->toolTip1->SetToolTip(this->label16, L"Herzfrequenz (Schläge pro Minute)");
+			this->label16->Visible = false;
+			// 
+			// label17
+			// 
+			this->label17->AutoSize = true;
+			this->label17->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label17->Location = System::Drawing::Point(12, 14);
+			this->label17->Name = L"label17";
+			this->label17->Size = System::Drawing::Size(92, 17);
+			this->label17->TabIndex = 0;
+			this->label17->Text = L"Tanaka HF:";
+			this->toolTip1->SetToolTip(this->label17, L"Herzfrequenz, die ein effizientes Ausdauertraining ermöglicht,\r\num Übertraining u"
+				L"nd Unterforderung zu vermeiden.");
+			// 
+			// label18
+			// 
+			this->label18->AutoSize = true;
+			this->label18->BackColor = System::Drawing::Color::Yellow;
+			this->label18->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label18->Location = System::Drawing::Point(126, 14);
+			this->label18->Name = L"label18";
+			this->label18->Size = System::Drawing::Size(128, 20);
+			this->label18->TabIndex = 1;
+			this->label18->Text = L"(wartet auf Eingabe)";
+			this->toolTip1->SetToolTip(this->label18, L"Ergebnis der Berechnung");
+			this->label18->UseCompatibleTextRendering = true;
+			// 
+			// label19
+			// 
+			this->label19->AutoSize = true;
+			this->label19->Enabled = false;
+			this->label19->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label19->ForeColor = System::Drawing::Color::Crimson;
+			this->label19->Location = System::Drawing::Point(174, 12);
+			this->label19->Name = L"label19";
+			this->label19->Size = System::Drawing::Size(32, 22);
+			this->label19->TabIndex = 2;
+			this->label19->Text = L"♥";
+			this->toolTip1->SetToolTip(this->label19, L"Herzfrequenz (Schläge pro Minute)");
+			this->label19->Visible = false;
+			// 
+			// label20
+			// 
+			this->label20->AutoSize = true;
+			this->label20->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label20->Location = System::Drawing::Point(12, 14);
+			this->label20->Name = L"label20";
+			this->label20->Size = System::Drawing::Size(101, 17);
+			this->label20->TabIndex = 0;
+			this->label20->Text = L"Spanaus HF:";
+			this->toolTip1->SetToolTip(this->label20, L"Herzfrequenz, die ein effizientes Ausdauertraining ermöglicht,\r\num Übertraining u"
+				L"nd Unterforderung zu vermeiden.");
+			// 
+			// label21
+			// 
+			this->label21->AutoSize = true;
+			this->label21->BackColor = System::Drawing::Color::Yellow;
+			this->label21->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label21->Location = System::Drawing::Point(126, 14);
+			this->label21->Name = L"label21";
+			this->label21->Size = System::Drawing::Size(128, 20);
+			this->label21->TabIndex = 1;
+			this->label21->Text = L"(wartet auf Eingabe)";
+			this->toolTip1->SetToolTip(this->label21, L"Ergebnis der Berechnung");
+			this->label21->UseCompatibleTextRendering = true;
+			// 
+			// button3
+			// 
+			this->button3->BackColor = System::Drawing::Color::Gainsboro;
+			this->button3->Font = (gcnew System::Drawing::Font(L"Carolingia", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->button3->Location = System::Drawing::Point(6, 312);
+			this->button3->Name = L"button3";
+			this->button3->Size = System::Drawing::Size(101, 36);
+			this->button3->TabIndex = 14;
+			this->button3->Text = L"Berechnen";
+			this->toolTip1->SetToolTip(this->button3, L"Berechnung der maximalen Herzfrequenz starten");
+			this->button3->UseCompatibleTextRendering = true;
+			this->button3->UseVisualStyleBackColor = false;
+			this->button3->Click += gcnew System::EventHandler(this, &Form1::button3_Click);
+			// 
+			// button4
+			// 
+			this->button4->BackColor = System::Drawing::Color::Gainsboro;
+			this->button4->Font = (gcnew System::Drawing::Font(L"Carolingia", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->button4->Location = System::Drawing::Point(113, 312);
+			this->button4->Name = L"button4";
+			this->button4->Size = System::Drawing::Size(101, 36);
+			this->button4->TabIndex = 15;
+			this->button4->Text = L"Beenden";
+			this->toolTip1->SetToolTip(this->button4, L"Programm beenden");
+			this->button4->UseVisualStyleBackColor = false;
+			this->button4->Click += gcnew System::EventHandler(this, &Form1::button4_Click);
+			// 
+			// label22
+			// 
+			this->label22->AccessibleDescription = L"Beschreibung";
+			this->label22->AccessibleName = L"Name davon";
+			this->label22->AccessibleRole = System::Windows::Forms::AccessibleRole::ToolTip;
+			this->label22->AutoSize = true;
+			this->label22->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label22->Location = System::Drawing::Point(6, 3);
+			this->label22->Name = L"label22";
+			this->label22->Size = System::Drawing::Size(261, 32);
+			this->label22->TabIndex = 16;
+			this->label22->Text = L"Berechnung Ihrer maximalen Herzfrequenz.\r\nBitte geben Sie Ihre Daten ein.";
+			this->toolTip1->SetToolTip(this->label22, L"Die Berechnung der maximalen Herzfrequenz ist kein\r\nErsatz für eine tatsächliche "
+				L"Messung. Sie kann aber\r\neinen groben Orientierungswert liefern.");
+			// 
+			// label24
+			// 
+			this->label24->AutoSize = true;
+			this->label24->Location = System::Drawing::Point(6, 142);
+			this->label24->Name = L"label24";
+			this->label24->Size = System::Drawing::Size(41, 13);
+			this->label24->TabIndex = 20;
+			this->label24->Text = L"Formel:";
+			this->toolTip1->SetToolTip(this->label24, L"Formel zur Errechnung des Maximalpulses nach Hirofumi Tanaka");
+			// 
+			// label25
+			// 
+			this->label25->AutoSize = true;
+			this->label25->Location = System::Drawing::Point(6, 203);
+			this->label25->Name = L"label25";
+			this->label25->Size = System::Drawing::Size(41, 13);
+			this->label25->TabIndex = 21;
+			this->label25->Text = L"Formel:";
+			this->toolTip1->SetToolTip(this->label25, L"Formel zur Errechnung des Maximalpulses für trainierte Sportler nach Winfried Spa"
+				L"naus");
+			// 
+			// label26
+			// 
+			this->label26->AutoSize = true;
+			this->label26->Location = System::Drawing::Point(50, 203);
+			this->label26->Name = L"label26";
+			this->label26->Size = System::Drawing::Size(156, 26);
+			this->label26->TabIndex = 22;
+			this->label26->Text = L"Männer: 223 - 0,9 * Lebensalter\r\nFrauen: 226 - 1,0 * Lebensalter\r\n";
+			this->toolTip1->SetToolTip(this->label26, L"Formel zur Errechnung des Maximalpulses für trainierte Sportler nach Winfried Spa"
+				L"naus");
+			// 
+			// label27
+			// 
+			this->label27->AutoSize = true;
+			this->label27->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label27->Location = System::Drawing::Point(9, 360);
+			this->label27->Name = L"label27";
+			this->label27->Size = System::Drawing::Size(274, 13);
+			this->label27->TabIndex = 23;
+			this->label27->Text = L"(Cursor auf Elementen positionieren für Beschreibungen.)";
+			this->toolTip1->SetToolTip(this->label27, L"Maus auf den Überschriften stehen lassen um Erklärungen zu lesen.");
+			// 
+			// label28
+			// 
+			this->label28->AutoSize = true;
+			this->label28->Location = System::Drawing::Point(53, 141);
+			this->label28->Name = L"label28";
+			this->label28->Size = System::Drawing::Size(114, 13);
+			this->label28->TabIndex = 24;
+			this->label28->Text = L"208 - 0,7 * Lebensalter";
+			this->toolTip1->SetToolTip(this->label28, L"Formel zur Errechnung des Maximalpulses nach Hirofumi Tanaka");
+			// 
+			// groupBox9
+			// 
+			this->groupBox9->Controls->Add(this->radioButton12);
+			this->groupBox9->Controls->Add(this->radioButton11);
+			this->groupBox9->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->groupBox9->Location = System::Drawing::Point(149, 43);
+			this->groupBox9->Name = L"groupBox9";
+			this->groupBox9->Size = System::Drawing::Size(161, 50);
+			this->groupBox9->TabIndex = 19;
+			this->groupBox9->TabStop = false;
+			this->groupBox9->Text = L"Geschlecht";
+			this->toolTip1->SetToolTip(this->groupBox9, L"Die Formel von Winfried Spanaus unterscheidet nach Geschlechtern,\r\num den individ"
+				L"uellen Unterschieden bei trainierten Sportlern Rechnung\r\nzu tragen.");
+			// 
+			// radioButton12
+			// 
+			this->radioButton12->AutoSize = true;
+			this->radioButton12->Location = System::Drawing::Point(82, 20);
+			this->radioButton12->Name = L"radioButton12";
+			this->radioButton12->Size = System::Drawing::Size(73, 20);
+			this->radioButton12->TabIndex = 1;
+			this->radioButton12->TabStop = true;
+			this->radioButton12->Text = L"weiblich";
+			this->toolTip1->SetToolTip(this->radioButton12, L"♀");
+			this->radioButton12->UseVisualStyleBackColor = true;
+			// 
+			// radioButton11
+			// 
+			this->radioButton11->AutoSize = true;
+			this->radioButton11->Location = System::Drawing::Point(7, 20);
+			this->radioButton11->Name = L"radioButton11";
+			this->radioButton11->Size = System::Drawing::Size(78, 20);
+			this->radioButton11->TabIndex = 0;
+			this->radioButton11->TabStop = true;
+			this->radioButton11->Text = L"männlich";
+			this->toolTip1->SetToolTip(this->radioButton11, L"♂");
+			this->radioButton11->UseVisualStyleBackColor = true;
+			// 
+			// label23
+			// 
+			this->label23->AutoSize = true;
+			this->label23->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label23->Location = System::Drawing::Point(6, 43);
+			this->label23->Name = L"label23";
+			this->label23->Size = System::Drawing::Size(37, 16);
+			this->label23->TabIndex = 18;
+			this->label23->Text = L"Alter:";
+			this->toolTip1->SetToolTip(this->label23, L"Lebensalter in Jahren");
+			// 
+			// label29
+			// 
+			this->label29->AutoSize = true;
+			this->label29->Enabled = false;
+			this->label29->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label29->ForeColor = System::Drawing::Color::Crimson;
+			this->label29->Location = System::Drawing::Point(174, 12);
+			this->label29->Name = L"label29";
+			this->label29->Size = System::Drawing::Size(32, 22);
+			this->label29->TabIndex = 2;
+			this->label29->Text = L"♥";
+			this->toolTip1->SetToolTip(this->label29, L"Herzfrequenz (Schläge pro Minute)");
+			this->label29->Visible = false;
+			// 
+			// label30
+			// 
+			this->label30->AutoSize = true;
+			this->label30->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label30->Location = System::Drawing::Point(12, 14);
+			this->label30->Name = L"label30";
+			this->label30->Size = System::Drawing::Size(99, 17);
+			this->label30->TabIndex = 0;
+			this->label30->Text = L"Edwards HF:";
+			this->toolTip1->SetToolTip(this->label30, L"Herzfrequenz, die ein effizientes Ausdauertraining ermöglicht,\r\num Übertraining u"
+				L"nd Unterforderung zu vermeiden.");
+			// 
+			// label31
+			// 
+			this->label31->AutoSize = true;
+			this->label31->BackColor = System::Drawing::Color::Yellow;
+			this->label31->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label31->Location = System::Drawing::Point(126, 14);
+			this->label31->Name = L"label31";
+			this->label31->Size = System::Drawing::Size(128, 20);
+			this->label31->TabIndex = 1;
+			this->label31->Text = L"(wartet auf Eingabe)";
+			this->toolTip1->SetToolTip(this->label31, L"Ergebnis der Berechnung");
+			this->label31->UseCompatibleTextRendering = true;
+			// 
+			// label32
+			// 
+			this->label32->AutoSize = true;
+			this->label32->Location = System::Drawing::Point(50, 278);
+			this->label32->Name = L"label32";
+			this->label32->Size = System::Drawing::Size(251, 26);
+			this->label32->TabIndex = 27;
+			this->label32->Text = L"Männer: 214 - 0,5 * Alter - 0,11 * Körpergewicht (kg)\r\nFrauen: 210 - 0,5 * Alter "
+				L"- 0,11 * Körpergewicht (kg)";
+			this->toolTip1->SetToolTip(this->label32, L"Formel zur Errechnung des Maximalpulses nach Sally Edwards");
+			// 
+			// label33
+			// 
+			this->label33->AutoSize = true;
+			this->label33->Location = System::Drawing::Point(6, 278);
+			this->label33->Name = L"label33";
+			this->label33->Size = System::Drawing::Size(41, 13);
+			this->label33->TabIndex = 26;
+			this->label33->Text = L"Formel:";
+			this->toolTip1->SetToolTip(this->label33, L"Formel zur Errechnung des Maximalpulses nach Sally Edwards");
+			// 
+			// label34
+			// 
+			this->label34->AutoSize = true;
+			this->label34->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label34->Location = System::Drawing::Point(75, 43);
+			this->label34->Name = L"label34";
+			this->label34->Size = System::Drawing::Size(57, 16);
+			this->label34->TabIndex = 29;
+			this->label34->Text = L"Gewicht:";
+			this->toolTip1->SetToolTip(this->label34, L"Gewicht in Kilogramm");
+			// 
+			// radioButton15
+			// 
+			this->radioButton15->AutoSize = true;
+			this->radioButton15->Enabled = false;
+			this->radioButton15->Location = System::Drawing::Point(7, 149);
+			this->radioButton15->Name = L"radioButton15";
+			this->radioButton15->Size = System::Drawing::Size(14, 13);
+			this->radioButton15->TabIndex = 2;
+			this->radioButton15->TabStop = true;
+			this->toolTip1->SetToolTip(this->radioButton15, L"Edwards-Maximalpuls in die Karvonen-Formel einsetzen.\r\n");
+			this->radioButton15->UseVisualStyleBackColor = true;
+			this->radioButton15->CheckedChanged += gcnew System::EventHandler(this, &Form1::radioButton15_CheckedChanged);
+			// 
+			// radioButton14
+			// 
+			this->radioButton14->AutoSize = true;
+			this->radioButton14->Enabled = false;
+			this->radioButton14->Location = System::Drawing::Point(7, 76);
+			this->radioButton14->Name = L"radioButton14";
+			this->radioButton14->Size = System::Drawing::Size(14, 13);
+			this->radioButton14->TabIndex = 1;
+			this->radioButton14->TabStop = true;
+			this->toolTip1->SetToolTip(this->radioButton14, L"Spanaus-Maximalpuls in die Karvonen-Formel einsetzen.\r\n");
+			this->radioButton14->UseVisualStyleBackColor = true;
+			this->radioButton14->CheckedChanged += gcnew System::EventHandler(this, &Form1::radioButton14_CheckedChanged);
+			// 
+			// radioButton13
+			// 
+			this->radioButton13->AutoSize = true;
+			this->radioButton13->Enabled = false;
+			this->radioButton13->Location = System::Drawing::Point(7, 14);
+			this->radioButton13->Name = L"radioButton13";
+			this->radioButton13->Size = System::Drawing::Size(14, 13);
+			this->radioButton13->TabIndex = 0;
+			this->radioButton13->TabStop = true;
+			this->toolTip1->SetToolTip(this->radioButton13, L"Tanaka-Maximalpuls in die Karvonen-Formel einsetzen.");
+			this->radioButton13->UseVisualStyleBackColor = true;
+			this->radioButton13->CheckedChanged += gcnew System::EventHandler(this, &Form1::radioButton13_CheckedChanged);
 			// 
 			// groupBox3
 			// 
@@ -744,7 +1174,7 @@ namespace CppCLRWinFormsProject {
 			this->groupBox3->Controls->Add(this->labelErgebnis);
 			this->groupBox3->Location = System::Drawing::Point(6, 265);
 			this->groupBox3->Name = L"groupBox3";
-			this->groupBox3->Size = System::Drawing::Size(303, 41);
+			this->groupBox3->Size = System::Drawing::Size(304, 41);
 			this->groupBox3->TabIndex = 8;
 			this->groupBox3->TabStop = false;
 			this->groupBox3->Enter += gcnew System::EventHandler(this, &Form1::groupBox3_Enter);
@@ -753,6 +1183,7 @@ namespace CppCLRWinFormsProject {
 			// 
 			this->tabControl1->Controls->Add(this->tabLagerstrom);
 			this->tabControl1->Controls->Add(this->tabKarvonen);
+			this->tabControl1->Controls->Add(this->tabPageMaxpuls);
 			this->tabControl1->Dock = System::Windows::Forms::DockStyle::Fill;
 			this->tabControl1->Location = System::Drawing::Point(0, 0);
 			this->tabControl1->Name = L"tabControl1";
@@ -831,6 +1262,94 @@ namespace CppCLRWinFormsProject {
 			this->textBox1->Size = System::Drawing::Size(82, 20);
 			this->textBox1->TabIndex = 4;
 			// 
+			// tabPageMaxpuls
+			// 
+			this->tabPageMaxpuls->BackColor = System::Drawing::Color::DarkSeaGreen;
+			this->tabPageMaxpuls->Controls->Add(this->groupBox11);
+			this->tabPageMaxpuls->Controls->Add(this->label34);
+			this->tabPageMaxpuls->Controls->Add(this->textBox5);
+			this->tabPageMaxpuls->Controls->Add(this->label32);
+			this->tabPageMaxpuls->Controls->Add(this->label33);
+			this->tabPageMaxpuls->Controls->Add(this->groupBox10);
+			this->tabPageMaxpuls->Controls->Add(this->label28);
+			this->tabPageMaxpuls->Controls->Add(this->label27);
+			this->tabPageMaxpuls->Controls->Add(this->label26);
+			this->tabPageMaxpuls->Controls->Add(this->label25);
+			this->tabPageMaxpuls->Controls->Add(this->label24);
+			this->tabPageMaxpuls->Controls->Add(this->groupBox9);
+			this->tabPageMaxpuls->Controls->Add(this->label23);
+			this->tabPageMaxpuls->Controls->Add(this->textBox4);
+			this->tabPageMaxpuls->Controls->Add(this->label22);
+			this->tabPageMaxpuls->Controls->Add(this->button3);
+			this->tabPageMaxpuls->Controls->Add(this->button4);
+			this->tabPageMaxpuls->Controls->Add(this->groupBox8);
+			this->tabPageMaxpuls->Controls->Add(this->groupBox7);
+			this->tabPageMaxpuls->Location = System::Drawing::Point(4, 22);
+			this->tabPageMaxpuls->Name = L"tabPageMaxpuls";
+			this->tabPageMaxpuls->Padding = System::Windows::Forms::Padding(3);
+			this->tabPageMaxpuls->Size = System::Drawing::Size(323, 382);
+			this->tabPageMaxpuls->TabIndex = 2;
+			this->tabPageMaxpuls->Text = L"Maximalpuls";
+			// 
+			// groupBox11
+			// 
+			this->groupBox11->Controls->Add(this->radioButton15);
+			this->groupBox11->Controls->Add(this->radioButton14);
+			this->groupBox11->Controls->Add(this->radioButton13);
+			this->groupBox11->Location = System::Drawing::Point(266, 97);
+			this->groupBox11->Name = L"groupBox11";
+			this->groupBox11->Size = System::Drawing::Size(35, 176);
+			this->groupBox11->TabIndex = 30;
+			this->groupBox11->TabStop = false;
+			this->toolTip1->SetToolTip(this->groupBox11, L"Ergebnis in die Karvonen-Formel zur Berechnung\r\ndes Trainingspulses einsetzen.");
+			// 
+			// textBox5
+			// 
+			this->textBox5->Location = System::Drawing::Point(86, 63);
+			this->textBox5->Name = L"textBox5";
+			this->textBox5->Size = System::Drawing::Size(42, 20);
+			this->textBox5->TabIndex = 28;
+			// 
+			// groupBox10
+			// 
+			this->groupBox10->Controls->Add(this->label29);
+			this->groupBox10->Controls->Add(this->label30);
+			this->groupBox10->Controls->Add(this->label31);
+			this->groupBox10->Location = System::Drawing::Point(6, 232);
+			this->groupBox10->Name = L"groupBox10";
+			this->groupBox10->Size = System::Drawing::Size(277, 41);
+			this->groupBox10->TabIndex = 25;
+			this->groupBox10->TabStop = false;
+			// 
+			// textBox4
+			// 
+			this->textBox4->Location = System::Drawing::Point(6, 63);
+			this->textBox4->Name = L"textBox4";
+			this->textBox4->Size = System::Drawing::Size(42, 20);
+			this->textBox4->TabIndex = 17;
+			// 
+			// groupBox8
+			// 
+			this->groupBox8->Controls->Add(this->label19);
+			this->groupBox8->Controls->Add(this->label20);
+			this->groupBox8->Controls->Add(this->label21);
+			this->groupBox8->Location = System::Drawing::Point(6, 159);
+			this->groupBox8->Name = L"groupBox8";
+			this->groupBox8->Size = System::Drawing::Size(277, 41);
+			this->groupBox8->TabIndex = 12;
+			this->groupBox8->TabStop = false;
+			// 
+			// groupBox7
+			// 
+			this->groupBox7->Controls->Add(this->label16);
+			this->groupBox7->Controls->Add(this->label17);
+			this->groupBox7->Controls->Add(this->label18);
+			this->groupBox7->Location = System::Drawing::Point(6, 97);
+			this->groupBox7->Name = L"groupBox7";
+			this->groupBox7->Size = System::Drawing::Size(277, 41);
+			this->groupBox7->TabIndex = 11;
+			this->groupBox7->TabStop = false;
+			// 
 			// Form1
 			// 
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Inherit;
@@ -850,6 +1369,8 @@ namespace CppCLRWinFormsProject {
 			this->groupBox4->PerformLayout();
 			this->groupBox6->ResumeLayout(false);
 			this->groupBox6->PerformLayout();
+			this->groupBox9->ResumeLayout(false);
+			this->groupBox9->PerformLayout();
 			this->groupBox3->ResumeLayout(false);
 			this->groupBox3->PerformLayout();
 			this->tabControl1->ResumeLayout(false);
@@ -859,6 +1380,16 @@ namespace CppCLRWinFormsProject {
 			this->tabKarvonen->PerformLayout();
 			this->groupBox5->ResumeLayout(false);
 			this->groupBox5->PerformLayout();
+			this->tabPageMaxpuls->ResumeLayout(false);
+			this->tabPageMaxpuls->PerformLayout();
+			this->groupBox11->ResumeLayout(false);
+			this->groupBox11->PerformLayout();
+			this->groupBox10->ResumeLayout(false);
+			this->groupBox10->PerformLayout();
+			this->groupBox8->ResumeLayout(false);
+			this->groupBox8->PerformLayout();
+			this->groupBox7->ResumeLayout(false);
+			this->groupBox7->PerformLayout();
 			this->ResumeLayout(false);
 
 		}
@@ -872,9 +1403,13 @@ namespace CppCLRWinFormsProject {
 		double zwischenergebnis = 0;
 		double tp = 0; //Trainingspuls Ergebnis
 
+		
+
 	//	if (textBoxRuhepuls->Text && textBoxLebensalter->Text && ausdauerkategorie != 0 && fitnesskategorie != 0) {
 		if (textBoxRuhepuls->Text&& textBoxLebensalter->Text){
 
+			textBox1->Text = Convert::ToString(textBoxRuhepuls->Text);
+			textBox4->Text = Convert::ToString(textBoxLebensalter->Text); //Alter in die Maximalpulsrechnung kopieren 
 			double ruhepuls = 0;
 			double lebensalter = 0;
 
@@ -1122,6 +1657,8 @@ private: System::Void herz_Click(System::Object^ sender, System::EventArgs^ e) {
 private: System::Void button1_Click_1(System::Object^ sender, System::EventArgs^ e) {
 	if (textBox1->Text && textBox3->Text && radioButton8->Checked || radioButton9->Checked || radioButton10->Checked) {
 		
+		textBoxRuhepuls->Text = Convert::ToString(textBox1->Text);
+
 		double maxPuls = 0, ruhePuls = 0;
 
 		try {
@@ -1186,6 +1723,120 @@ private: System::Void radioButton10_CheckedChanged(System::Object^ sender, Syste
 private: System::Void label12_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void textBox3_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
+	double alter = 0;
+	double gewicht = 0;
+	/* global definiert
+	double ergebnisTanaka = 0;
+	double ergebnisSpanaus = 0;
+	double ergebnisEdwards = 0;
+	*/
+
+
+
+
+	if (textBox4->Text) {
+		try {
+			textBoxLebensalter->Text = Convert::ToString(textBox4->Text); //Alter in die Lagerström-Rechnung kopieren
+			
+			alter = Convert::ToDouble(textBox4->Text);
+			gewicht = Convert::ToDouble(textBox5->Text);
+			ergebnisTanaka = 208 - 0.7 * alter;
+			ergebnisTanaka = Math::Round(ergebnisTanaka, 2);
+
+			label18->Font = gcnew System::Drawing::Font("Microsoft Sans Serif", 10, FontStyle::Bold, GraphicsUnit::Point);
+			label18->Text = Convert::ToString(ergebnisTanaka);
+			textBox3->Text = Convert::ToString(ergebnisTanaka); //Zur Karvonen-Formel
+			label16->Enabled = true;
+			label16->Visible = true;
+			label18->BackColor = Color::Green;
+
+
+			if (radioButton11->Checked) {
+				ergebnisSpanaus = 223 - 0.9 * alter;
+				ergebnisSpanaus = Math::Round(ergebnisSpanaus, 2);
+
+				label21->Font = gcnew System::Drawing::Font("Microsoft Sans Serif", 10, FontStyle::Bold, GraphicsUnit::Point);
+				label21->Text = Convert::ToString(ergebnisSpanaus);
+				label19->Enabled = true;
+				label19->Visible = true;
+				label21->BackColor = Color::Green;
+
+				ergebnisEdwards = 214 - 0.5 * alter - 0.11 * gewicht;
+				ergebnisEdwards = Math::Round(ergebnisEdwards, 2);
+
+				label31->Font = gcnew System::Drawing::Font("Microsoft Sans Serif", 10, FontStyle::Bold, GraphicsUnit::Point);
+				label31->Text = Convert::ToString(ergebnisEdwards);
+				label29->Enabled = true;
+				label29->Visible = true;
+				label31->BackColor = Color::Green;
+			}
+			if (radioButton12->Checked) {
+				ergebnisSpanaus = 226 - 1.0 * alter;
+				ergebnisSpanaus = Math::Round(ergebnisSpanaus, 2);
+
+				label21->Font = gcnew System::Drawing::Font("Microsoft Sans Serif", 10, FontStyle::Bold, GraphicsUnit::Point);
+				label21->Text = Convert::ToString(ergebnisSpanaus);
+				label19->Enabled = true;
+				label19->Visible = true;
+				label21->BackColor = Color::Green;
+
+				ergebnisEdwards = 210 - 0.5 * alter - 0.11 * gewicht;
+				ergebnisEdwards = Math::Round(ergebnisEdwards, 2);
+
+				label31->Font = gcnew System::Drawing::Font("Microsoft Sans Serif", 10, FontStyle::Bold, GraphicsUnit::Point);
+				label31->Text = Convert::ToString(ergebnisEdwards);
+				label29->Enabled = true;
+				label29->Visible = true;
+				label31->BackColor = Color::Green;
+			}
+
+			if (ergebnisTanaka > 0) {
+				radioButton13->Enabled = true;
+			}
+			if (ergebnisSpanaus > 0) {
+				radioButton14->Enabled = true;
+			}
+			if (ergebnisEdwards > 0) {
+				radioButton15->Enabled = true;
+			}
+
+			
+
+
+		}
+		catch (Exception^ e)
+		{
+			Console::WriteLine(e->ToString());
+			Console::WriteLine("An error occurred.");
+			Console::WriteLine(e->Message);
+			Console::WriteLine(e->StackTrace);
+		}
+
+
+	}
+
+
+	/*
+	Tanaka - Formel: Maximalpuls = 208 - 0, 7 * Lebensalter\n";
+	Spanaus - Formel(Männer) : Maximalpuls = 223 - 0, 9 * Lebensalter
+	Spanaus - Formel(Frauen) : Maximalpuls = 226 - 1, 0 * Lebensalter
+	Edwards: Männer: 214 - 0,5 * Alter - 0,11 * Körpergewicht (kg)
+    Edwards: Frauen: 210 - 0,5 * Alter - 0,11 * Körpergewicht (kg)
+	*/
+}
+private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->Close();
+}
+private: System::Void radioButton13_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
+	textBox3->Text = Convert::ToString(ergebnisTanaka);
+}
+private: System::Void radioButton14_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
+	textBox3->Text = Convert::ToString(ergebnisSpanaus);
+}
+private: System::Void radioButton15_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
+	textBox3->Text = Convert::ToString(ergebnisEdwards);
 }
 };
 };
