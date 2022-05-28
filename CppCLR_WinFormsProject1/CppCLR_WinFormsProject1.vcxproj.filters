@@ -48,12 +48,6 @@
     <Image Include="app.ico">
       <Filter>Resource Files</Filter>
     </Image>
-    <Image Include="%24this.Icon.ico">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="Bitmap.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
     <Image Include="Symbol.ico">
       <Filter>Resource Files</Filter>
     </Image>

@@ -149,12 +149,7 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="%24this.Icon.ico" />
     <Image Include="app.ico" />
-    <Image Include="Bitmap.bmp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
-      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
-    </Image>
     <Image Include="Symbol.ico" />
   </ItemGroup>
   <ItemGroup>

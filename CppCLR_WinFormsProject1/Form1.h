@@ -35,7 +35,7 @@ namespace CppCLRWinFormsProject {
 			//
 			//TODO: Add the constructor code here
 			//
-			this->Text = "Pulsrechner (v0.1.0)";
+			this->Text = "Pulsrechner (v0.1.1)";
 			
 		}
 
@@ -175,6 +175,7 @@ namespace CppCLRWinFormsProject {
 			this->label14 = (gcnew System::Windows::Forms::Label());
 			this->label15 = (gcnew System::Windows::Forms::Label());
 			this->groupBox4 = (gcnew System::Windows::Forms::GroupBox());
+			this->groupBox6 = (gcnew System::Windows::Forms::GroupBox());
 			this->groupBox3 = (gcnew System::Windows::Forms::GroupBox());
 			this->tabControl1 = (gcnew System::Windows::Forms::TabControl());
 			this->tabLagerstrom = (gcnew System::Windows::Forms::TabPage());
@@ -182,16 +183,15 @@ namespace CppCLRWinFormsProject {
 			this->groupBox5 = (gcnew System::Windows::Forms::GroupBox());
 			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
-			this->groupBox6 = (gcnew System::Windows::Forms::GroupBox());
 			this->groupBox1->SuspendLayout();
 			this->groupBox2->SuspendLayout();
 			this->groupBox4->SuspendLayout();
+			this->groupBox6->SuspendLayout();
 			this->groupBox3->SuspendLayout();
 			this->tabControl1->SuspendLayout();
 			this->tabLagerstrom->SuspendLayout();
 			this->tabKarvonen->SuspendLayout();
 			this->groupBox5->SuspendLayout();
-			this->groupBox6->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// berechnen
@@ -722,6 +722,21 @@ namespace CppCLRWinFormsProject {
 			this->groupBox4->Text = L"Trainingsart";
 			this->toolTip1->SetToolTip(this->groupBox4, L"Intensitätsfaktor (Belastungsintensität)");
 			// 
+			// groupBox6
+			// 
+			this->groupBox6->Controls->Add(this->label15);
+			this->groupBox6->Controls->Add(this->label14);
+			this->groupBox6->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.25F));
+			this->groupBox6->Location = System::Drawing::Point(6, 223);
+			this->groupBox6->Name = L"groupBox6";
+			this->groupBox6->Size = System::Drawing::Size(288, 78);
+			this->groupBox6->TabIndex = 17;
+			this->groupBox6->TabStop = false;
+			this->groupBox6->Text = L"Sicherheitshinweis";
+			this->toolTip1->SetToolTip(this->groupBox6, L"Beim Testen des Maximalpulses, etwa mit einem Ergometertest,\r\nist der Körper eine"
+				L"r hohen Belastung ausgesetzt, die vor allem \r\nbei unerkannten Krankheiten lebens"
+				L"gefährliche Folgen haben kann.");
+			// 
 			// groupBox3
 			// 
 			this->groupBox3->Controls->Add(this->herz);
@@ -816,21 +831,6 @@ namespace CppCLRWinFormsProject {
 			this->textBox1->Size = System::Drawing::Size(82, 20);
 			this->textBox1->TabIndex = 4;
 			// 
-			// groupBox6
-			// 
-			this->groupBox6->Controls->Add(this->label15);
-			this->groupBox6->Controls->Add(this->label14);
-			this->groupBox6->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.25F));
-			this->groupBox6->Location = System::Drawing::Point(6, 223);
-			this->groupBox6->Name = L"groupBox6";
-			this->groupBox6->Size = System::Drawing::Size(288, 78);
-			this->groupBox6->TabIndex = 17;
-			this->groupBox6->TabStop = false;
-			this->groupBox6->Text = L"Sicherheitshinweis";
-			this->toolTip1->SetToolTip(this->groupBox6, L"Beim Testen des Maximalpulses, etwa mit einem Ergometertest,\r\nist der Körper eine"
-				L"r hohen Belastung ausgesetzt, die vor allem \r\nbei unerkannten Krankheiten lebens"
-				L"gefährliche Folgen haben kann.");
-			// 
 			// Form1
 			// 
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Inherit;
@@ -848,6 +848,8 @@ namespace CppCLRWinFormsProject {
 			this->groupBox2->PerformLayout();
 			this->groupBox4->ResumeLayout(false);
 			this->groupBox4->PerformLayout();
+			this->groupBox6->ResumeLayout(false);
+			this->groupBox6->PerformLayout();
 			this->groupBox3->ResumeLayout(false);
 			this->groupBox3->PerformLayout();
 			this->tabControl1->ResumeLayout(false);
@@ -857,8 +859,6 @@ namespace CppCLRWinFormsProject {
 			this->tabKarvonen->PerformLayout();
 			this->groupBox5->ResumeLayout(false);
 			this->groupBox5->PerformLayout();
-			this->groupBox6->ResumeLayout(false);
-			this->groupBox6->PerformLayout();
 			this->ResumeLayout(false);
 
 		}
