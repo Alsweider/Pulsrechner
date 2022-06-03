@@ -1,19 +1,12 @@
 ﻿#pragma once
-#include <string>
-
 
 // https://github.com/Alsweider
-
-
 
 double rp = 0;
 double la = 0;
 double ausdauerkategorie = 0; //Lagerström
 double fitnesskategorie = 0; //Lagerström
 double trainingsart = 0; //Karvonen
-std::string geschlecht = "keine Angabe";
-
- 
 
 
 //Maximalpuls:
@@ -308,7 +301,7 @@ private: System::Windows::Forms::Button^ button7;
 			// berechnen
 			// 
 			this->berechnen->BackColor = System::Drawing::Color::Gainsboro;
-			this->berechnen->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->berechnen->Font = (gcnew System::Drawing::Font(L"Carolingia", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->berechnen->Location = System::Drawing::Point(6, 312);
 			this->berechnen->Name = L"berechnen";
@@ -397,7 +390,7 @@ private: System::Windows::Forms::Button^ button7;
 			// beenden
 			// 
 			this->beenden->BackColor = System::Drawing::Color::Gainsboro;
-			this->beenden->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->beenden->Font = (gcnew System::Drawing::Font(L"Carolingia", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->beenden->Location = System::Drawing::Point(209, 312);
 			this->beenden->Name = L"beenden";
@@ -712,7 +705,7 @@ private: System::Windows::Forms::Button^ button7;
 			// button1
 			// 
 			this->button1->BackColor = System::Drawing::Color::Gainsboro;
-			this->button1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->button1->Font = (gcnew System::Drawing::Font(L"Carolingia", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->button1->Location = System::Drawing::Point(6, 312);
 			this->button1->Name = L"button1";
@@ -739,7 +732,7 @@ private: System::Windows::Forms::Button^ button7;
 			// button2
 			// 
 			this->button2->BackColor = System::Drawing::Color::Gainsboro;
-			this->button2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->button2->Font = (gcnew System::Drawing::Font(L"Carolingia", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->button2->Location = System::Drawing::Point(209, 312);
 			this->button2->Name = L"button2";
@@ -935,7 +928,7 @@ private: System::Windows::Forms::Button^ button7;
 			// button3
 			// 
 			this->button3->BackColor = System::Drawing::Color::Gainsboro;
-			this->button3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->button3->Font = (gcnew System::Drawing::Font(L"Carolingia", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->button3->Location = System::Drawing::Point(6, 312);
 			this->button3->Name = L"button3";
@@ -950,7 +943,7 @@ private: System::Windows::Forms::Button^ button7;
 			// button4
 			// 
 			this->button4->BackColor = System::Drawing::Color::Gainsboro;
-			this->button4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->button4->Font = (gcnew System::Drawing::Font(L"Carolingia", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->button4->Location = System::Drawing::Point(209, 312);
 			this->button4->Name = L"button4";
@@ -1213,7 +1206,7 @@ private: System::Windows::Forms::Button^ button7;
 			// button5
 			// 
 			this->button5->BackColor = System::Drawing::Color::Gainsboro;
-			this->button5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->button5->Font = (gcnew System::Drawing::Font(L"Carolingia", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->button5->Location = System::Drawing::Point(113, 312);
 			this->button5->Name = L"button5";
@@ -1227,7 +1220,7 @@ private: System::Windows::Forms::Button^ button7;
 			// button6
 			// 
 			this->button6->BackColor = System::Drawing::Color::Gainsboro;
-			this->button6->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->button6->Font = (gcnew System::Drawing::Font(L"Carolingia", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->button6->Location = System::Drawing::Point(113, 312);
 			this->button6->Name = L"button6";
@@ -1241,7 +1234,7 @@ private: System::Windows::Forms::Button^ button7;
 			// button7
 			// 
 			this->button7->BackColor = System::Drawing::Color::Gainsboro;
-			this->button7->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->button7->Font = (gcnew System::Drawing::Font(L"Carolingia", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->button7->Location = System::Drawing::Point(113, 312);
 			this->button7->Name = L"button7";
@@ -1450,7 +1443,7 @@ private: System::Windows::Forms::Button^ button7;
 			// 
 			this->speichernToolStripMenuItem->Name = L"speichernToolStripMenuItem";
 			this->speichernToolStripMenuItem->ShortcutKeys = static_cast<System::Windows::Forms::Keys>((System::Windows::Forms::Keys::Control | System::Windows::Forms::Keys::S));
-			this->speichernToolStripMenuItem->Size = System::Drawing::Size(180, 22);
+			this->speichernToolStripMenuItem->Size = System::Drawing::Size(168, 22);
 			this->speichernToolStripMenuItem->Text = L"&Speichern";
 			this->speichernToolStripMenuItem->Click += gcnew System::EventHandler(this, &Form1::speichernToolStripMenuItem_Click);
 			// 
@@ -1458,7 +1451,7 @@ private: System::Windows::Forms::Button^ button7;
 			// 
 			this->beendenToolStripMenuItem->Name = L"beendenToolStripMenuItem";
 			this->beendenToolStripMenuItem->ShortcutKeys = static_cast<System::Windows::Forms::Keys>((System::Windows::Forms::Keys::Control | System::Windows::Forms::Keys::B));
-			this->beendenToolStripMenuItem->Size = System::Drawing::Size(180, 22);
+			this->beendenToolStripMenuItem->Size = System::Drawing::Size(168, 22);
 			this->beendenToolStripMenuItem->Text = L"&Beenden";
 			this->beendenToolStripMenuItem->Click += gcnew System::EventHandler(this, &Form1::beendenToolStripMenuItem_Click);
 			// 
@@ -1853,16 +1846,11 @@ private: System::Void textBox3_TextChanged(System::Object^ sender, System::Event
 private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
 	double alter = 0;
 	double gewicht = 0;
-	/* global definiert
-	double ergebnisTanaka = 0;
-	double ergebnisSpanaus = 0;
-	double ergebnisEdwards = 0;
-	*/
 
 
 	//Tanaka:
 
-	if (textBox4->Text && textBox5->Text=="" && radioButton11->Checked == false && radioButton12->Checked == false) { // wenn Lebensalter angegeben
+	if (textBox4->Text) { // wenn Lebensalter angegeben
 		try {
 			textBoxLebensalter->Text = Convert::ToString(textBox4->Text); //Alter in die Lagerström-Rechnung kopieren
 			alter = Convert::ToDouble(textBox4->Text); //Text zu Zahl
@@ -2021,91 +2009,6 @@ private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e
 
 	}
 
-
-	/* //Wurde ersetzt
-	if (textBox4->Text) {
-		try {
-			textBoxLebensalter->Text = Convert::ToString(textBox4->Text); //Alter in die Lagerström-Rechnung kopieren
-			
-			alter = Convert::ToDouble(textBox4->Text);
-			gewicht = Convert::ToDouble(textBox5->Text);
-			ergebnisTanaka = 208 - 0.7 * alter;
-			ergebnisTanaka = Math::Round(ergebnisTanaka, 2);
-
-			label18->Font = gcnew System::Drawing::Font("Microsoft Sans Serif", 10, FontStyle::Bold, GraphicsUnit::Point);
-			label18->Text = Convert::ToString(ergebnisTanaka);
-			textBox3->Text = Convert::ToString(ergebnisTanaka); //Zur Karvonen-Formel
-			label16->Enabled = true;
-			label16->Visible = true;
-			label18->BackColor = Color::Green;
-
-
-			if (radioButton11->Checked) { // Geschlecht männlich
-				ergebnisSpanaus = 223 - 0.9 * alter;
-				ergebnisSpanaus = Math::Round(ergebnisSpanaus, 2);
-
-				label21->Font = gcnew System::Drawing::Font("Microsoft Sans Serif", 10, FontStyle::Bold, GraphicsUnit::Point);
-				label21->Text = Convert::ToString(ergebnisSpanaus);
-				label19->Enabled = true;
-				label19->Visible = true;
-				label21->BackColor = Color::Green;
-
-				ergebnisEdwards = 214 - 0.5 * alter - 0.11 * gewicht;
-				ergebnisEdwards = Math::Round(ergebnisEdwards, 2);
-
-				label31->Font = gcnew System::Drawing::Font("Microsoft Sans Serif", 10, FontStyle::Bold, GraphicsUnit::Point);
-				label31->Text = Convert::ToString(ergebnisEdwards);
-				label29->Enabled = true;
-				label29->Visible = true;
-				label31->BackColor = Color::Green;
-			}
-			if (radioButton12->Checked) {  // Geschlecht weiblich
-				ergebnisSpanaus = 226 - 1.0 * alter;
-				ergebnisSpanaus = Math::Round(ergebnisSpanaus, 2);
-
-				label21->Font = gcnew System::Drawing::Font("Microsoft Sans Serif", 10, FontStyle::Bold, GraphicsUnit::Point);
-				label21->Text = Convert::ToString(ergebnisSpanaus);
-				label19->Enabled = true;
-				label19->Visible = true;
-				label21->BackColor = Color::Green;
-
-				ergebnisEdwards = 210 - 0.5 * alter - 0.11 * gewicht;
-				ergebnisEdwards = Math::Round(ergebnisEdwards, 2);
-
-				label31->Font = gcnew System::Drawing::Font("Microsoft Sans Serif", 10, FontStyle::Bold, GraphicsUnit::Point);
-				label31->Text = Convert::ToString(ergebnisEdwards);
-				label29->Enabled = true;
-				label29->Visible = true;
-				label31->BackColor = Color::Green;
-			}
-
-			if (ergebnisTanaka > 0) {
-				radioButton13->Enabled = true;
-			}
-			if (ergebnisSpanaus > 0) {
-				radioButton14->Enabled = true;
-			}
-			if (ergebnisEdwards > 0) {
-				radioButton15->Enabled = true;
-			}
-
-			
-
-
-		}
-		catch (Exception^ e)
-		{
-			Console::WriteLine(e->ToString());
-			Console::WriteLine("An error occurred.");
-			Console::WriteLine(e->Message);
-			Console::WriteLine(e->StackTrace);
-		}
-
-
-	}
-
-	*/
-
 	/*
 	Tanaka - Formel: Maximalpuls = 208 - 0, 7 * Lebensalter\n";
 	Spanaus - Formel(Männer) : Maximalpuls = 223 - 0, 9 * Lebensalter
@@ -2160,10 +2063,10 @@ private: System::Void beendenToolStripMenuItem_Click(System::Object^ sender, Sys
 	this->Close();
 }
 private: System::Void radioButton11_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
-	geschlecht = "männlich";
+
 }
 private: System::Void radioButton12_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
-	geschlecht = "weiblich";
+
 }
 private: System::Void saveFileDialog1_FileOk(System::Object^ sender, System::ComponentModel::CancelEventArgs^ e) {
 	
