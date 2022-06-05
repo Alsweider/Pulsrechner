@@ -829,7 +829,7 @@ private: System::Windows::Forms::Button^ button7;
 			this->groupBox6->Controls->Add(this->label14);
 			this->groupBox6->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->groupBox6->Location = System::Drawing::Point(6, 253);
+			this->groupBox6->Location = System::Drawing::Point(6, 200);
 			this->groupBox6->Name = L"groupBox6";
 			this->groupBox6->Size = System::Drawing::Size(373, 111);
 			this->groupBox6->TabIndex = 8;
@@ -1367,7 +1367,7 @@ private: System::Windows::Forms::Button^ button7;
 			this->groupBox5->Controls->Add(this->label10);
 			this->groupBox5->Controls->Add(this->label11);
 			this->groupBox5->Controls->Add(this->label12);
-			this->groupBox5->Location = System::Drawing::Point(6, 184);
+			this->groupBox5->Location = System::Drawing::Point(6, 329);
 			this->groupBox5->Name = L"groupBox5";
 			this->groupBox5->Size = System::Drawing::Size(371, 47);
 			this->groupBox5->TabIndex = 7;
