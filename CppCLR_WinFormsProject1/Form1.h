@@ -80,7 +80,7 @@ namespace CppCLRWinFormsProject {
 	private: System::Windows::Forms::RadioButton^ radioButton7;
 	private: System::Windows::Forms::RadioButton^ radioButton6;
 	private: System::Windows::Forms::RadioButton^ radioButton5;
-	private: System::Windows::Forms::RadioButton^ radioButton4;
+
 	private: System::Windows::Forms::RadioButton^ radioButton3;
 	private: System::Windows::Forms::Label^ label1;
 	private: System::Windows::Forms::ToolTip^ toolTip1;
@@ -155,6 +155,7 @@ private: System::Windows::Forms::ToolStripMenuItem^ beendenToolStripMenuItem;
 private: System::Windows::Forms::Button^ button5;
 private: System::Windows::Forms::Button^ button6;
 private: System::Windows::Forms::Button^ button7;
+private: System::Windows::Forms::RadioButton^ radioButton4;
 
 
 
@@ -206,10 +207,10 @@ private: System::Windows::Forms::Button^ button7;
 			this->radioButton2 = (gcnew System::Windows::Forms::RadioButton());
 			this->groupBox1 = (gcnew System::Windows::Forms::GroupBox());
 			this->groupBox2 = (gcnew System::Windows::Forms::GroupBox());
+			this->radioButton4 = (gcnew System::Windows::Forms::RadioButton());
 			this->radioButton7 = (gcnew System::Windows::Forms::RadioButton());
 			this->radioButton6 = (gcnew System::Windows::Forms::RadioButton());
 			this->radioButton5 = (gcnew System::Windows::Forms::RadioButton());
-			this->radioButton4 = (gcnew System::Windows::Forms::RadioButton());
 			this->radioButton3 = (gcnew System::Windows::Forms::RadioButton());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->toolTip1 = (gcnew System::Windows::Forms::ToolTip(this->components));
@@ -312,6 +313,7 @@ private: System::Windows::Forms::Button^ button7;
 			this->toolTip1->SetToolTip(this->berechnen, L"Berechnung der Trainings-Herzfrequenz starten");
 			this->berechnen->UseCompatibleTextRendering = true;
 			this->berechnen->UseVisualStyleBackColor = false;
+			this->berechnen->Visible = false;
 			this->berechnen->Click += gcnew System::EventHandler(this, &Form1::button1_Click);
 			// 
 			// textBoxRuhepuls
@@ -451,10 +453,10 @@ private: System::Windows::Forms::Button^ button7;
 			// 
 			// groupBox2
 			// 
+			this->groupBox2->Controls->Add(this->radioButton4);
 			this->groupBox2->Controls->Add(this->radioButton7);
 			this->groupBox2->Controls->Add(this->radioButton6);
 			this->groupBox2->Controls->Add(this->radioButton5);
-			this->groupBox2->Controls->Add(this->radioButton4);
 			this->groupBox2->Controls->Add(this->radioButton3);
 			this->groupBox2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
@@ -467,6 +469,21 @@ private: System::Windows::Forms::Button^ button7;
 			this->toolTip1->SetToolTip(this->groupBox2, L"Eigenes Leistungsniveau nach Selbsteinschätzung.\r\nSetzt einen Faktor von 0,55 (vö"
 				L"llig untrainiert) bis 0,75\r\n(Hochleistungssportler) in die Formel ein.");
 			this->groupBox2->Enter += gcnew System::EventHandler(this, &Form1::groupBox2_Enter);
+			// 
+			// radioButton4
+			// 
+			this->radioButton4->AutoSize = true;
+			this->radioButton4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->radioButton4->Location = System::Drawing::Point(198, 13);
+			this->radioButton4->Name = L"radioButton4";
+			this->radioButton4->Size = System::Drawing::Size(155, 24);
+			this->radioButton4->TabIndex = 5;
+			this->radioButton4->TabStop = true;
+			this->radioButton4->Text = L"2. normal sportlich";
+			this->toolTip1->SetToolTip(this->radioButton4, L"Faktor: 0,6");
+			this->radioButton4->UseVisualStyleBackColor = true;
+			this->radioButton4->CheckedChanged += gcnew System::EventHandler(this, &Form1::radioButton4_CheckedChanged_1);
 			// 
 			// radioButton7
 			// 
@@ -512,21 +529,6 @@ private: System::Windows::Forms::Button^ button7;
 			this->toolTip1->SetToolTip(this->radioButton5, L"Faktor: 0,7");
 			this->radioButton5->UseVisualStyleBackColor = true;
 			this->radioButton5->CheckedChanged += gcnew System::EventHandler(this, &Form1::radioButton5_CheckedChanged);
-			// 
-			// radioButton4
-			// 
-			this->radioButton4->AutoSize = true;
-			this->radioButton4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->radioButton4->Location = System::Drawing::Point(198, 19);
-			this->radioButton4->Name = L"radioButton4";
-			this->radioButton4->Size = System::Drawing::Size(155, 24);
-			this->radioButton4->TabIndex = 1;
-			this->radioButton4->TabStop = true;
-			this->radioButton4->Text = L"2. normal sportlich";
-			this->toolTip1->SetToolTip(this->radioButton4, L"Faktor: 0,6");
-			this->radioButton4->UseVisualStyleBackColor = true;
-			this->radioButton4->CheckedChanged += gcnew System::EventHandler(this, &Form1::radioButton4_CheckedChanged);
 			// 
 			// radioButton3
 			// 
@@ -714,6 +716,7 @@ private: System::Windows::Forms::Button^ button7;
 			this->toolTip1->SetToolTip(this->button1, L"Berechnung der Trainings-Herzfrequenz starten");
 			this->button1->UseCompatibleTextRendering = true;
 			this->button1->UseVisualStyleBackColor = false;
+			this->button1->Visible = false;
 			this->button1->Click += gcnew System::EventHandler(this, &Form1::button1_Click_1);
 			// 
 			// label13
@@ -938,6 +941,7 @@ private: System::Windows::Forms::Button^ button7;
 			this->toolTip1->SetToolTip(this->button3, L"Berechnung der maximalen Herzfrequenz starten");
 			this->button3->UseCompatibleTextRendering = true;
 			this->button3->UseVisualStyleBackColor = false;
+			this->button3->Visible = false;
 			this->button3->Click += gcnew System::EventHandler(this, &Form1::button3_Click);
 			// 
 			// button4
@@ -1183,7 +1187,7 @@ private: System::Windows::Forms::Button^ button7;
 			this->button5->BackColor = System::Drawing::Color::Gainsboro;
 			this->button5->Font = (gcnew System::Drawing::Font(L"Carolingia", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->button5->Location = System::Drawing::Point(145, 389);
+			this->button5->Location = System::Drawing::Point(171, 389);
 			this->button5->Name = L"button5";
 			this->button5->Size = System::Drawing::Size(101, 36);
 			this->button5->TabIndex = 12;
@@ -1196,7 +1200,7 @@ private: System::Windows::Forms::Button^ button7;
 			// 
 			this->button6->BackColor = System::Drawing::Color::Gainsboro;
 			this->button6->Font = (gcnew System::Drawing::Font(L"Carolingia", 14.25F));
-			this->button6->Location = System::Drawing::Point(145, 389);
+			this->button6->Location = System::Drawing::Point(171, 389);
 			this->button6->Name = L"button6";
 			this->button6->Size = System::Drawing::Size(101, 36);
 			this->button6->TabIndex = 13;
@@ -1209,7 +1213,7 @@ private: System::Windows::Forms::Button^ button7;
 			// 
 			this->button7->BackColor = System::Drawing::Color::Gainsboro;
 			this->button7->Font = (gcnew System::Drawing::Font(L"Carolingia", 14));
-			this->button7->Location = System::Drawing::Point(145, 389);
+			this->button7->Location = System::Drawing::Point(171, 389);
 			this->button7->Name = L"button7";
 			this->button7->Size = System::Drawing::Size(101, 36);
 			this->button7->TabIndex = 19;
@@ -1274,6 +1278,7 @@ private: System::Windows::Forms::Button^ button7;
 			this->textBox5->Name = L"textBox5";
 			this->textBox5->Size = System::Drawing::Size(42, 26);
 			this->textBox5->TabIndex = 4;
+			this->textBox5->TextChanged += gcnew System::EventHandler(this, &Form1::textBox5_TextChanged);
 			// 
 			// groupBox10
 			// 
@@ -1491,15 +1496,12 @@ private: System::Windows::Forms::Button^ button7;
 		
 	private: System::Void Form1_Load(System::Object^ sender, System::EventArgs^ e) {
 	}
-	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-		
+	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {		
 
+		//Berechnen Start
 		double zwischenergebnis = 0;
 		double tp = 0; //Trainingspuls Ergebnis
 
-		
-
-	//	if (textBoxRuhepuls->Text && textBoxLebensalter->Text && ausdauerkategorie != 0 && fitnesskategorie != 0) {
 		if (textBoxRuhepuls->Text&& textBoxLebensalter->Text){
 
 			textBox1->Text = Convert::ToString(textBoxRuhepuls->Text);
@@ -1575,26 +1577,9 @@ private: System::Windows::Forms::Button^ button7;
 		else {
 			labelErgebnis->Text = "Fehlende Angaben";
 		}
-
+//		//Berechnen Ende
 			
-
-		//double result = Math::Round(number7, 2); // Round number7 to 2 decimal places.
-
-		/*labelErgebnis->Text = Convert::ToString(Convert::ToDouble(
-			textBoxRuhepuls->Text) + (220 - ausdauerkategorie * Convert::ToDouble(textBoxLebensalter->Text) - Convert::ToDouble(
-				textBoxRuhepuls->Text)) * fitnesskategorie);
-				*/
-		
-		
-
-		
-		
-
-
 		//tp = rp + (220 - ausdauerart * la - rp) * fk;
-
-		
-
 	}
 	private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
@@ -1614,6 +1599,89 @@ private: System::Void textBox1_TextChanged(System::Object^ sender, System::Event
 	//Aktiviere Berechnen-Knopf, wenn alle Daten vorhanden sind:
 	if ((textBoxRuhepuls->Text != "" && textBoxLebensalter->Text != "") && (radioButton1->Checked == true || radioButton2->Checked == true) && (radioButton3->Checked == true || radioButton4->Checked == true || radioButton5->Checked == true || radioButton6->Checked == true || radioButton7->Checked == true)) {
 			berechnen->Enabled = true;
+
+			//Berechnen Start
+			double zwischenergebnis = 0;
+			double tp = 0; //Trainingspuls Ergebnis
+
+			if (textBoxRuhepuls->Text && textBoxLebensalter->Text) {
+
+				textBox1->Text = Convert::ToString(textBoxRuhepuls->Text);
+				textBox4->Text = Convert::ToString(textBoxLebensalter->Text); //Alter in die Maximalpulsrechnung kopieren 
+				double ruhepuls = 0;
+				double lebensalter = 0;
+
+				try {
+					ruhepuls = Convert::ToDouble(textBoxRuhepuls->Text);
+					lebensalter = Convert::ToDouble(textBoxLebensalter->Text);
+				}
+				catch (Exception^ e)
+				{
+					Console::WriteLine(e->ToString());
+					Console::WriteLine("An error occurred.");
+					Console::WriteLine(e->Message);
+					Console::WriteLine(e->StackTrace);
+				}
+
+				if (ruhepuls <= 0 || lebensalter <= 0) {
+					herz->Enabled = false;
+					herz->Visible = false;
+					labelErgebnis->BackColor = Color::Yellow;
+					labelErgebnis->ForeColor = Color::Black;
+					labelErgebnis->Text = "Eingabewert zu niedrig";
+				}
+				else if (radioButton2->Checked || radioButton1->Checked) {
+					if (radioButton3->Checked || radioButton4->Checked || radioButton5->Checked || radioButton6->Checked || radioButton7->Checked) {
+						if (ausdauerkategorie > 0 && fitnesskategorie > 0) {
+
+
+							try
+							{
+								zwischenergebnis = ruhepuls + (220 - ausdauerkategorie * lebensalter - ruhepuls) * fitnesskategorie;
+
+								zwischenergebnis = Math::Round(zwischenergebnis, 2);
+								labelErgebnis->Font = gcnew System::Drawing::Font("Microsoft Sans Serif", 12, FontStyle::Bold, GraphicsUnit::Point);
+
+
+								labelErgebnis->Text = Convert::ToString(zwischenergebnis);
+								herz->Enabled = true;
+								herz->Visible = true;
+								labelErgebnis->BackColor = Color::Green;
+								labelErgebnis->ForeColor = Color::White;
+
+
+							}
+
+							catch (Exception^ e)
+							{
+								Console::WriteLine(e->ToString());
+								Console::WriteLine("An error occurred.");
+								Console::WriteLine(e->Message);
+								Console::WriteLine(e->StackTrace);
+							}
+
+
+
+
+						}
+						else {
+							labelErgebnis->Text = "Fehlende Angaben";
+						}
+
+					}
+					else {
+						labelErgebnis->Text = "Fehlende Angaben";
+					}
+				}
+				else {
+					labelErgebnis->Text = "Fehlende Angaben";
+				}
+			}
+			else {
+				labelErgebnis->Text = "Fehlende Angaben";
+			}
+			//Berechnen Ende
+
 		}
 		else {
 			berechnen->Enabled = false;
@@ -1644,6 +1712,88 @@ private: System::Void textBox2_TextChanged(System::Object^ sender, System::Event
 	//Aktiviere Berechnen-Knopf, wenn alle Daten vorhanden sind:
 	if ((textBoxRuhepuls->Text != "" && textBoxLebensalter->Text != "") && (radioButton1->Checked == true || radioButton2->Checked == true) && (radioButton3->Checked == true || radioButton4->Checked == true || radioButton5->Checked == true || radioButton6->Checked == true || radioButton7->Checked == true)) {
 		berechnen->Enabled = true;
+
+		//Berechnen Start
+		double zwischenergebnis = 0;
+		double tp = 0; //Trainingspuls Ergebnis
+
+		if (textBoxRuhepuls->Text && textBoxLebensalter->Text) {
+
+			textBox1->Text = Convert::ToString(textBoxRuhepuls->Text);
+			textBox4->Text = Convert::ToString(textBoxLebensalter->Text); //Alter in die Maximalpulsrechnung kopieren 
+			double ruhepuls = 0;
+			double lebensalter = 0;
+
+			try {
+				ruhepuls = Convert::ToDouble(textBoxRuhepuls->Text);
+				lebensalter = Convert::ToDouble(textBoxLebensalter->Text);
+			}
+			catch (Exception^ e)
+			{
+				Console::WriteLine(e->ToString());
+				Console::WriteLine("An error occurred.");
+				Console::WriteLine(e->Message);
+				Console::WriteLine(e->StackTrace);
+			}
+
+			if (ruhepuls <= 0 || lebensalter <= 0) {
+				herz->Enabled = false;
+				herz->Visible = false;
+				labelErgebnis->BackColor = Color::Yellow;
+				labelErgebnis->ForeColor = Color::Black;
+				labelErgebnis->Text = "Eingabewert zu niedrig";
+			}
+			else if (radioButton2->Checked || radioButton1->Checked) {
+				if (radioButton3->Checked || radioButton4->Checked || radioButton5->Checked || radioButton6->Checked || radioButton7->Checked) {
+					if (ausdauerkategorie > 0 && fitnesskategorie > 0) {
+
+
+						try
+						{
+							zwischenergebnis = ruhepuls + (220 - ausdauerkategorie * lebensalter - ruhepuls) * fitnesskategorie;
+
+							zwischenergebnis = Math::Round(zwischenergebnis, 2);
+							labelErgebnis->Font = gcnew System::Drawing::Font("Microsoft Sans Serif", 12, FontStyle::Bold, GraphicsUnit::Point);
+
+
+							labelErgebnis->Text = Convert::ToString(zwischenergebnis);
+							herz->Enabled = true;
+							herz->Visible = true;
+							labelErgebnis->BackColor = Color::Green;
+							labelErgebnis->ForeColor = Color::White;
+
+
+						}
+
+						catch (Exception^ e)
+						{
+							Console::WriteLine(e->ToString());
+							Console::WriteLine("An error occurred.");
+							Console::WriteLine(e->Message);
+							Console::WriteLine(e->StackTrace);
+						}
+
+
+
+
+					}
+					else {
+						labelErgebnis->Text = "Fehlende Angaben";
+					}
+
+				}
+				else {
+					labelErgebnis->Text = "Fehlende Angaben";
+				}
+			}
+			else {
+				labelErgebnis->Text = "Fehlende Angaben";
+			}
+		}
+		else {
+			labelErgebnis->Text = "Fehlende Angaben";
+		}
+		//Berechnen Ende
 	}
 	else {
 		berechnen->Enabled = false;
@@ -1667,14 +1817,6 @@ private: System::Void listBox1_SelectedIndexChanged(System::Object^ sender, Syst
 }
 private: System::Void radioButton1_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
 
-	//Aktiviere Berechnen-Knopf, wenn alle Daten vorhanden sind:
-	if ((textBoxRuhepuls->Text != "" && textBoxLebensalter->Text != "") && (radioButton1->Checked == true || radioButton2->Checked == true) && (radioButton3->Checked == true || radioButton4->Checked == true || radioButton5->Checked == true || radioButton6->Checked == true || radioButton7->Checked == true)) {
-		berechnen->Enabled = true;
-	}
-	else {
-		berechnen->Enabled = false;
-	}
-
 	try {
 		ausdauerkategorie = static_cast<double>(3) / 4;
 	}
@@ -1686,16 +1828,100 @@ private: System::Void radioButton1_CheckedChanged(System::Object^ sender, System
 		Console::WriteLine(e->Message);
 		Console::WriteLine(e->StackTrace);
 	}
-}
-private: System::Void radioButton2_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
 
 	//Aktiviere Berechnen-Knopf, wenn alle Daten vorhanden sind:
 	if ((textBoxRuhepuls->Text != "" && textBoxLebensalter->Text != "") && (radioButton1->Checked == true || radioButton2->Checked == true) && (radioButton3->Checked == true || radioButton4->Checked == true || radioButton5->Checked == true || radioButton6->Checked == true || radioButton7->Checked == true)) {
 		berechnen->Enabled = true;
+
+		//Berechnen Start
+		double zwischenergebnis = 0;
+		double tp = 0; //Trainingspuls Ergebnis
+
+		if (textBoxRuhepuls->Text && textBoxLebensalter->Text) {
+
+			textBox1->Text = Convert::ToString(textBoxRuhepuls->Text);
+			textBox4->Text = Convert::ToString(textBoxLebensalter->Text); //Alter in die Maximalpulsrechnung kopieren 
+			double ruhepuls = 0;
+			double lebensalter = 0;
+
+			try {
+				ruhepuls = Convert::ToDouble(textBoxRuhepuls->Text);
+				lebensalter = Convert::ToDouble(textBoxLebensalter->Text);
+			}
+			catch (Exception^ e)
+			{
+				Console::WriteLine(e->ToString());
+				Console::WriteLine("An error occurred.");
+				Console::WriteLine(e->Message);
+				Console::WriteLine(e->StackTrace);
+			}
+
+			if (ruhepuls <= 0 || lebensalter <= 0) {
+				herz->Enabled = false;
+				herz->Visible = false;
+				labelErgebnis->BackColor = Color::Yellow;
+				labelErgebnis->ForeColor = Color::Black;
+				labelErgebnis->Text = "Eingabewert zu niedrig";
+			}
+			else if (radioButton2->Checked || radioButton1->Checked) {
+				if (radioButton3->Checked || radioButton4->Checked || radioButton5->Checked || radioButton6->Checked || radioButton7->Checked) {
+					if (ausdauerkategorie > 0 && fitnesskategorie > 0) {
+
+
+						try
+						{
+							zwischenergebnis = ruhepuls + (220 - ausdauerkategorie * lebensalter - ruhepuls) * fitnesskategorie;
+
+							zwischenergebnis = Math::Round(zwischenergebnis, 2);
+							labelErgebnis->Font = gcnew System::Drawing::Font("Microsoft Sans Serif", 12, FontStyle::Bold, GraphicsUnit::Point);
+
+
+							labelErgebnis->Text = Convert::ToString(zwischenergebnis);
+							herz->Enabled = true;
+							herz->Visible = true;
+							labelErgebnis->BackColor = Color::Green;
+							labelErgebnis->ForeColor = Color::White;
+
+
+						}
+
+						catch (Exception^ e)
+						{
+							Console::WriteLine(e->ToString());
+							Console::WriteLine("An error occurred.");
+							Console::WriteLine(e->Message);
+							Console::WriteLine(e->StackTrace);
+						}
+
+
+
+
+					}
+					else {
+						labelErgebnis->Text = "Fehlende Angaben";
+					}
+
+				}
+				else {
+					labelErgebnis->Text = "Fehlende Angaben";
+				}
+			}
+			else {
+				labelErgebnis->Text = "Fehlende Angaben";
+			}
+		}
+		else {
+			labelErgebnis->Text = "Fehlende Angaben";
+		}
+		//Berechnen Ende
 	}
 	else {
 		berechnen->Enabled = false;
 	}
+
+	
+}
+private: System::Void radioButton2_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
 
 	try {
 		ausdauerkategorie = static_cast<double>(2) / 3;
@@ -1708,18 +1934,102 @@ private: System::Void radioButton2_CheckedChanged(System::Object^ sender, System
 		Console::WriteLine(e->StackTrace);
 	}
 
-	}
-private: System::Void label3_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void radioButton3_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
-
 	//Aktiviere Berechnen-Knopf, wenn alle Daten vorhanden sind:
 	if ((textBoxRuhepuls->Text != "" && textBoxLebensalter->Text != "") && (radioButton1->Checked == true || radioButton2->Checked == true) && (radioButton3->Checked == true || radioButton4->Checked == true || radioButton5->Checked == true || radioButton6->Checked == true || radioButton7->Checked == true)) {
 		berechnen->Enabled = true;
+
+		//Berechnen Start
+		double zwischenergebnis = 0;
+		double tp = 0; //Trainingspuls Ergebnis
+
+		if (textBoxRuhepuls->Text && textBoxLebensalter->Text) {
+
+			textBox1->Text = Convert::ToString(textBoxRuhepuls->Text);
+			textBox4->Text = Convert::ToString(textBoxLebensalter->Text); //Alter in die Maximalpulsrechnung kopieren 
+			double ruhepuls = 0;
+			double lebensalter = 0;
+
+			try {
+				ruhepuls = Convert::ToDouble(textBoxRuhepuls->Text);
+				lebensalter = Convert::ToDouble(textBoxLebensalter->Text);
+			}
+			catch (Exception^ e)
+			{
+				Console::WriteLine(e->ToString());
+				Console::WriteLine("An error occurred.");
+				Console::WriteLine(e->Message);
+				Console::WriteLine(e->StackTrace);
+			}
+
+			if (ruhepuls <= 0 || lebensalter <= 0) {
+				herz->Enabled = false;
+				herz->Visible = false;
+				labelErgebnis->BackColor = Color::Yellow;
+				labelErgebnis->ForeColor = Color::Black;
+				labelErgebnis->Text = "Eingabewert zu niedrig";
+			}
+			else if (radioButton2->Checked || radioButton1->Checked) {
+				if (radioButton3->Checked || radioButton4->Checked || radioButton5->Checked || radioButton6->Checked || radioButton7->Checked) {
+					if (ausdauerkategorie > 0 && fitnesskategorie > 0) {
+
+
+						try
+						{
+							zwischenergebnis = ruhepuls + (220 - ausdauerkategorie * lebensalter - ruhepuls) * fitnesskategorie;
+
+							zwischenergebnis = Math::Round(zwischenergebnis, 2);
+							labelErgebnis->Font = gcnew System::Drawing::Font("Microsoft Sans Serif", 12, FontStyle::Bold, GraphicsUnit::Point);
+
+
+							labelErgebnis->Text = Convert::ToString(zwischenergebnis);
+							herz->Enabled = true;
+							herz->Visible = true;
+							labelErgebnis->BackColor = Color::Green;
+							labelErgebnis->ForeColor = Color::White;
+
+
+						}
+
+						catch (Exception^ e)
+						{
+							Console::WriteLine(e->ToString());
+							Console::WriteLine("An error occurred.");
+							Console::WriteLine(e->Message);
+							Console::WriteLine(e->StackTrace);
+						}
+
+
+
+
+					}
+					else {
+						labelErgebnis->Text = "Fehlende Angaben";
+					}
+
+				}
+				else {
+					labelErgebnis->Text = "Fehlende Angaben";
+				}
+			}
+			else {
+				labelErgebnis->Text = "Fehlende Angaben";
+			}
+		}
+		else {
+			labelErgebnis->Text = "Fehlende Angaben";
+		}
+		//Berechnen Ende
 	}
 	else {
 		berechnen->Enabled = false;
 	}
+
+	
+
+	}
+private: System::Void label3_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void radioButton3_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
 
 	try {
 		fitnesskategorie = 0.55;
@@ -1731,16 +2041,100 @@ private: System::Void radioButton3_CheckedChanged(System::Object^ sender, System
 		Console::WriteLine(e->Message);
 		Console::WriteLine(e->StackTrace);
 	}
-}
-private: System::Void radioButton4_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
 
 	//Aktiviere Berechnen-Knopf, wenn alle Daten vorhanden sind:
 	if ((textBoxRuhepuls->Text != "" && textBoxLebensalter->Text != "") && (radioButton1->Checked == true || radioButton2->Checked == true) && (radioButton3->Checked == true || radioButton4->Checked == true || radioButton5->Checked == true || radioButton6->Checked == true || radioButton7->Checked == true)) {
 		berechnen->Enabled = true;
+
+		//Berechnen Start
+		double zwischenergebnis = 0;
+		double tp = 0; //Trainingspuls Ergebnis
+
+		if (textBoxRuhepuls->Text && textBoxLebensalter->Text) {
+
+			textBox1->Text = Convert::ToString(textBoxRuhepuls->Text);
+			textBox4->Text = Convert::ToString(textBoxLebensalter->Text); //Alter in die Maximalpulsrechnung kopieren 
+			double ruhepuls = 0;
+			double lebensalter = 0;
+
+			try {
+				ruhepuls = Convert::ToDouble(textBoxRuhepuls->Text);
+				lebensalter = Convert::ToDouble(textBoxLebensalter->Text);
+			}
+			catch (Exception^ e)
+			{
+				Console::WriteLine(e->ToString());
+				Console::WriteLine("An error occurred.");
+				Console::WriteLine(e->Message);
+				Console::WriteLine(e->StackTrace);
+			}
+
+			if (ruhepuls <= 0 || lebensalter <= 0) {
+				herz->Enabled = false;
+				herz->Visible = false;
+				labelErgebnis->BackColor = Color::Yellow;
+				labelErgebnis->ForeColor = Color::Black;
+				labelErgebnis->Text = "Eingabewert zu niedrig";
+			}
+			else if (radioButton2->Checked || radioButton1->Checked) {
+				if (radioButton3->Checked || radioButton4->Checked || radioButton5->Checked || radioButton6->Checked || radioButton7->Checked) {
+					if (ausdauerkategorie > 0 && fitnesskategorie > 0) {
+
+
+						try
+						{
+							zwischenergebnis = ruhepuls + (220 - ausdauerkategorie * lebensalter - ruhepuls) * fitnesskategorie;
+
+							zwischenergebnis = Math::Round(zwischenergebnis, 2);
+							labelErgebnis->Font = gcnew System::Drawing::Font("Microsoft Sans Serif", 12, FontStyle::Bold, GraphicsUnit::Point);
+
+
+							labelErgebnis->Text = Convert::ToString(zwischenergebnis);
+							herz->Enabled = true;
+							herz->Visible = true;
+							labelErgebnis->BackColor = Color::Green;
+							labelErgebnis->ForeColor = Color::White;
+
+
+						}
+
+						catch (Exception^ e)
+						{
+							Console::WriteLine(e->ToString());
+							Console::WriteLine("An error occurred.");
+							Console::WriteLine(e->Message);
+							Console::WriteLine(e->StackTrace);
+						}
+
+
+
+
+					}
+					else {
+						labelErgebnis->Text = "Fehlende Angaben";
+					}
+
+				}
+				else {
+					labelErgebnis->Text = "Fehlende Angaben";
+				}
+			}
+			else {
+				labelErgebnis->Text = "Fehlende Angaben";
+			}
+		}
+		else {
+			labelErgebnis->Text = "Fehlende Angaben";
+		}
+		//Berechnen Ende
 	}
 	else {
 		berechnen->Enabled = false;
 	}
+
+	
+}
+private: System::Void radioButton4_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
 
 	try {
 		fitnesskategorie = 0.6;
@@ -1752,16 +2146,100 @@ private: System::Void radioButton4_CheckedChanged(System::Object^ sender, System
 		Console::WriteLine(e->Message);
 		Console::WriteLine(e->StackTrace);
 	}
-}
-private: System::Void radioButton7_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
 
 	//Aktiviere Berechnen-Knopf, wenn alle Daten vorhanden sind:
 	if ((textBoxRuhepuls->Text != "" && textBoxLebensalter->Text != "") && (radioButton1->Checked == true || radioButton2->Checked == true) && (radioButton3->Checked == true || radioButton4->Checked == true || radioButton5->Checked == true || radioButton6->Checked == true || radioButton7->Checked == true)) {
 		berechnen->Enabled = true;
+
+		//Berechnen Start
+		double zwischenergebnis = 0;
+		double tp = 0; //Trainingspuls Ergebnis
+
+		if (textBoxRuhepuls->Text && textBoxLebensalter->Text) {
+
+			textBox1->Text = Convert::ToString(textBoxRuhepuls->Text);
+			textBox4->Text = Convert::ToString(textBoxLebensalter->Text); //Alter in die Maximalpulsrechnung kopieren 
+			double ruhepuls = 0;
+			double lebensalter = 0;
+
+			try {
+				ruhepuls = Convert::ToDouble(textBoxRuhepuls->Text);
+				lebensalter = Convert::ToDouble(textBoxLebensalter->Text);
+			}
+			catch (Exception^ e)
+			{
+				Console::WriteLine(e->ToString());
+				Console::WriteLine("An error occurred.");
+				Console::WriteLine(e->Message);
+				Console::WriteLine(e->StackTrace);
+			}
+
+			if (ruhepuls <= 0 || lebensalter <= 0) {
+				herz->Enabled = false;
+				herz->Visible = false;
+				labelErgebnis->BackColor = Color::Yellow;
+				labelErgebnis->ForeColor = Color::Black;
+				labelErgebnis->Text = "Eingabewert zu niedrig";
+			}
+			else if (radioButton2->Checked || radioButton1->Checked) {
+				if (radioButton3->Checked || radioButton4->Checked || radioButton5->Checked || radioButton6->Checked || radioButton7->Checked) {
+					if (ausdauerkategorie > 0 && fitnesskategorie > 0) {
+
+
+						try
+						{
+							zwischenergebnis = ruhepuls + (220 - ausdauerkategorie * lebensalter - ruhepuls) * fitnesskategorie;
+
+							zwischenergebnis = Math::Round(zwischenergebnis, 2);
+							labelErgebnis->Font = gcnew System::Drawing::Font("Microsoft Sans Serif", 12, FontStyle::Bold, GraphicsUnit::Point);
+
+
+							labelErgebnis->Text = Convert::ToString(zwischenergebnis);
+							herz->Enabled = true;
+							herz->Visible = true;
+							labelErgebnis->BackColor = Color::Green;
+							labelErgebnis->ForeColor = Color::White;
+
+
+						}
+
+						catch (Exception^ e)
+						{
+							Console::WriteLine(e->ToString());
+							Console::WriteLine("An error occurred.");
+							Console::WriteLine(e->Message);
+							Console::WriteLine(e->StackTrace);
+						}
+
+
+
+
+					}
+					else {
+						labelErgebnis->Text = "Fehlende Angaben";
+					}
+
+				}
+				else {
+					labelErgebnis->Text = "Fehlende Angaben";
+				}
+			}
+			else {
+				labelErgebnis->Text = "Fehlende Angaben";
+			}
+		}
+		else {
+			labelErgebnis->Text = "Fehlende Angaben";
+		}
+		//Berechnen Ende
 	}
 	else {
 		berechnen->Enabled = false;
 	}
+
+	
+}
+private: System::Void radioButton7_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
 
 	try {
 		fitnesskategorie = 0.65;
@@ -1773,16 +2251,99 @@ private: System::Void radioButton7_CheckedChanged(System::Object^ sender, System
 		Console::WriteLine(e->Message);
 		Console::WriteLine(e->StackTrace);
 	}
-}
-private: System::Void radioButton5_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
 
 	//Aktiviere Berechnen-Knopf, wenn alle Daten vorhanden sind:
 	if ((textBoxRuhepuls->Text != "" && textBoxLebensalter->Text != "") && (radioButton1->Checked == true || radioButton2->Checked == true) && (radioButton3->Checked == true || radioButton4->Checked == true || radioButton5->Checked == true || radioButton6->Checked == true || radioButton7->Checked == true)) {
 		berechnen->Enabled = true;
+
+		//Berechnen Start
+		double zwischenergebnis = 0;
+		double tp = 0; //Trainingspuls Ergebnis
+
+		if (textBoxRuhepuls->Text && textBoxLebensalter->Text) {
+
+			textBox1->Text = Convert::ToString(textBoxRuhepuls->Text);
+			textBox4->Text = Convert::ToString(textBoxLebensalter->Text); //Alter in die Maximalpulsrechnung kopieren 
+			double ruhepuls = 0;
+			double lebensalter = 0;
+
+			try {
+				ruhepuls = Convert::ToDouble(textBoxRuhepuls->Text);
+				lebensalter = Convert::ToDouble(textBoxLebensalter->Text);
+			}
+			catch (Exception^ e)
+			{
+				Console::WriteLine(e->ToString());
+				Console::WriteLine("An error occurred.");
+				Console::WriteLine(e->Message);
+				Console::WriteLine(e->StackTrace);
+			}
+
+			if (ruhepuls <= 0 || lebensalter <= 0) {
+				herz->Enabled = false;
+				herz->Visible = false;
+				labelErgebnis->BackColor = Color::Yellow;
+				labelErgebnis->ForeColor = Color::Black;
+				labelErgebnis->Text = "Eingabewert zu niedrig";
+			}
+			else if (radioButton2->Checked || radioButton1->Checked) {
+				if (radioButton3->Checked || radioButton4->Checked || radioButton5->Checked || radioButton6->Checked || radioButton7->Checked) {
+					if (ausdauerkategorie > 0 && fitnesskategorie > 0) {
+
+
+						try
+						{
+							zwischenergebnis = ruhepuls + (220 - ausdauerkategorie * lebensalter - ruhepuls) * fitnesskategorie;
+
+							zwischenergebnis = Math::Round(zwischenergebnis, 2);
+							labelErgebnis->Font = gcnew System::Drawing::Font("Microsoft Sans Serif", 12, FontStyle::Bold, GraphicsUnit::Point);
+
+
+							labelErgebnis->Text = Convert::ToString(zwischenergebnis);
+							herz->Enabled = true;
+							herz->Visible = true;
+							labelErgebnis->BackColor = Color::Green;
+							labelErgebnis->ForeColor = Color::White;
+
+
+						}
+
+						catch (Exception^ e)
+						{
+							Console::WriteLine(e->ToString());
+							Console::WriteLine("An error occurred.");
+							Console::WriteLine(e->Message);
+							Console::WriteLine(e->StackTrace);
+						}
+
+
+
+
+					}
+					else {
+						labelErgebnis->Text = "Fehlende Angaben";
+					}
+
+				}
+				else {
+					labelErgebnis->Text = "Fehlende Angaben";
+				}
+			}
+			else {
+				labelErgebnis->Text = "Fehlende Angaben";
+			}
+		}
+		else {
+			labelErgebnis->Text = "Fehlende Angaben";
+		}
+		//Berechnen Ende
 	}
 	else {
 		berechnen->Enabled = false;
 	}
+	
+}
+private: System::Void radioButton5_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
 
 	try {
 		fitnesskategorie = 0.7;
@@ -1794,19 +2355,103 @@ private: System::Void radioButton5_CheckedChanged(System::Object^ sender, System
 		Console::WriteLine(e->Message);
 		Console::WriteLine(e->StackTrace);
 	}
-}
-private: System::Void radioButton6_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
 
 	//Aktiviere Berechnen-Knopf, wenn alle Daten vorhanden sind:
 	if ((textBoxRuhepuls->Text != "" && textBoxLebensalter->Text != "") && (radioButton1->Checked == true || radioButton2->Checked == true) && (radioButton3->Checked == true || radioButton4->Checked == true || radioButton5->Checked == true || radioButton6->Checked == true || radioButton7->Checked == true)) {
 		berechnen->Enabled = true;
+
+		//Berechnen Start
+		double zwischenergebnis = 0;
+		double tp = 0; //Trainingspuls Ergebnis
+
+		if (textBoxRuhepuls->Text && textBoxLebensalter->Text) {
+
+			textBox1->Text = Convert::ToString(textBoxRuhepuls->Text);
+			textBox4->Text = Convert::ToString(textBoxLebensalter->Text); //Alter in die Maximalpulsrechnung kopieren 
+			double ruhepuls = 0;
+			double lebensalter = 0;
+
+			try {
+				ruhepuls = Convert::ToDouble(textBoxRuhepuls->Text);
+				lebensalter = Convert::ToDouble(textBoxLebensalter->Text);
+			}
+			catch (Exception^ e)
+			{
+				Console::WriteLine(e->ToString());
+				Console::WriteLine("An error occurred.");
+				Console::WriteLine(e->Message);
+				Console::WriteLine(e->StackTrace);
+			}
+
+			if (ruhepuls <= 0 || lebensalter <= 0) {
+				herz->Enabled = false;
+				herz->Visible = false;
+				labelErgebnis->BackColor = Color::Yellow;
+				labelErgebnis->ForeColor = Color::Black;
+				labelErgebnis->Text = "Eingabewert zu niedrig";
+			}
+			else if (radioButton2->Checked || radioButton1->Checked) {
+				if (radioButton3->Checked || radioButton4->Checked || radioButton5->Checked || radioButton6->Checked || radioButton7->Checked) {
+					if (ausdauerkategorie > 0 && fitnesskategorie > 0) {
+
+
+						try
+						{
+							zwischenergebnis = ruhepuls + (220 - ausdauerkategorie * lebensalter - ruhepuls) * fitnesskategorie;
+
+							zwischenergebnis = Math::Round(zwischenergebnis, 2);
+							labelErgebnis->Font = gcnew System::Drawing::Font("Microsoft Sans Serif", 12, FontStyle::Bold, GraphicsUnit::Point);
+
+
+							labelErgebnis->Text = Convert::ToString(zwischenergebnis);
+							herz->Enabled = true;
+							herz->Visible = true;
+							labelErgebnis->BackColor = Color::Green;
+							labelErgebnis->ForeColor = Color::White;
+
+
+						}
+
+						catch (Exception^ e)
+						{
+							Console::WriteLine(e->ToString());
+							Console::WriteLine("An error occurred.");
+							Console::WriteLine(e->Message);
+							Console::WriteLine(e->StackTrace);
+						}
+
+
+
+
+					}
+					else {
+						labelErgebnis->Text = "Fehlende Angaben";
+					}
+
+				}
+				else {
+					labelErgebnis->Text = "Fehlende Angaben";
+				}
+			}
+			else {
+				labelErgebnis->Text = "Fehlende Angaben";
+			}
+		}
+		else {
+			labelErgebnis->Text = "Fehlende Angaben";
+		}
+		//Berechnen Ende
 	}
 	else {
 		berechnen->Enabled = false;
-	} 
+	}
 
-	try { 
-		fitnesskategorie = 0.75; 
+	
+}
+private: System::Void radioButton6_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
+
+	try {
+		fitnesskategorie = 0.75;
 	}
 	catch (Exception^ e)
 	{
@@ -1815,6 +2460,98 @@ private: System::Void radioButton6_CheckedChanged(System::Object^ sender, System
 		Console::WriteLine(e->Message);
 		Console::WriteLine(e->StackTrace);
 	}
+
+	//Aktiviere Berechnen-Knopf, wenn alle Daten vorhanden sind:
+	if ((textBoxRuhepuls->Text != "" && textBoxLebensalter->Text != "") && (radioButton1->Checked == true || radioButton2->Checked == true) && (radioButton3->Checked == true || radioButton4->Checked == true || radioButton5->Checked == true || radioButton6->Checked == true || radioButton7->Checked == true)) {
+		berechnen->Enabled = true;
+
+		//Berechnen Start
+		double zwischenergebnis = 0;
+		double tp = 0; //Trainingspuls Ergebnis
+
+		if (textBoxRuhepuls->Text && textBoxLebensalter->Text) {
+
+			textBox1->Text = Convert::ToString(textBoxRuhepuls->Text);
+			textBox4->Text = Convert::ToString(textBoxLebensalter->Text); //Alter in die Maximalpulsrechnung kopieren 
+			double ruhepuls = 0;
+			double lebensalter = 0;
+
+			try {
+				ruhepuls = Convert::ToDouble(textBoxRuhepuls->Text);
+				lebensalter = Convert::ToDouble(textBoxLebensalter->Text);
+			}
+			catch (Exception^ e)
+			{
+				Console::WriteLine(e->ToString());
+				Console::WriteLine("An error occurred.");
+				Console::WriteLine(e->Message);
+				Console::WriteLine(e->StackTrace);
+			}
+
+			if (ruhepuls <= 0 || lebensalter <= 0) {
+				herz->Enabled = false;
+				herz->Visible = false;
+				labelErgebnis->BackColor = Color::Yellow;
+				labelErgebnis->ForeColor = Color::Black;
+				labelErgebnis->Text = "Eingabewert zu niedrig";
+			}
+			else if (radioButton2->Checked || radioButton1->Checked) {
+				if (radioButton3->Checked || radioButton4->Checked || radioButton5->Checked || radioButton6->Checked || radioButton7->Checked) {
+					if (ausdauerkategorie > 0 && fitnesskategorie > 0) {
+
+
+						try
+						{
+							zwischenergebnis = ruhepuls + (220 - ausdauerkategorie * lebensalter - ruhepuls) * fitnesskategorie;
+
+							zwischenergebnis = Math::Round(zwischenergebnis, 2);
+							labelErgebnis->Font = gcnew System::Drawing::Font("Microsoft Sans Serif", 12, FontStyle::Bold, GraphicsUnit::Point);
+
+
+							labelErgebnis->Text = Convert::ToString(zwischenergebnis);
+							herz->Enabled = true;
+							herz->Visible = true;
+							labelErgebnis->BackColor = Color::Green;
+							labelErgebnis->ForeColor = Color::White;
+
+
+						}
+
+						catch (Exception^ e)
+						{
+							Console::WriteLine(e->ToString());
+							Console::WriteLine("An error occurred.");
+							Console::WriteLine(e->Message);
+							Console::WriteLine(e->StackTrace);
+						}
+
+
+
+
+					}
+					else {
+						labelErgebnis->Text = "Fehlende Angaben";
+					}
+
+				}
+				else {
+					labelErgebnis->Text = "Fehlende Angaben";
+				}
+			}
+			else {
+				labelErgebnis->Text = "Fehlende Angaben";
+			}
+		}
+		else {
+			labelErgebnis->Text = "Fehlende Angaben";
+		}
+		//Berechnen Ende
+	}
+	else {
+		berechnen->Enabled = false;
+	}
+
+	
 }
 private: System::Void label1_Click_1(System::Object^ sender, System::EventArgs^ e) {
 }
@@ -1835,6 +2572,7 @@ private: System::Void groupBox2_Enter(System::Object^ sender, System::EventArgs^
 private: System::Void herz_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void button1_Click_1(System::Object^ sender, System::EventArgs^ e) {
+	//Berechnen Start:
 	if (textBox1->Text && textBox3->Text && radioButton8->Checked || radioButton9->Checked || radioButton10->Checked) {
 		
 		textBoxRuhepuls->Text = Convert::ToString(textBox1->Text);
@@ -1889,6 +2627,7 @@ private: System::Void button1_Click_1(System::Object^ sender, System::EventArgs^
 	else {
 		label12->Text = "Eingabe fehlt";
 	}
+	//Berechnen Ende
 }
 private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->Close();
@@ -1898,6 +2637,65 @@ private: System::Void radioButton8_CheckedChanged(System::Object^ sender, System
 	if (textBox1->Text != "" && textBox3->Text != "") {
 		if (radioButton8->Checked == true || radioButton9->Checked == true || radioButton10->Checked == true) {
 			button1->Enabled = true;
+
+			if (textBox1->Text && textBox3->Text && radioButton8->Checked || radioButton9->Checked || radioButton10->Checked) {
+
+				textBoxRuhepuls->Text = Convert::ToString(textBox1->Text);
+
+				double maxPuls = 0, ruhePuls = 0;
+
+				try {
+					ruhePuls = Convert::ToDouble(textBox1->Text);
+					maxPuls = Convert::ToDouble(textBox3->Text);
+
+					if (ruhePuls <= 0 || maxPuls <= 0) {
+						label10->Enabled = false;
+						label10->Visible = false;
+						label12->BackColor = Color::Yellow;
+						label12->ForeColor = Color::Black;
+						label12->Text = "Eingabewert zu niedrig";
+					}
+					else {
+						try
+						{
+							double ergebnis = 0;
+							ergebnis = ruhePuls + (maxPuls - ruhePuls) * trainingsart;
+							// Ruhepuls + (Maximale Herzfrequenz - Ruhepuls) * Intensitäts-Faktor
+							ergebnis = Math::Round(ergebnis, 2);
+							label12->Font = gcnew System::Drawing::Font("Microsoft Sans Serif", 12, FontStyle::Bold, GraphicsUnit::Point);
+							label12->Text = Convert::ToString(ergebnis);
+							label10->Enabled = true;
+							label10->Visible = true;
+							label12->BackColor = Color::Green;
+							label12->ForeColor = Color::White;
+						}
+
+						catch (Exception^ e)
+						{
+							Console::WriteLine(e->ToString());
+							Console::WriteLine("An error occurred.");
+							Console::WriteLine(e->Message);
+							Console::WriteLine(e->StackTrace);
+						}
+
+					}
+
+				}
+				catch (Exception^ e)
+				{
+					Console::WriteLine(e->ToString());
+					Console::WriteLine("An error occurred.");
+					Console::WriteLine(e->Message);
+					Console::WriteLine(e->StackTrace);
+				}
+			}
+			else {
+				label12->Text = "Eingabe fehlt";
+			}
+			//Berechnen Ende
+		}
+		else {
+			button1->Enabled = false;
 		}
 	}
 }
@@ -1906,6 +2704,65 @@ private: System::Void radioButton9_CheckedChanged(System::Object^ sender, System
 	if (textBox1->Text != "" && textBox3->Text != "") {
 		if (radioButton8->Checked == true || radioButton9->Checked == true || radioButton10->Checked == true) {
 			button1->Enabled = true;
+
+			if (textBox1->Text && textBox3->Text && radioButton8->Checked || radioButton9->Checked || radioButton10->Checked) {
+
+				textBoxRuhepuls->Text = Convert::ToString(textBox1->Text);
+
+				double maxPuls = 0, ruhePuls = 0;
+
+				try {
+					ruhePuls = Convert::ToDouble(textBox1->Text);
+					maxPuls = Convert::ToDouble(textBox3->Text);
+
+					if (ruhePuls <= 0 || maxPuls <= 0) {
+						label10->Enabled = false;
+						label10->Visible = false;
+						label12->BackColor = Color::Yellow;
+						label12->ForeColor = Color::Black;
+						label12->Text = "Eingabewert zu niedrig";
+					}
+					else {
+						try
+						{
+							double ergebnis = 0;
+							ergebnis = ruhePuls + (maxPuls - ruhePuls) * trainingsart;
+							// Ruhepuls + (Maximale Herzfrequenz - Ruhepuls) * Intensitäts-Faktor
+							ergebnis = Math::Round(ergebnis, 2);
+							label12->Font = gcnew System::Drawing::Font("Microsoft Sans Serif", 12, FontStyle::Bold, GraphicsUnit::Point);
+							label12->Text = Convert::ToString(ergebnis);
+							label10->Enabled = true;
+							label10->Visible = true;
+							label12->BackColor = Color::Green;
+							label12->ForeColor = Color::White;
+						}
+
+						catch (Exception^ e)
+						{
+							Console::WriteLine(e->ToString());
+							Console::WriteLine("An error occurred.");
+							Console::WriteLine(e->Message);
+							Console::WriteLine(e->StackTrace);
+						}
+
+					}
+
+				}
+				catch (Exception^ e)
+				{
+					Console::WriteLine(e->ToString());
+					Console::WriteLine("An error occurred.");
+					Console::WriteLine(e->Message);
+					Console::WriteLine(e->StackTrace);
+				}
+			}
+			else {
+				label12->Text = "Eingabe fehlt";
+			}
+			//Berechnen Ende
+		}
+		else {
+			button1->Enabled = false;
 		}
 	}
 }
@@ -1914,6 +2771,65 @@ private: System::Void radioButton10_CheckedChanged(System::Object^ sender, Syste
 	if (textBox1->Text != "" && textBox3->Text != "") {
 		if (radioButton8->Checked == true || radioButton9->Checked == true || radioButton10->Checked == true) {
 			button1->Enabled = true;
+
+			if (textBox1->Text && textBox3->Text && radioButton8->Checked || radioButton9->Checked || radioButton10->Checked) {
+
+				textBoxRuhepuls->Text = Convert::ToString(textBox1->Text);
+
+				double maxPuls = 0, ruhePuls = 0;
+
+				try {
+					ruhePuls = Convert::ToDouble(textBox1->Text);
+					maxPuls = Convert::ToDouble(textBox3->Text);
+
+					if (ruhePuls <= 0 || maxPuls <= 0) {
+						label10->Enabled = false;
+						label10->Visible = false;
+						label12->BackColor = Color::Yellow;
+						label12->ForeColor = Color::Black;
+						label12->Text = "Eingabewert zu niedrig";
+					}
+					else {
+						try
+						{
+							double ergebnis = 0;
+							ergebnis = ruhePuls + (maxPuls - ruhePuls) * trainingsart;
+							// Ruhepuls + (Maximale Herzfrequenz - Ruhepuls) * Intensitäts-Faktor
+							ergebnis = Math::Round(ergebnis, 2);
+							label12->Font = gcnew System::Drawing::Font("Microsoft Sans Serif", 12, FontStyle::Bold, GraphicsUnit::Point);
+							label12->Text = Convert::ToString(ergebnis);
+							label10->Enabled = true;
+							label10->Visible = true;
+							label12->BackColor = Color::Green;
+							label12->ForeColor = Color::White;
+						}
+
+						catch (Exception^ e)
+						{
+							Console::WriteLine(e->ToString());
+							Console::WriteLine("An error occurred.");
+							Console::WriteLine(e->Message);
+							Console::WriteLine(e->StackTrace);
+						}
+
+					}
+
+				}
+				catch (Exception^ e)
+				{
+					Console::WriteLine(e->ToString());
+					Console::WriteLine("An error occurred.");
+					Console::WriteLine(e->Message);
+					Console::WriteLine(e->StackTrace);
+				}
+			}
+			else {
+				label12->Text = "Eingabe fehlt";
+			}
+			//Berechnen Ende
+		}
+		else {
+			button1->Enabled = false;
 		}
 	}
 }
@@ -1923,6 +2839,66 @@ private: System::Void textBox3_TextChanged(System::Object^ sender, System::Event
 	if (textBox1->Text != "" && textBox3->Text != "") {
 		if (radioButton8->Checked == true || radioButton9->Checked == true || radioButton10->Checked == true) {
 			button1->Enabled = true;
+
+			if (textBox1->Text && textBox3->Text && radioButton8->Checked || radioButton9->Checked || radioButton10->Checked) {
+
+				textBoxRuhepuls->Text = Convert::ToString(textBox1->Text);
+
+				double maxPuls = 0, ruhePuls = 0;
+
+				try {
+					ruhePuls = Convert::ToDouble(textBox1->Text);
+					maxPuls = Convert::ToDouble(textBox3->Text);
+
+					if (ruhePuls <= 0 || maxPuls <= 0) {
+						label10->Enabled = false;
+						label10->Visible = false;
+						label12->BackColor = Color::Yellow;
+						label12->ForeColor = Color::Black;
+						label12->Text = "Eingabewert zu niedrig";
+					}
+					else {
+						try
+						{
+							double ergebnis = 0;
+							ergebnis = ruhePuls + (maxPuls - ruhePuls) * trainingsart;
+							// Ruhepuls + (Maximale Herzfrequenz - Ruhepuls) * Intensitäts-Faktor
+							ergebnis = Math::Round(ergebnis, 2);
+							label12->Font = gcnew System::Drawing::Font("Microsoft Sans Serif", 12, FontStyle::Bold, GraphicsUnit::Point);
+							label12->Text = Convert::ToString(ergebnis);
+							label10->Enabled = true;
+							label10->Visible = true;
+							label12->BackColor = Color::Green;
+							label12->ForeColor = Color::White;
+						}
+
+						catch (Exception^ e)
+						{
+							Console::WriteLine(e->ToString());
+							Console::WriteLine("An error occurred.");
+							Console::WriteLine(e->Message);
+							Console::WriteLine(e->StackTrace);
+						}
+
+					}
+
+				}
+				catch (Exception^ e)
+				{
+					Console::WriteLine(e->ToString());
+					Console::WriteLine("An error occurred.");
+					Console::WriteLine(e->Message);
+					Console::WriteLine(e->StackTrace);
+				}
+			}
+			else {
+				label12->Text = "Eingabe fehlt";
+			}
+			//Berechnen Ende
+
+		}
+		else {
+			button1->Enabled = false;
 		}
 	}
 }
@@ -2165,10 +3141,378 @@ private: System::Void beendenToolStripMenuItem_Click(System::Object^ sender, Sys
 	this->Close();
 }
 private: System::Void radioButton11_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
+	//Berechnen Start:
 
+	double alter = 0;
+	double gewicht = 0;
+
+	//Tanaka:
+
+	if (textBox4->Text) { // wenn Lebensalter angegeben
+		try {
+			textBoxLebensalter->Text = Convert::ToString(textBox4->Text); //Alter in die Lagerström-Rechnung kopieren
+			alter = Convert::ToDouble(textBox4->Text); //Text zu Zahl
+
+			ergebnisTanaka = 208 - 0.7 * alter;
+			ergebnisTanaka = Math::Round(ergebnisTanaka, 2);
+
+			label18->Font = gcnew System::Drawing::Font("Microsoft Sans Serif", 12, FontStyle::Bold, GraphicsUnit::Point);
+			label18->Text = Convert::ToString(ergebnisTanaka);
+			textBox3->Text = Convert::ToString(ergebnisTanaka); //Zur Karvonen-Formel
+			label16->Enabled = true;
+			label16->Visible = true;
+			label18->BackColor = Color::Green;
+			label18->ForeColor = Color::White;
+
+
+			if (ergebnisTanaka > 0) {
+				radioButton13->Enabled = true;
+				radioButton13->Visible = true;
+			}
+
+
+		}
+		catch (Exception^ e)
+		{
+			Console::WriteLine(e->ToString());
+			Console::WriteLine("An error occurred.");
+			Console::WriteLine(e->Message);
+			Console::WriteLine(e->StackTrace);
+		}
+
+		//Spanaus männlich:
+	}
+	if (textBox4->Text && radioButton11->Checked == true && radioButton12->Checked == false) {
+		try {
+			textBoxLebensalter->Text = Convert::ToString(textBox4->Text); //Alter in die Lagerström-Rechnung kopieren
+			alter = Convert::ToDouble(textBox4->Text); //Text zu Zahl
+
+			ergebnisSpanaus = 223 - 0.9 * alter;
+			ergebnisSpanaus = Math::Round(ergebnisSpanaus, 2);
+
+			label21->Font = gcnew System::Drawing::Font("Microsoft Sans Serif", 12, FontStyle::Bold, GraphicsUnit::Point);
+			label21->Text = Convert::ToString(ergebnisSpanaus);
+			label19->Enabled = true;
+			label19->Visible = true;
+			label21->BackColor = Color::Green;
+			label21->ForeColor = Color::White;
+
+
+			if (ergebnisSpanaus > 0) {
+				radioButton14->Enabled = true;
+				radioButton14->Visible = true;
+
+			}
+
+
+		}
+
+		catch (Exception^ e)
+		{
+			Console::WriteLine(e->ToString());
+			Console::WriteLine("An error occurred.");
+			Console::WriteLine(e->Message);
+			Console::WriteLine(e->StackTrace);
+		}
+	}
+	//Spanaus weiblich:
+
+	if (textBox4->Text && radioButton11->Checked == false && radioButton12->Checked == true) {
+		try {
+
+			textBoxLebensalter->Text = Convert::ToString(textBox4->Text); //Alter in die Lagerström-Rechnung kopieren
+			alter = Convert::ToDouble(textBox4->Text); //Text zu Zahl
+
+			ergebnisSpanaus = 226 - 1.0 * alter;
+			ergebnisSpanaus = Math::Round(ergebnisSpanaus, 2);
+
+			label21->Font = gcnew System::Drawing::Font("Microsoft Sans Serif", 12, FontStyle::Bold, GraphicsUnit::Point);
+			label21->Text = Convert::ToString(ergebnisSpanaus);
+			label19->Enabled = true;
+			label19->Visible = true;
+			label21->BackColor = Color::Green;
+			label21->ForeColor = Color::White;
+
+
+			if (ergebnisSpanaus > 0) {
+				radioButton14->Enabled = true;
+				radioButton14->Visible = true;
+
+			}
+
+		}
+		catch (Exception^ e)
+		{
+			Console::WriteLine(e->ToString());
+			Console::WriteLine("An error occurred.");
+			Console::WriteLine(e->Message);
+			Console::WriteLine(e->StackTrace);
+		}
+
+	}
+
+	//Edwards männlich:
+	if (textBox4->Text && textBox5->Text && radioButton11->Checked == true && radioButton12->Checked == false) {
+		try {
+			textBoxLebensalter->Text = Convert::ToString(textBox4->Text); //Alter in die Lagerström-Rechnung kopieren
+			alter = Convert::ToDouble(textBox4->Text); //Alter Text zu Zahl
+			gewicht = Convert::ToDouble(textBox5->Text); //Gewicht Text zu Zahl
+
+
+			ergebnisEdwards = 214 - 0.5 * alter - 0.11 * gewicht;
+			ergebnisEdwards = Math::Round(ergebnisEdwards, 2);
+
+			label31->Font = gcnew System::Drawing::Font("Microsoft Sans Serif", 12, FontStyle::Bold, GraphicsUnit::Point);
+			label31->Text = Convert::ToString(ergebnisEdwards);
+			label29->Enabled = true;
+			label29->Visible = true;
+			label31->BackColor = Color::Green;
+			label31->ForeColor = Color::White;
+
+
+			if (ergebnisEdwards > 0) {
+				radioButton15->Enabled = true;
+				radioButton15->Visible = true;
+
+			}
+
+		}
+		catch (Exception^ e)
+		{
+			Console::WriteLine(e->ToString());
+			Console::WriteLine("An error occurred.");
+			Console::WriteLine(e->Message);
+			Console::WriteLine(e->StackTrace);
+		}
+
+	}
+
+	//Edwards weiblich:
+
+	if (textBox4->Text && textBox5->Text && radioButton11->Checked == false && radioButton12->Checked == true) {
+		try {
+			textBoxLebensalter->Text = Convert::ToString(textBox4->Text); //Alter in die Lagerström-Rechnung kopieren
+			alter = Convert::ToDouble(textBox4->Text); //Alter Text zu Zahl
+			gewicht = Convert::ToDouble(textBox5->Text); //Gewicht Text zu Zahl
+
+
+			ergebnisEdwards = 210 - 0.5 * alter - 0.11 * gewicht;
+			ergebnisEdwards = Math::Round(ergebnisEdwards, 2);
+
+			label31->Font = gcnew System::Drawing::Font("Microsoft Sans Serif", 12, FontStyle::Bold, GraphicsUnit::Point);
+			label31->Text = Convert::ToString(ergebnisEdwards);
+			label29->Enabled = true;
+			label29->Visible = true;
+			label31->BackColor = Color::Green;
+			label31->ForeColor = Color::White;
+
+
+			if (ergebnisEdwards > 0) {
+				radioButton15->Enabled = true;
+				radioButton15->Visible = true;
+
+			}
+
+
+
+		}
+		catch (Exception^ e)
+		{
+			Console::WriteLine(e->ToString());
+			Console::WriteLine("An error occurred.");
+			Console::WriteLine(e->Message);
+			Console::WriteLine(e->StackTrace);
+		}
+
+	}
+	//Berechnen ende
 }
 private: System::Void radioButton12_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
+	//Berechnen Start:
 
+	double alter = 0;
+	double gewicht = 0;
+
+	//Tanaka:
+
+	if (textBox4->Text) { // wenn Lebensalter angegeben
+		try {
+			textBoxLebensalter->Text = Convert::ToString(textBox4->Text); //Alter in die Lagerström-Rechnung kopieren
+			alter = Convert::ToDouble(textBox4->Text); //Text zu Zahl
+
+			ergebnisTanaka = 208 - 0.7 * alter;
+			ergebnisTanaka = Math::Round(ergebnisTanaka, 2);
+
+			label18->Font = gcnew System::Drawing::Font("Microsoft Sans Serif", 12, FontStyle::Bold, GraphicsUnit::Point);
+			label18->Text = Convert::ToString(ergebnisTanaka);
+			textBox3->Text = Convert::ToString(ergebnisTanaka); //Zur Karvonen-Formel
+			label16->Enabled = true;
+			label16->Visible = true;
+			label18->BackColor = Color::Green;
+			label18->ForeColor = Color::White;
+
+
+			if (ergebnisTanaka > 0) {
+				radioButton13->Enabled = true;
+				radioButton13->Visible = true;
+			}
+
+
+		}
+		catch (Exception^ e)
+		{
+			Console::WriteLine(e->ToString());
+			Console::WriteLine("An error occurred.");
+			Console::WriteLine(e->Message);
+			Console::WriteLine(e->StackTrace);
+		}
+
+		//Spanaus männlich:
+	}
+	if (textBox4->Text && radioButton11->Checked == true && radioButton12->Checked == false) {
+		try {
+			textBoxLebensalter->Text = Convert::ToString(textBox4->Text); //Alter in die Lagerström-Rechnung kopieren
+			alter = Convert::ToDouble(textBox4->Text); //Text zu Zahl
+
+			ergebnisSpanaus = 223 - 0.9 * alter;
+			ergebnisSpanaus = Math::Round(ergebnisSpanaus, 2);
+
+			label21->Font = gcnew System::Drawing::Font("Microsoft Sans Serif", 12, FontStyle::Bold, GraphicsUnit::Point);
+			label21->Text = Convert::ToString(ergebnisSpanaus);
+			label19->Enabled = true;
+			label19->Visible = true;
+			label21->BackColor = Color::Green;
+			label21->ForeColor = Color::White;
+
+
+			if (ergebnisSpanaus > 0) {
+				radioButton14->Enabled = true;
+				radioButton14->Visible = true;
+
+			}
+
+
+		}
+
+		catch (Exception^ e)
+		{
+			Console::WriteLine(e->ToString());
+			Console::WriteLine("An error occurred.");
+			Console::WriteLine(e->Message);
+			Console::WriteLine(e->StackTrace);
+		}
+	}
+	//Spanaus weiblich:
+
+	if (textBox4->Text && radioButton11->Checked == false && radioButton12->Checked == true) {
+		try {
+
+			textBoxLebensalter->Text = Convert::ToString(textBox4->Text); //Alter in die Lagerström-Rechnung kopieren
+			alter = Convert::ToDouble(textBox4->Text); //Text zu Zahl
+
+			ergebnisSpanaus = 226 - 1.0 * alter;
+			ergebnisSpanaus = Math::Round(ergebnisSpanaus, 2);
+
+			label21->Font = gcnew System::Drawing::Font("Microsoft Sans Serif", 12, FontStyle::Bold, GraphicsUnit::Point);
+			label21->Text = Convert::ToString(ergebnisSpanaus);
+			label19->Enabled = true;
+			label19->Visible = true;
+			label21->BackColor = Color::Green;
+			label21->ForeColor = Color::White;
+
+
+			if (ergebnisSpanaus > 0) {
+				radioButton14->Enabled = true;
+				radioButton14->Visible = true;
+
+			}
+
+		}
+		catch (Exception^ e)
+		{
+			Console::WriteLine(e->ToString());
+			Console::WriteLine("An error occurred.");
+			Console::WriteLine(e->Message);
+			Console::WriteLine(e->StackTrace);
+		}
+
+	}
+
+	//Edwards männlich:
+	if (textBox4->Text && textBox5->Text && radioButton11->Checked == true && radioButton12->Checked == false) {
+		try {
+			textBoxLebensalter->Text = Convert::ToString(textBox4->Text); //Alter in die Lagerström-Rechnung kopieren
+			alter = Convert::ToDouble(textBox4->Text); //Alter Text zu Zahl
+			gewicht = Convert::ToDouble(textBox5->Text); //Gewicht Text zu Zahl
+
+
+			ergebnisEdwards = 214 - 0.5 * alter - 0.11 * gewicht;
+			ergebnisEdwards = Math::Round(ergebnisEdwards, 2);
+
+			label31->Font = gcnew System::Drawing::Font("Microsoft Sans Serif", 12, FontStyle::Bold, GraphicsUnit::Point);
+			label31->Text = Convert::ToString(ergebnisEdwards);
+			label29->Enabled = true;
+			label29->Visible = true;
+			label31->BackColor = Color::Green;
+			label31->ForeColor = Color::White;
+
+
+			if (ergebnisEdwards > 0) {
+				radioButton15->Enabled = true;
+				radioButton15->Visible = true;
+
+			}
+
+		}
+		catch (Exception^ e)
+		{
+			Console::WriteLine(e->ToString());
+			Console::WriteLine("An error occurred.");
+			Console::WriteLine(e->Message);
+			Console::WriteLine(e->StackTrace);
+		}
+
+	}
+
+	//Edwards weiblich:
+
+	if (textBox4->Text && textBox5->Text && radioButton11->Checked == false && radioButton12->Checked == true) {
+		try {
+			textBoxLebensalter->Text = Convert::ToString(textBox4->Text); //Alter in die Lagerström-Rechnung kopieren
+			alter = Convert::ToDouble(textBox4->Text); //Alter Text zu Zahl
+			gewicht = Convert::ToDouble(textBox5->Text); //Gewicht Text zu Zahl
+
+
+			ergebnisEdwards = 210 - 0.5 * alter - 0.11 * gewicht;
+			ergebnisEdwards = Math::Round(ergebnisEdwards, 2);
+
+			label31->Font = gcnew System::Drawing::Font("Microsoft Sans Serif", 12, FontStyle::Bold, GraphicsUnit::Point);
+			label31->Text = Convert::ToString(ergebnisEdwards);
+			label29->Enabled = true;
+			label29->Visible = true;
+			label31->BackColor = Color::Green;
+			label31->ForeColor = Color::White;
+
+
+			if (ergebnisEdwards > 0) {
+				radioButton15->Enabled = true;
+				radioButton15->Visible = true;
+
+			}
+
+
+
+		}
+		catch (Exception^ e)
+		{
+			Console::WriteLine(e->ToString());
+			Console::WriteLine("An error occurred.");
+			Console::WriteLine(e->Message);
+			Console::WriteLine(e->StackTrace);
+		}
+
+	}
+	//Berechnen ende
 }
 private: System::Void saveFileDialog1_FileOk(System::Object^ sender, System::ComponentModel::CancelEventArgs^ e) {
 	
@@ -2284,6 +3628,192 @@ private: System::Void textBox4_TextChanged(System::Object^ sender, System::Event
 	if (textBox4->Text != "")
 	{
 		button3->Enabled = true;
+
+		//Berechnen Start:
+
+		double alter = 0;
+		double gewicht = 0;
+
+		//Tanaka:
+
+		if (textBox4->Text) { // wenn Lebensalter angegeben
+			try {
+				textBoxLebensalter->Text = Convert::ToString(textBox4->Text); //Alter in die Lagerström-Rechnung kopieren
+				alter = Convert::ToDouble(textBox4->Text); //Text zu Zahl
+
+				ergebnisTanaka = 208 - 0.7 * alter;
+				ergebnisTanaka = Math::Round(ergebnisTanaka, 2);
+
+				label18->Font = gcnew System::Drawing::Font("Microsoft Sans Serif", 12, FontStyle::Bold, GraphicsUnit::Point);
+				label18->Text = Convert::ToString(ergebnisTanaka);
+				textBox3->Text = Convert::ToString(ergebnisTanaka); //Zur Karvonen-Formel
+				label16->Enabled = true;
+				label16->Visible = true;
+				label18->BackColor = Color::Green;
+				label18->ForeColor = Color::White;
+
+
+				if (ergebnisTanaka > 0) {
+					radioButton13->Enabled = true;
+					radioButton13->Visible = true;
+				}
+
+
+			}
+			catch (Exception^ e)
+			{
+				Console::WriteLine(e->ToString());
+				Console::WriteLine("An error occurred.");
+				Console::WriteLine(e->Message);
+				Console::WriteLine(e->StackTrace);
+			}
+
+			//Spanaus männlich:
+		}
+		if (textBox4->Text && radioButton11->Checked == true && radioButton12->Checked == false) {
+			try {
+				textBoxLebensalter->Text = Convert::ToString(textBox4->Text); //Alter in die Lagerström-Rechnung kopieren
+				alter = Convert::ToDouble(textBox4->Text); //Text zu Zahl
+
+				ergebnisSpanaus = 223 - 0.9 * alter;
+				ergebnisSpanaus = Math::Round(ergebnisSpanaus, 2);
+
+				label21->Font = gcnew System::Drawing::Font("Microsoft Sans Serif", 12, FontStyle::Bold, GraphicsUnit::Point);
+				label21->Text = Convert::ToString(ergebnisSpanaus);
+				label19->Enabled = true;
+				label19->Visible = true;
+				label21->BackColor = Color::Green;
+				label21->ForeColor = Color::White;
+
+
+				if (ergebnisSpanaus > 0) {
+					radioButton14->Enabled = true;
+					radioButton14->Visible = true;
+
+				}
+
+
+			}
+
+			catch (Exception^ e)
+			{
+				Console::WriteLine(e->ToString());
+				Console::WriteLine("An error occurred.");
+				Console::WriteLine(e->Message);
+				Console::WriteLine(e->StackTrace);
+			}
+		}
+		//Spanaus weiblich:
+
+		if (textBox4->Text && radioButton11->Checked == false && radioButton12->Checked == true) {
+			try {
+
+				textBoxLebensalter->Text = Convert::ToString(textBox4->Text); //Alter in die Lagerström-Rechnung kopieren
+				alter = Convert::ToDouble(textBox4->Text); //Text zu Zahl
+
+				ergebnisSpanaus = 226 - 1.0 * alter;
+				ergebnisSpanaus = Math::Round(ergebnisSpanaus, 2);
+
+				label21->Font = gcnew System::Drawing::Font("Microsoft Sans Serif", 12, FontStyle::Bold, GraphicsUnit::Point);
+				label21->Text = Convert::ToString(ergebnisSpanaus);
+				label19->Enabled = true;
+				label19->Visible = true;
+				label21->BackColor = Color::Green;
+				label21->ForeColor = Color::White;
+
+
+				if (ergebnisSpanaus > 0) {
+					radioButton14->Enabled = true;
+					radioButton14->Visible = true;
+
+				}
+
+			}
+			catch (Exception^ e)
+			{
+				Console::WriteLine(e->ToString());
+				Console::WriteLine("An error occurred.");
+				Console::WriteLine(e->Message);
+				Console::WriteLine(e->StackTrace);
+			}
+
+		}
+
+		//Edwards männlich:
+		if (textBox4->Text && textBox5->Text && radioButton11->Checked == true && radioButton12->Checked == false) {
+			try {
+				textBoxLebensalter->Text = Convert::ToString(textBox4->Text); //Alter in die Lagerström-Rechnung kopieren
+				alter = Convert::ToDouble(textBox4->Text); //Alter Text zu Zahl
+				gewicht = Convert::ToDouble(textBox5->Text); //Gewicht Text zu Zahl
+
+
+				ergebnisEdwards = 214 - 0.5 * alter - 0.11 * gewicht;
+				ergebnisEdwards = Math::Round(ergebnisEdwards, 2);
+
+				label31->Font = gcnew System::Drawing::Font("Microsoft Sans Serif", 12, FontStyle::Bold, GraphicsUnit::Point);
+				label31->Text = Convert::ToString(ergebnisEdwards);
+				label29->Enabled = true;
+				label29->Visible = true;
+				label31->BackColor = Color::Green;
+				label31->ForeColor = Color::White;
+
+
+				if (ergebnisEdwards > 0) {
+					radioButton15->Enabled = true;
+					radioButton15->Visible = true;
+
+				}
+
+			}
+			catch (Exception^ e)
+			{
+				Console::WriteLine(e->ToString());
+				Console::WriteLine("An error occurred.");
+				Console::WriteLine(e->Message);
+				Console::WriteLine(e->StackTrace);
+			}
+
+		}
+
+		//Edwards weiblich:
+
+		if (textBox4->Text && textBox5->Text && radioButton11->Checked == false && radioButton12->Checked == true) {
+			try {
+				textBoxLebensalter->Text = Convert::ToString(textBox4->Text); //Alter in die Lagerström-Rechnung kopieren
+				alter = Convert::ToDouble(textBox4->Text); //Alter Text zu Zahl
+				gewicht = Convert::ToDouble(textBox5->Text); //Gewicht Text zu Zahl
+
+
+				ergebnisEdwards = 210 - 0.5 * alter - 0.11 * gewicht;
+				ergebnisEdwards = Math::Round(ergebnisEdwards, 2);
+
+				label31->Font = gcnew System::Drawing::Font("Microsoft Sans Serif", 12, FontStyle::Bold, GraphicsUnit::Point);
+				label31->Text = Convert::ToString(ergebnisEdwards);
+				label29->Enabled = true;
+				label29->Visible = true;
+				label31->BackColor = Color::Green;
+				label31->ForeColor = Color::White;
+
+
+				if (ergebnisEdwards > 0) {
+					radioButton15->Enabled = true;
+					radioButton15->Visible = true;
+
+				}
+
+
+
+			}
+			catch (Exception^ e)
+			{
+				Console::WriteLine(e->ToString());
+				Console::WriteLine("An error occurred.");
+				Console::WriteLine(e->Message);
+				Console::WriteLine(e->StackTrace);
+			}
+
+		}
+		//Berechnen ende
 		
 	}
 	else
@@ -2301,6 +3831,62 @@ private: System::Void textBox1_TextChanged_1(System::Object^ sender, System::Eve
 	if (textBox1->Text!="" && textBox3->Text!="") {
 		if (radioButton8->Checked==true || radioButton9->Checked==true || radioButton10->Checked==true) {
 			button1->Enabled = true;
+
+			if (textBox1->Text && textBox3->Text && radioButton8->Checked || radioButton9->Checked || radioButton10->Checked) {
+
+				textBoxRuhepuls->Text = Convert::ToString(textBox1->Text);
+
+				double maxPuls = 0, ruhePuls = 0;
+
+				try {
+					ruhePuls = Convert::ToDouble(textBox1->Text);
+					maxPuls = Convert::ToDouble(textBox3->Text);
+
+					if (ruhePuls <= 0 || maxPuls <= 0) {
+						label10->Enabled = false;
+						label10->Visible = false;
+						label12->BackColor = Color::Yellow;
+						label12->ForeColor = Color::Black;
+						label12->Text = "Eingabewert zu niedrig";
+					}
+					else {
+						try
+						{
+							double ergebnis = 0;
+							ergebnis = ruhePuls + (maxPuls - ruhePuls) * trainingsart;
+							// Ruhepuls + (Maximale Herzfrequenz - Ruhepuls) * Intensitäts-Faktor
+							ergebnis = Math::Round(ergebnis, 2);
+							label12->Font = gcnew System::Drawing::Font("Microsoft Sans Serif", 12, FontStyle::Bold, GraphicsUnit::Point);
+							label12->Text = Convert::ToString(ergebnis);
+							label10->Enabled = true;
+							label10->Visible = true;
+							label12->BackColor = Color::Green;
+							label12->ForeColor = Color::White;
+						}
+
+						catch (Exception^ e)
+						{
+							Console::WriteLine(e->ToString());
+							Console::WriteLine("An error occurred.");
+							Console::WriteLine(e->Message);
+							Console::WriteLine(e->StackTrace);
+						}
+
+					}
+
+				}
+				catch (Exception^ e)
+				{
+					Console::WriteLine(e->ToString());
+					Console::WriteLine("An error occurred.");
+					Console::WriteLine(e->Message);
+					Console::WriteLine(e->StackTrace);
+				}
+			}
+			else {
+				label12->Text = "Eingabe fehlt";
+			}
+			//Berechnen Ende
 		}
 	}
 	else {
@@ -2314,6 +3900,297 @@ private: System::Void textBox4_ModifiedChanged(System::Object^ sender, System::E
 	}
 	else {
 		button3->Enabled = false;
+	}
+
+}
+private: System::Void textBox5_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+	//Berechnen Start:
+
+	double alter = 0;
+	double gewicht = 0;
+
+	//Tanaka:
+
+	if (textBox4->Text) { // wenn Lebensalter angegeben
+		try {
+			textBoxLebensalter->Text = Convert::ToString(textBox4->Text); //Alter in die Lagerström-Rechnung kopieren
+			alter = Convert::ToDouble(textBox4->Text); //Text zu Zahl
+
+			ergebnisTanaka = 208 - 0.7 * alter;
+			ergebnisTanaka = Math::Round(ergebnisTanaka, 2);
+
+			label18->Font = gcnew System::Drawing::Font("Microsoft Sans Serif", 12, FontStyle::Bold, GraphicsUnit::Point);
+			label18->Text = Convert::ToString(ergebnisTanaka);
+			textBox3->Text = Convert::ToString(ergebnisTanaka); //Zur Karvonen-Formel
+			label16->Enabled = true;
+			label16->Visible = true;
+			label18->BackColor = Color::Green;
+			label18->ForeColor = Color::White;
+
+
+			if (ergebnisTanaka > 0) {
+				radioButton13->Enabled = true;
+				radioButton13->Visible = true;
+			}
+
+
+		}
+		catch (Exception^ e)
+		{
+			Console::WriteLine(e->ToString());
+			Console::WriteLine("An error occurred.");
+			Console::WriteLine(e->Message);
+			Console::WriteLine(e->StackTrace);
+		}
+
+		//Spanaus männlich:
+	}
+	if (textBox4->Text && radioButton11->Checked == true && radioButton12->Checked == false) {
+		try {
+			textBoxLebensalter->Text = Convert::ToString(textBox4->Text); //Alter in die Lagerström-Rechnung kopieren
+			alter = Convert::ToDouble(textBox4->Text); //Text zu Zahl
+
+			ergebnisSpanaus = 223 - 0.9 * alter;
+			ergebnisSpanaus = Math::Round(ergebnisSpanaus, 2);
+
+			label21->Font = gcnew System::Drawing::Font("Microsoft Sans Serif", 12, FontStyle::Bold, GraphicsUnit::Point);
+			label21->Text = Convert::ToString(ergebnisSpanaus);
+			label19->Enabled = true;
+			label19->Visible = true;
+			label21->BackColor = Color::Green;
+			label21->ForeColor = Color::White;
+
+
+			if (ergebnisSpanaus > 0) {
+				radioButton14->Enabled = true;
+				radioButton14->Visible = true;
+
+			}
+
+
+		}
+
+		catch (Exception^ e)
+		{
+			Console::WriteLine(e->ToString());
+			Console::WriteLine("An error occurred.");
+			Console::WriteLine(e->Message);
+			Console::WriteLine(e->StackTrace);
+		}
+	}
+	//Spanaus weiblich:
+
+	if (textBox4->Text && radioButton11->Checked == false && radioButton12->Checked == true) {
+		try {
+
+			textBoxLebensalter->Text = Convert::ToString(textBox4->Text); //Alter in die Lagerström-Rechnung kopieren
+			alter = Convert::ToDouble(textBox4->Text); //Text zu Zahl
+
+			ergebnisSpanaus = 226 - 1.0 * alter;
+			ergebnisSpanaus = Math::Round(ergebnisSpanaus, 2);
+
+			label21->Font = gcnew System::Drawing::Font("Microsoft Sans Serif", 12, FontStyle::Bold, GraphicsUnit::Point);
+			label21->Text = Convert::ToString(ergebnisSpanaus);
+			label19->Enabled = true;
+			label19->Visible = true;
+			label21->BackColor = Color::Green;
+			label21->ForeColor = Color::White;
+
+
+			if (ergebnisSpanaus > 0) {
+				radioButton14->Enabled = true;
+				radioButton14->Visible = true;
+
+			}
+
+		}
+		catch (Exception^ e)
+		{
+			Console::WriteLine(e->ToString());
+			Console::WriteLine("An error occurred.");
+			Console::WriteLine(e->Message);
+			Console::WriteLine(e->StackTrace);
+		}
+
+	}
+
+	//Edwards männlich:
+	if (textBox4->Text && textBox5->Text && radioButton11->Checked == true && radioButton12->Checked == false) {
+		try {
+			textBoxLebensalter->Text = Convert::ToString(textBox4->Text); //Alter in die Lagerström-Rechnung kopieren
+			alter = Convert::ToDouble(textBox4->Text); //Alter Text zu Zahl
+			gewicht = Convert::ToDouble(textBox5->Text); //Gewicht Text zu Zahl
+
+
+			ergebnisEdwards = 214 - 0.5 * alter - 0.11 * gewicht;
+			ergebnisEdwards = Math::Round(ergebnisEdwards, 2);
+
+			label31->Font = gcnew System::Drawing::Font("Microsoft Sans Serif", 12, FontStyle::Bold, GraphicsUnit::Point);
+			label31->Text = Convert::ToString(ergebnisEdwards);
+			label29->Enabled = true;
+			label29->Visible = true;
+			label31->BackColor = Color::Green;
+			label31->ForeColor = Color::White;
+
+
+			if (ergebnisEdwards > 0) {
+				radioButton15->Enabled = true;
+				radioButton15->Visible = true;
+
+			}
+
+		}
+		catch (Exception^ e)
+		{
+			Console::WriteLine(e->ToString());
+			Console::WriteLine("An error occurred.");
+			Console::WriteLine(e->Message);
+			Console::WriteLine(e->StackTrace);
+		}
+
+	}
+
+	//Edwards weiblich:
+
+	if (textBox4->Text && textBox5->Text && radioButton11->Checked == false && radioButton12->Checked == true) {
+		try {
+			textBoxLebensalter->Text = Convert::ToString(textBox4->Text); //Alter in die Lagerström-Rechnung kopieren
+			alter = Convert::ToDouble(textBox4->Text); //Alter Text zu Zahl
+			gewicht = Convert::ToDouble(textBox5->Text); //Gewicht Text zu Zahl
+
+
+			ergebnisEdwards = 210 - 0.5 * alter - 0.11 * gewicht;
+			ergebnisEdwards = Math::Round(ergebnisEdwards, 2);
+
+			label31->Font = gcnew System::Drawing::Font("Microsoft Sans Serif", 12, FontStyle::Bold, GraphicsUnit::Point);
+			label31->Text = Convert::ToString(ergebnisEdwards);
+			label29->Enabled = true;
+			label29->Visible = true;
+			label31->BackColor = Color::Green;
+			label31->ForeColor = Color::White;
+
+
+			if (ergebnisEdwards > 0) {
+				radioButton15->Enabled = true;
+				radioButton15->Visible = true;
+
+			}
+
+
+
+		}
+		catch (Exception^ e)
+		{
+			Console::WriteLine(e->ToString());
+			Console::WriteLine("An error occurred.");
+			Console::WriteLine(e->Message);
+			Console::WriteLine(e->StackTrace);
+		}
+
+	}
+	//Berechnen ende
+}
+private: System::Void radioButton4_CheckedChanged_1(System::Object^ sender, System::EventArgs^ e) {
+
+	try {
+		fitnesskategorie = 0.6;
+	}
+	catch (Exception^ e)
+	{
+		Console::WriteLine(e->ToString());
+		Console::WriteLine("An error occurred.");
+		Console::WriteLine(e->Message);
+		Console::WriteLine(e->StackTrace);
+	}
+
+	//Aktiviere Berechnen-Knopf, wenn alle Daten vorhanden sind:
+	if ((textBoxRuhepuls->Text != "" && textBoxLebensalter->Text != "") && (radioButton1->Checked == true || radioButton2->Checked == true) && (radioButton3->Checked == true || radioButton4->Checked == true || radioButton5->Checked == true || radioButton6->Checked == true || radioButton7->Checked == true)) {
+		berechnen->Enabled = true;
+
+		//Berechnen Start
+		double zwischenergebnis = 0;
+		double tp = 0; //Trainingspuls Ergebnis
+
+		if (textBoxRuhepuls->Text && textBoxLebensalter->Text) {
+
+			textBox1->Text = Convert::ToString(textBoxRuhepuls->Text);
+			textBox4->Text = Convert::ToString(textBoxLebensalter->Text); //Alter in die Maximalpulsrechnung kopieren 
+			double ruhepuls = 0;
+			double lebensalter = 0;
+
+			try {
+				ruhepuls = Convert::ToDouble(textBoxRuhepuls->Text);
+				lebensalter = Convert::ToDouble(textBoxLebensalter->Text);
+			}
+			catch (Exception^ e)
+			{
+				Console::WriteLine(e->ToString());
+				Console::WriteLine("An error occurred.");
+				Console::WriteLine(e->Message);
+				Console::WriteLine(e->StackTrace);
+			}
+
+			if (ruhepuls <= 0 || lebensalter <= 0) {
+				herz->Enabled = false;
+				herz->Visible = false;
+				labelErgebnis->BackColor = Color::Yellow;
+				labelErgebnis->ForeColor = Color::Black;
+				labelErgebnis->Text = "Eingabewert zu niedrig";
+			}
+			else if (radioButton2->Checked || radioButton1->Checked) {
+				if (radioButton3->Checked || radioButton4->Checked || radioButton5->Checked || radioButton6->Checked || radioButton7->Checked) {
+					if (ausdauerkategorie > 0 && fitnesskategorie > 0) {
+
+
+						try
+						{
+							zwischenergebnis = ruhepuls + (220 - ausdauerkategorie * lebensalter - ruhepuls) * fitnesskategorie;
+
+							zwischenergebnis = Math::Round(zwischenergebnis, 2);
+							labelErgebnis->Font = gcnew System::Drawing::Font("Microsoft Sans Serif", 12, FontStyle::Bold, GraphicsUnit::Point);
+
+
+							labelErgebnis->Text = Convert::ToString(zwischenergebnis);
+							herz->Enabled = true;
+							herz->Visible = true;
+							labelErgebnis->BackColor = Color::Green;
+							labelErgebnis->ForeColor = Color::White;
+
+
+						}
+
+						catch (Exception^ e)
+						{
+							Console::WriteLine(e->ToString());
+							Console::WriteLine("An error occurred.");
+							Console::WriteLine(e->Message);
+							Console::WriteLine(e->StackTrace);
+						}
+
+
+
+
+					}
+					else {
+						labelErgebnis->Text = "Fehlende Angaben";
+					}
+
+				}
+				else {
+					labelErgebnis->Text = "Fehlende Angaben";
+				}
+			}
+			else {
+				labelErgebnis->Text = "Fehlende Angaben";
+			}
+		}
+		else {
+			labelErgebnis->Text = "Fehlende Angaben";
+		}
+		//Berechnen Ende
+	}
+	else {
+		berechnen->Enabled = false;
 	}
 
 }
