@@ -596,7 +596,7 @@ private: System::Windows::Forms::Button^ button7;
 			this->herz->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->herz->ForeColor = System::Drawing::Color::Crimson;
-			this->herz->Location = System::Drawing::Point(193, 14);
+			this->herz->Location = System::Drawing::Point(335, 15);
 			this->herz->Name = L"herz";
 			this->herz->Size = System::Drawing::Size(32, 22);
 			this->herz->TabIndex = 2;
@@ -664,7 +664,7 @@ private: System::Windows::Forms::Button^ button7;
 			this->label10->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label10->ForeColor = System::Drawing::Color::Crimson;
-			this->label10->Location = System::Drawing::Point(193, 14);
+			this->label10->Location = System::Drawing::Point(335, 15);
 			this->label10->Name = L"label10";
 			this->label10->Size = System::Drawing::Size(32, 22);
 			this->label10->TabIndex = 2;
@@ -846,7 +846,7 @@ private: System::Windows::Forms::Button^ button7;
 			this->label16->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label16->ForeColor = System::Drawing::Color::Crimson;
-			this->label16->Location = System::Drawing::Point(177, 12);
+			this->label16->Location = System::Drawing::Point(304, 15);
 			this->label16->Name = L"label16";
 			this->label16->Size = System::Drawing::Size(32, 22);
 			this->label16->TabIndex = 2;
@@ -888,7 +888,7 @@ private: System::Windows::Forms::Button^ button7;
 			this->label19->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label19->ForeColor = System::Drawing::Color::Crimson;
-			this->label19->Location = System::Drawing::Point(177, 12);
+			this->label19->Location = System::Drawing::Point(304, 15);
 			this->label19->Name = L"label19";
 			this->label19->Size = System::Drawing::Size(32, 22);
 			this->label19->TabIndex = 2;
@@ -1062,7 +1062,7 @@ private: System::Windows::Forms::Button^ button7;
 			this->label29->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label29->ForeColor = System::Drawing::Color::Crimson;
-			this->label29->Location = System::Drawing::Point(177, 12);
+			this->label29->Location = System::Drawing::Point(304, 15);
 			this->label29->Name = L"label29";
 			this->label29->Size = System::Drawing::Size(32, 22);
 			this->label29->TabIndex = 2;
