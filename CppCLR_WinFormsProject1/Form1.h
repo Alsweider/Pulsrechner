@@ -42,7 +42,7 @@ namespace CppCLRWinFormsProject {
 			//
 			//TODO: Add the constructor code here
 			//
-			this->Text = "Pulsrechner (v0.3.1)";
+			this->Text = "Pulsrechner (v0.3.3)";
 			
 		}
 
@@ -269,11 +269,11 @@ private: System::Windows::Forms::Button^ button7;
 			this->textBox4 = (gcnew System::Windows::Forms::TextBox());
 			this->groupBox8 = (gcnew System::Windows::Forms::GroupBox());
 			this->groupBox7 = (gcnew System::Windows::Forms::GroupBox());
-			this->tabLagerstrom = (gcnew System::Windows::Forms::TabPage());
 			this->tabKarvonen = (gcnew System::Windows::Forms::TabPage());
 			this->groupBox5 = (gcnew System::Windows::Forms::GroupBox());
 			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
+			this->tabLagerstrom = (gcnew System::Windows::Forms::TabPage());
 			this->menuStrip1 = (gcnew System::Windows::Forms::MenuStrip());
 			this->menüToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->speichernToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
@@ -292,15 +292,16 @@ private: System::Windows::Forms::Button^ button7;
 			this->groupBox10->SuspendLayout();
 			this->groupBox8->SuspendLayout();
 			this->groupBox7->SuspendLayout();
-			this->tabLagerstrom->SuspendLayout();
 			this->tabKarvonen->SuspendLayout();
 			this->groupBox5->SuspendLayout();
+			this->tabLagerstrom->SuspendLayout();
 			this->menuStrip1->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// berechnen
 			// 
 			this->berechnen->BackColor = System::Drawing::Color::Gainsboro;
+			this->berechnen->Enabled = false;
 			this->berechnen->Font = (gcnew System::Drawing::Font(L"Carolingia", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->berechnen->Location = System::Drawing::Point(6, 389);
@@ -582,10 +583,10 @@ private: System::Windows::Forms::Button^ button7;
 				static_cast<System::Byte>(0)));
 			this->label5->Location = System::Drawing::Point(6, 278);
 			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(371, 40);
+			this->label5->Size = System::Drawing::Size(321, 40);
 			this->label5->TabIndex = 7;
-			this->label5->Text = L"Formel: Ruhepuls + (220 - Ausdauersportkategorie \r\n* Lebensalter - Ruhepuls) * Fi"
-				L"tnesskategorie\r\n";
+			this->label5->Text = L"Ruhepuls + (220 - Ausdauersportkategorie \r\n* Lebensalter - Ruhepuls) * Fitnesskat"
+				L"egorie\r\n";
 			this->toolTip1->SetToolTip(this->label5, L"Formel nach Dieter Lagerstrøm");
 			this->label5->Click += gcnew System::EventHandler(this, &Form1::label5_Click);
 			// 
@@ -703,6 +704,7 @@ private: System::Windows::Forms::Button^ button7;
 			// button1
 			// 
 			this->button1->BackColor = System::Drawing::Color::Gainsboro;
+			this->button1->Enabled = false;
 			this->button1->Font = (gcnew System::Drawing::Font(L"Carolingia", 14.25F));
 			this->button1->Location = System::Drawing::Point(6, 389);
 			this->button1->Name = L"button1";
@@ -926,6 +928,7 @@ private: System::Windows::Forms::Button^ button7;
 			// button3
 			// 
 			this->button3->BackColor = System::Drawing::Color::Gainsboro;
+			this->button3->Enabled = false;
 			this->button3->Font = (gcnew System::Drawing::Font(L"Carolingia", 14));
 			this->button3->Location = System::Drawing::Point(6, 389);
 			this->button3->Name = L"button3";
@@ -1290,6 +1293,7 @@ private: System::Windows::Forms::Button^ button7;
 			this->textBox4->Name = L"textBox4";
 			this->textBox4->Size = System::Drawing::Size(42, 26);
 			this->textBox4->TabIndex = 2;
+			this->textBox4->TextChanged += gcnew System::EventHandler(this, &Form1::textBox4_TextChanged);
 			// 
 			// groupBox8
 			// 
@@ -1314,29 +1318,6 @@ private: System::Windows::Forms::Button^ button7;
 			this->groupBox7->Size = System::Drawing::Size(345, 72);
 			this->groupBox7->TabIndex = 6;
 			this->groupBox7->TabStop = false;
-			// 
-			// tabLagerstrom
-			// 
-			this->tabLagerstrom->BackColor = System::Drawing::Color::DarkSeaGreen;
-			this->tabLagerstrom->Controls->Add(this->button5);
-			this->tabLagerstrom->Controls->Add(this->Einführung);
-			this->tabLagerstrom->Controls->Add(this->groupBox3);
-			this->tabLagerstrom->Controls->Add(this->berechnen);
-			this->tabLagerstrom->Controls->Add(this->label5);
-			this->tabLagerstrom->Controls->Add(this->textBoxRuhepuls);
-			this->tabLagerstrom->Controls->Add(this->label2);
-			this->tabLagerstrom->Controls->Add(this->textBoxLebensalter);
-			this->tabLagerstrom->Controls->Add(this->groupBox2);
-			this->tabLagerstrom->Controls->Add(this->label3);
-			this->tabLagerstrom->Controls->Add(this->groupBox1);
-			this->tabLagerstrom->Controls->Add(this->label4);
-			this->tabLagerstrom->Controls->Add(this->beenden);
-			this->tabLagerstrom->Location = System::Drawing::Point(4, 29);
-			this->tabLagerstrom->Name = L"tabLagerstrom";
-			this->tabLagerstrom->Padding = System::Windows::Forms::Padding(3);
-			this->tabLagerstrom->Size = System::Drawing::Size(388, 456);
-			this->tabLagerstrom->TabIndex = 0;
-			this->tabLagerstrom->Text = L" Lagerstrøm";
 			// 
 			// tabKarvonen
 			// 
@@ -1387,6 +1368,30 @@ private: System::Windows::Forms::Button^ button7;
 			this->textBox1->Name = L"textBox1";
 			this->textBox1->Size = System::Drawing::Size(99, 26);
 			this->textBox1->TabIndex = 2;
+			this->textBox1->TextChanged += gcnew System::EventHandler(this, &Form1::textBox1_TextChanged_1);
+			// 
+			// tabLagerstrom
+			// 
+			this->tabLagerstrom->BackColor = System::Drawing::Color::DarkSeaGreen;
+			this->tabLagerstrom->Controls->Add(this->button5);
+			this->tabLagerstrom->Controls->Add(this->Einführung);
+			this->tabLagerstrom->Controls->Add(this->groupBox3);
+			this->tabLagerstrom->Controls->Add(this->berechnen);
+			this->tabLagerstrom->Controls->Add(this->label5);
+			this->tabLagerstrom->Controls->Add(this->textBoxRuhepuls);
+			this->tabLagerstrom->Controls->Add(this->label2);
+			this->tabLagerstrom->Controls->Add(this->textBoxLebensalter);
+			this->tabLagerstrom->Controls->Add(this->groupBox2);
+			this->tabLagerstrom->Controls->Add(this->label3);
+			this->tabLagerstrom->Controls->Add(this->groupBox1);
+			this->tabLagerstrom->Controls->Add(this->label4);
+			this->tabLagerstrom->Controls->Add(this->beenden);
+			this->tabLagerstrom->Location = System::Drawing::Point(4, 29);
+			this->tabLagerstrom->Name = L"tabLagerstrom";
+			this->tabLagerstrom->Padding = System::Windows::Forms::Padding(3);
+			this->tabLagerstrom->Size = System::Drawing::Size(388, 456);
+			this->tabLagerstrom->TabIndex = 0;
+			this->tabLagerstrom->Text = L" Lagerstrøm";
 			// 
 			// menuStrip1
 			// 
@@ -1470,12 +1475,12 @@ private: System::Windows::Forms::Button^ button7;
 			this->groupBox8->PerformLayout();
 			this->groupBox7->ResumeLayout(false);
 			this->groupBox7->PerformLayout();
-			this->tabLagerstrom->ResumeLayout(false);
-			this->tabLagerstrom->PerformLayout();
 			this->tabKarvonen->ResumeLayout(false);
 			this->tabKarvonen->PerformLayout();
 			this->groupBox5->ResumeLayout(false);
 			this->groupBox5->PerformLayout();
+			this->tabLagerstrom->ResumeLayout(false);
+			this->tabLagerstrom->PerformLayout();
 			this->menuStrip1->ResumeLayout(false);
 			this->menuStrip1->PerformLayout();
 			this->ResumeLayout(false);
@@ -1605,9 +1610,17 @@ private: System::Void beenden_Click(System::Object^ sender, System::EventArgs^ e
 	this->Close();
 }
 private: System::Void textBox1_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-	//Convert::ToDouble(textBoxRuhepuls->Text);
-
 	
+	//Aktiviere Berechnen-Knopf, wenn alle Daten vorhanden sind:
+	if ((textBoxRuhepuls->Text != "" && textBoxLebensalter->Text != "") && (radioButton1->Checked == true || radioButton2->Checked == true) && (radioButton3->Checked == true || radioButton4->Checked == true || radioButton5->Checked == true || radioButton6->Checked == true || radioButton7->Checked == true)) {
+			berechnen->Enabled = true;
+		}
+		else {
+			berechnen->Enabled = false;
+		}
+		
+	
+	//Convert::ToDouble(textBoxRuhepuls->Text);
 	try
 	{
 		Convert::ToDouble(textBoxRuhepuls->Text);
@@ -1627,7 +1640,18 @@ private: System::Void textBox1_TextChanged(System::Object^ sender, System::Event
 	
 
 private: System::Void textBox2_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+
+	//Aktiviere Berechnen-Knopf, wenn alle Daten vorhanden sind:
+	if ((textBoxRuhepuls->Text != "" && textBoxLebensalter->Text != "") && (radioButton1->Checked == true || radioButton2->Checked == true) && (radioButton3->Checked == true || radioButton4->Checked == true || radioButton5->Checked == true || radioButton6->Checked == true || radioButton7->Checked == true)) {
+		berechnen->Enabled = true;
+	}
+	else {
+		berechnen->Enabled = false;
+	}
+
 	try {
+		
+
 		Convert::ToDouble(textBoxLebensalter->Text);
 	}
 	catch (Exception^ e)
@@ -1642,6 +1666,15 @@ private: System::Void textBox2_TextChanged(System::Object^ sender, System::Event
 private: System::Void listBox1_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void radioButton1_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
+
+	//Aktiviere Berechnen-Knopf, wenn alle Daten vorhanden sind:
+	if ((textBoxRuhepuls->Text != "" && textBoxLebensalter->Text != "") && (radioButton1->Checked == true || radioButton2->Checked == true) && (radioButton3->Checked == true || radioButton4->Checked == true || radioButton5->Checked == true || radioButton6->Checked == true || radioButton7->Checked == true)) {
+		berechnen->Enabled = true;
+	}
+	else {
+		berechnen->Enabled = false;
+	}
+
 	try {
 		ausdauerkategorie = static_cast<double>(3) / 4;
 	}
@@ -1655,6 +1688,15 @@ private: System::Void radioButton1_CheckedChanged(System::Object^ sender, System
 	}
 }
 private: System::Void radioButton2_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
+
+	//Aktiviere Berechnen-Knopf, wenn alle Daten vorhanden sind:
+	if ((textBoxRuhepuls->Text != "" && textBoxLebensalter->Text != "") && (radioButton1->Checked == true || radioButton2->Checked == true) && (radioButton3->Checked == true || radioButton4->Checked == true || radioButton5->Checked == true || radioButton6->Checked == true || radioButton7->Checked == true)) {
+		berechnen->Enabled = true;
+	}
+	else {
+		berechnen->Enabled = false;
+	}
+
 	try {
 		ausdauerkategorie = static_cast<double>(2) / 3;
 	}
@@ -1670,6 +1712,15 @@ private: System::Void radioButton2_CheckedChanged(System::Object^ sender, System
 private: System::Void label3_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void radioButton3_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
+
+	//Aktiviere Berechnen-Knopf, wenn alle Daten vorhanden sind:
+	if ((textBoxRuhepuls->Text != "" && textBoxLebensalter->Text != "") && (radioButton1->Checked == true || radioButton2->Checked == true) && (radioButton3->Checked == true || radioButton4->Checked == true || radioButton5->Checked == true || radioButton6->Checked == true || radioButton7->Checked == true)) {
+		berechnen->Enabled = true;
+	}
+	else {
+		berechnen->Enabled = false;
+	}
+
 	try {
 		fitnesskategorie = 0.55;
 	}
@@ -1682,6 +1733,15 @@ private: System::Void radioButton3_CheckedChanged(System::Object^ sender, System
 	}
 }
 private: System::Void radioButton4_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
+
+	//Aktiviere Berechnen-Knopf, wenn alle Daten vorhanden sind:
+	if ((textBoxRuhepuls->Text != "" && textBoxLebensalter->Text != "") && (radioButton1->Checked == true || radioButton2->Checked == true) && (radioButton3->Checked == true || radioButton4->Checked == true || radioButton5->Checked == true || radioButton6->Checked == true || radioButton7->Checked == true)) {
+		berechnen->Enabled = true;
+	}
+	else {
+		berechnen->Enabled = false;
+	}
+
 	try {
 		fitnesskategorie = 0.6;
 	}
@@ -1694,6 +1754,15 @@ private: System::Void radioButton4_CheckedChanged(System::Object^ sender, System
 	}
 }
 private: System::Void radioButton7_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
+
+	//Aktiviere Berechnen-Knopf, wenn alle Daten vorhanden sind:
+	if ((textBoxRuhepuls->Text != "" && textBoxLebensalter->Text != "") && (radioButton1->Checked == true || radioButton2->Checked == true) && (radioButton3->Checked == true || radioButton4->Checked == true || radioButton5->Checked == true || radioButton6->Checked == true || radioButton7->Checked == true)) {
+		berechnen->Enabled = true;
+	}
+	else {
+		berechnen->Enabled = false;
+	}
+
 	try {
 		fitnesskategorie = 0.65;
 	}
@@ -1706,6 +1775,15 @@ private: System::Void radioButton7_CheckedChanged(System::Object^ sender, System
 	}
 }
 private: System::Void radioButton5_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
+
+	//Aktiviere Berechnen-Knopf, wenn alle Daten vorhanden sind:
+	if ((textBoxRuhepuls->Text != "" && textBoxLebensalter->Text != "") && (radioButton1->Checked == true || radioButton2->Checked == true) && (radioButton3->Checked == true || radioButton4->Checked == true || radioButton5->Checked == true || radioButton6->Checked == true || radioButton7->Checked == true)) {
+		berechnen->Enabled = true;
+	}
+	else {
+		berechnen->Enabled = false;
+	}
+
 	try {
 		fitnesskategorie = 0.7;
 	}
@@ -1718,7 +1796,18 @@ private: System::Void radioButton5_CheckedChanged(System::Object^ sender, System
 	}
 }
 private: System::Void radioButton6_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
-	try { fitnesskategorie = 0.75; }
+
+	//Aktiviere Berechnen-Knopf, wenn alle Daten vorhanden sind:
+	if ((textBoxRuhepuls->Text != "" && textBoxLebensalter->Text != "") && (radioButton1->Checked == true || radioButton2->Checked == true) && (radioButton3->Checked == true || radioButton4->Checked == true || radioButton5->Checked == true || radioButton6->Checked == true || radioButton7->Checked == true)) {
+		berechnen->Enabled = true;
+	}
+	else {
+		berechnen->Enabled = false;
+	} 
+
+	try { 
+		fitnesskategorie = 0.75; 
+	}
 	catch (Exception^ e)
 	{
 		Console::WriteLine(e->ToString());
@@ -1806,16 +1895,36 @@ private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e
 }
 private: System::Void radioButton8_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
 	trainingsart = 0.5;
+	if (textBox1->Text != "" && textBox3->Text != "") {
+		if (radioButton8->Checked == true || radioButton9->Checked == true || radioButton10->Checked == true) {
+			button1->Enabled = true;
+		}
+	}
 }
 private: System::Void radioButton9_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
 	trainingsart = 0.6;
+	if (textBox1->Text != "" && textBox3->Text != "") {
+		if (radioButton8->Checked == true || radioButton9->Checked == true || radioButton10->Checked == true) {
+			button1->Enabled = true;
+		}
+	}
 }
 private: System::Void radioButton10_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
 	trainingsart = 0.8;
+	if (textBox1->Text != "" && textBox3->Text != "") {
+		if (radioButton8->Checked == true || radioButton9->Checked == true || radioButton10->Checked == true) {
+			button1->Enabled = true;
+		}
+	}
 }
 private: System::Void label12_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void textBox3_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+	if (textBox1->Text != "" && textBox3->Text != "") {
+		if (radioButton8->Checked == true || radioButton9->Checked == true || radioButton10->Checked == true) {
+			button1->Enabled = true;
+		}
+	}
 }
 private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
 	double alter = 0;
@@ -2169,6 +2278,44 @@ private: System::Void vergrößernToolStripMenuItem_Click(System::Object^ sender
 		label27*/
 
 	
+}
+private: System::Void textBox4_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+
+	if (textBox4->Text != "")
+	{
+		button3->Enabled = true;
+		
+	}
+	else
+	{
+		button3->Enabled = false;
+
+	}
+
+
+
+}
+private: System::Void textBox1_TextChanged_1(System::Object^ sender, System::EventArgs^ e) {
+
+
+	if (textBox1->Text!="" && textBox3->Text!="") {
+		if (radioButton8->Checked==true || radioButton9->Checked==true || radioButton10->Checked==true) {
+			button1->Enabled = true;
+		}
+	}
+	else {
+		button1->Enabled = false;
+	}
+}
+private: System::Void textBox4_ModifiedChanged(System::Object^ sender, System::EventArgs^ e) {
+	if (button3->Text != "" || button3->Text != " ")
+	{
+		button3->Enabled = true;
+	}
+	else {
+		button3->Enabled = false;
+	}
+
 }
 };
 };
