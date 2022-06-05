@@ -155,9 +155,9 @@ private: System::Windows::Forms::ToolStripMenuItem^ beendenToolStripMenuItem;
 private: System::Windows::Forms::Button^ button5;
 private: System::Windows::Forms::Button^ button6;
 private: System::Windows::Forms::Button^ button7;
-private: System::Windows::Forms::ToolStripMenuItem^ ansichtToolStripMenuItem;
-private: System::Windows::Forms::ToolStripMenuItem^ vergrößernToolStripMenuItem;
-private: System::Windows::Forms::ToolStripMenuItem^ verkleinernToolStripMenuItem;
+
+
+
 
 
 
@@ -278,9 +278,6 @@ private: System::Windows::Forms::ToolStripMenuItem^ verkleinernToolStripMenuItem
 			this->menüToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->speichernToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->beendenToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->ansichtToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->vergrößernToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->verkleinernToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->saveFileDialog1 = (gcnew System::Windows::Forms::SaveFileDialog());
 			this->openFileDialog1 = (gcnew System::Windows::Forms::OpenFileDialog());
 			this->groupBox1->SuspendLayout();
@@ -1393,10 +1390,7 @@ private: System::Windows::Forms::ToolStripMenuItem^ verkleinernToolStripMenuItem
 			// 
 			// menuStrip1
 			// 
-			this->menuStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(2) {
-				this->menüToolStripMenuItem,
-					this->ansichtToolStripMenuItem
-			});
+			this->menuStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(1) { this->menüToolStripMenuItem });
 			this->menuStrip1->Location = System::Drawing::Point(0, 0);
 			this->menuStrip1->Name = L"menuStrip1";
 			this->menuStrip1->Size = System::Drawing::Size(396, 29);
@@ -1430,31 +1424,6 @@ private: System::Windows::Forms::ToolStripMenuItem^ verkleinernToolStripMenuItem
 			this->beendenToolStripMenuItem->Size = System::Drawing::Size(207, 26);
 			this->beendenToolStripMenuItem->Text = L"&Beenden";
 			this->beendenToolStripMenuItem->Click += gcnew System::EventHandler(this, &Form1::beendenToolStripMenuItem_Click);
-			// 
-			// ansichtToolStripMenuItem
-			// 
-			this->ansichtToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(2) {
-				this->vergrößernToolStripMenuItem,
-					this->verkleinernToolStripMenuItem
-			});
-			this->ansichtToolStripMenuItem->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12));
-			this->ansichtToolStripMenuItem->Name = L"ansichtToolStripMenuItem";
-			this->ansichtToolStripMenuItem->Size = System::Drawing::Size(73, 25);
-			this->ansichtToolStripMenuItem->Text = L"&Ansicht";
-			// 
-			// vergrößernToolStripMenuItem
-			// 
-			this->vergrößernToolStripMenuItem->Name = L"vergrößernToolStripMenuItem";
-			this->vergrößernToolStripMenuItem->ShortcutKeys = static_cast<System::Windows::Forms::Keys>((System::Windows::Forms::Keys::Control | System::Windows::Forms::Keys::Oemplus));
-			this->vergrößernToolStripMenuItem->Size = System::Drawing::Size(271, 26);
-			this->vergrößernToolStripMenuItem->Text = L"Vergrößern";
-			this->vergrößernToolStripMenuItem->Click += gcnew System::EventHandler(this, &Form1::vergrößernToolStripMenuItem_Click);
-			// 
-			// verkleinernToolStripMenuItem
-			// 
-			this->verkleinernToolStripMenuItem->Name = L"verkleinernToolStripMenuItem";
-			this->verkleinernToolStripMenuItem->Size = System::Drawing::Size(271, 26);
-			this->verkleinernToolStripMenuItem->Text = L"Verkleinern";
 			// 
 			// saveFileDialog1
 			// 
