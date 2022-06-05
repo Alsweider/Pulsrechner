@@ -42,7 +42,7 @@ namespace CppCLRWinFormsProject {
 			//
 			//TODO: Add the constructor code here
 			//
-			this->Text = "Pulsrechner (v0.3.0)";
+			this->Text = "Pulsrechner (v0.3.1)";
 			
 		}
 
@@ -128,13 +128,13 @@ namespace CppCLRWinFormsProject {
 	private: System::Windows::Forms::Label^ label16;
 	private: System::Windows::Forms::Label^ label17;
 	private: System::Windows::Forms::Label^ label18;
-	private: System::Windows::Forms::Label^ label25;
-	private: System::Windows::Forms::Label^ label24;
+
+
 	private: System::Windows::Forms::Label^ label27;
 	private: System::Windows::Forms::Label^ label26;
 	private: System::Windows::Forms::Label^ label28;
 	private: System::Windows::Forms::Label^ label32;
-	private: System::Windows::Forms::Label^ label33;
+
 	private: System::Windows::Forms::GroupBox^ groupBox10;
 	private: System::Windows::Forms::Label^ label29;
 	private: System::Windows::Forms::Label^ label30;
@@ -155,6 +155,9 @@ private: System::Windows::Forms::ToolStripMenuItem^ beendenToolStripMenuItem;
 private: System::Windows::Forms::Button^ button5;
 private: System::Windows::Forms::Button^ button6;
 private: System::Windows::Forms::Button^ button7;
+private: System::Windows::Forms::ToolStripMenuItem^ ansichtToolStripMenuItem;
+private: System::Windows::Forms::ToolStripMenuItem^ vergrößernToolStripMenuItem;
+private: System::Windows::Forms::ToolStripMenuItem^ verkleinernToolStripMenuItem;
 
 
 
@@ -239,8 +242,6 @@ private: System::Windows::Forms::Button^ button7;
 			this->button3 = (gcnew System::Windows::Forms::Button());
 			this->button4 = (gcnew System::Windows::Forms::Button());
 			this->label22 = (gcnew System::Windows::Forms::Label());
-			this->label24 = (gcnew System::Windows::Forms::Label());
-			this->label25 = (gcnew System::Windows::Forms::Label());
 			this->label26 = (gcnew System::Windows::Forms::Label());
 			this->label27 = (gcnew System::Windows::Forms::Label());
 			this->label28 = (gcnew System::Windows::Forms::Label());
@@ -252,7 +253,6 @@ private: System::Windows::Forms::Button^ button7;
 			this->label30 = (gcnew System::Windows::Forms::Label());
 			this->label31 = (gcnew System::Windows::Forms::Label());
 			this->label32 = (gcnew System::Windows::Forms::Label());
-			this->label33 = (gcnew System::Windows::Forms::Label());
 			this->label34 = (gcnew System::Windows::Forms::Label());
 			this->radioButton15 = (gcnew System::Windows::Forms::RadioButton());
 			this->radioButton14 = (gcnew System::Windows::Forms::RadioButton());
@@ -263,21 +263,24 @@ private: System::Windows::Forms::Button^ button7;
 			this->button7 = (gcnew System::Windows::Forms::Button());
 			this->groupBox3 = (gcnew System::Windows::Forms::GroupBox());
 			this->tabControl1 = (gcnew System::Windows::Forms::TabControl());
-			this->tabLagerstrom = (gcnew System::Windows::Forms::TabPage());
-			this->tabKarvonen = (gcnew System::Windows::Forms::TabPage());
-			this->groupBox5 = (gcnew System::Windows::Forms::GroupBox());
-			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
 			this->tabPageMaxpuls = (gcnew System::Windows::Forms::TabPage());
 			this->textBox5 = (gcnew System::Windows::Forms::TextBox());
 			this->groupBox10 = (gcnew System::Windows::Forms::GroupBox());
 			this->textBox4 = (gcnew System::Windows::Forms::TextBox());
 			this->groupBox8 = (gcnew System::Windows::Forms::GroupBox());
 			this->groupBox7 = (gcnew System::Windows::Forms::GroupBox());
+			this->tabLagerstrom = (gcnew System::Windows::Forms::TabPage());
+			this->tabKarvonen = (gcnew System::Windows::Forms::TabPage());
+			this->groupBox5 = (gcnew System::Windows::Forms::GroupBox());
+			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
+			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
 			this->menuStrip1 = (gcnew System::Windows::Forms::MenuStrip());
 			this->menüToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->speichernToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->beendenToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->ansichtToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->vergrößernToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->verkleinernToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->saveFileDialog1 = (gcnew System::Windows::Forms::SaveFileDialog());
 			this->openFileDialog1 = (gcnew System::Windows::Forms::OpenFileDialog());
 			this->groupBox1->SuspendLayout();
@@ -288,22 +291,22 @@ private: System::Windows::Forms::Button^ button7;
 			this->groupBox11->SuspendLayout();
 			this->groupBox3->SuspendLayout();
 			this->tabControl1->SuspendLayout();
-			this->tabLagerstrom->SuspendLayout();
-			this->tabKarvonen->SuspendLayout();
-			this->groupBox5->SuspendLayout();
 			this->tabPageMaxpuls->SuspendLayout();
 			this->groupBox10->SuspendLayout();
 			this->groupBox8->SuspendLayout();
 			this->groupBox7->SuspendLayout();
+			this->tabLagerstrom->SuspendLayout();
+			this->tabKarvonen->SuspendLayout();
+			this->groupBox5->SuspendLayout();
 			this->menuStrip1->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// berechnen
 			// 
 			this->berechnen->BackColor = System::Drawing::Color::Gainsboro;
-			this->berechnen->Font = (gcnew System::Drawing::Font(L"Carolingia", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->berechnen->Font = (gcnew System::Drawing::Font(L"Carolingia", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->berechnen->Location = System::Drawing::Point(6, 312);
+			this->berechnen->Location = System::Drawing::Point(6, 389);
 			this->berechnen->Name = L"berechnen";
 			this->berechnen->Size = System::Drawing::Size(101, 36);
 			this->berechnen->TabIndex = 9;
@@ -315,9 +318,9 @@ private: System::Windows::Forms::Button^ button7;
 			// 
 			// textBoxRuhepuls
 			// 
-			this->textBoxRuhepuls->Location = System::Drawing::Point(6, 64);
+			this->textBoxRuhepuls->Location = System::Drawing::Point(6, 83);
 			this->textBoxRuhepuls->Name = L"textBoxRuhepuls";
-			this->textBoxRuhepuls->Size = System::Drawing::Size(55, 20);
+			this->textBoxRuhepuls->Size = System::Drawing::Size(55, 26);
 			this->textBoxRuhepuls->TabIndex = 2;
 			this->textBoxRuhepuls->TextChanged += gcnew System::EventHandler(this, &Form1::textBox1_TextChanged);
 			// 
@@ -327,11 +330,11 @@ private: System::Windows::Forms::Button^ button7;
 			this->Einführung->AccessibleName = L"Name davon";
 			this->Einführung->AccessibleRole = System::Windows::Forms::AccessibleRole::ToolTip;
 			this->Einführung->AutoSize = true;
-			this->Einführung->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->Einführung->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->Einführung->Location = System::Drawing::Point(6, 3);
 			this->Einführung->Name = L"Einführung";
-			this->Einführung->Size = System::Drawing::Size(272, 32);
+			this->Einführung->Size = System::Drawing::Size(327, 40);
 			this->Einführung->TabIndex = 0;
 			this->Einführung->Text = L"Ausdauerpuls-Berechnung nach Lagerstrøm.\r\nBitte geben Sie Ihre Daten ein.";
 			this->toolTip1->SetToolTip(this->Einführung, L"Dr. Dieter Lagerstrøm hat eine Formel entwickelt, um den optimalen Puls \r\nfür das"
@@ -341,9 +344,9 @@ private: System::Windows::Forms::Button^ button7;
 			// 
 			// textBoxLebensalter
 			// 
-			this->textBoxLebensalter->Location = System::Drawing::Point(6, 107);
+			this->textBoxLebensalter->Location = System::Drawing::Point(6, 130);
 			this->textBoxLebensalter->Name = L"textBoxLebensalter";
-			this->textBoxLebensalter->Size = System::Drawing::Size(55, 20);
+			this->textBoxLebensalter->Size = System::Drawing::Size(55, 26);
 			this->textBoxLebensalter->TabIndex = 4;
 			this->textBoxLebensalter->TextChanged += gcnew System::EventHandler(this, &Form1::textBox2_TextChanged);
 			// 
@@ -351,11 +354,11 @@ private: System::Windows::Forms::Button^ button7;
 			// 
 			this->labelErgebnis->AutoSize = true;
 			this->labelErgebnis->BackColor = System::Drawing::Color::Yellow;
-			this->labelErgebnis->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->labelErgebnis->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->labelErgebnis->Location = System::Drawing::Point(126, 14);
+			this->labelErgebnis->Location = System::Drawing::Point(132, 14);
 			this->labelErgebnis->Name = L"labelErgebnis";
-			this->labelErgebnis->Size = System::Drawing::Size(128, 20);
+			this->labelErgebnis->Size = System::Drawing::Size(154, 24);
 			this->labelErgebnis->TabIndex = 1;
 			this->labelErgebnis->Text = L"(wartet auf Eingabe)";
 			this->toolTip1->SetToolTip(this->labelErgebnis, L"Ergebnis der Berechnung");
@@ -365,11 +368,11 @@ private: System::Windows::Forms::Button^ button7;
 			// label3
 			// 
 			this->label3->AutoSize = true;
-			this->label3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->label3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label3->Location = System::Drawing::Point(6, 48);
+			this->label3->Location = System::Drawing::Point(6, 60);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(67, 16);
+			this->label3->Size = System::Drawing::Size(81, 20);
 			this->label3->TabIndex = 1;
 			this->label3->Text = L"Ruhepuls:";
 			this->toolTip1->SetToolTip(this->label3, L"Ruhepuls im entspannten Zustand messen, etwa morgens vor dem Aufstehen.");
@@ -378,11 +381,11 @@ private: System::Windows::Forms::Button^ button7;
 			// label4
 			// 
 			this->label4->AutoSize = true;
-			this->label4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->label4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label4->Location = System::Drawing::Point(6, 91);
+			this->label4->Location = System::Drawing::Point(6, 112);
 			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(37, 16);
+			this->label4->Size = System::Drawing::Size(46, 20);
 			this->label4->TabIndex = 3;
 			this->label4->Text = L"Alter:";
 			this->toolTip1->SetToolTip(this->label4, L"Lebensalter in Jahren");
@@ -390,9 +393,9 @@ private: System::Windows::Forms::Button^ button7;
 			// beenden
 			// 
 			this->beenden->BackColor = System::Drawing::Color::Gainsboro;
-			this->beenden->Font = (gcnew System::Drawing::Font(L"Carolingia", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->beenden->Font = (gcnew System::Drawing::Font(L"Carolingia", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->beenden->Location = System::Drawing::Point(209, 312);
+			this->beenden->Location = System::Drawing::Point(278, 389);
 			this->beenden->Name = L"beenden";
 			this->beenden->Size = System::Drawing::Size(101, 36);
 			this->beenden->TabIndex = 10;
@@ -404,11 +407,11 @@ private: System::Windows::Forms::Button^ button7;
 			// radioButton1
 			// 
 			this->radioButton1->AutoSize = true;
-			this->radioButton1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->radioButton1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->radioButton1->Location = System::Drawing::Point(5, 47);
+			this->radioButton1->Location = System::Drawing::Point(9, 54);
 			this->radioButton1->Name = L"radioButton1";
-			this->radioButton1->Size = System::Drawing::Size(207, 20);
+			this->radioButton1->Size = System::Drawing::Size(247, 24);
 			this->radioButton1->TabIndex = 1;
 			this->radioButton1->TabStop = true;
 			this->radioButton1->Text = L"Kraftausdauertraining (intensiv)";
@@ -420,11 +423,11 @@ private: System::Windows::Forms::Button^ button7;
 			// radioButton2
 			// 
 			this->radioButton2->AutoSize = true;
-			this->radioButton2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->radioButton2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->radioButton2->Location = System::Drawing::Point(5, 24);
+			this->radioButton2->Location = System::Drawing::Point(9, 31);
 			this->radioButton2->Name = L"radioButton2";
-			this->radioButton2->Size = System::Drawing::Size(226, 20);
+			this->radioButton2->Size = System::Drawing::Size(266, 24);
 			this->radioButton2->TabIndex = 0;
 			this->radioButton2->TabStop = true;
 			this->radioButton2->Text = L"reines Ausdauertraining (extensiv)";
@@ -437,11 +440,11 @@ private: System::Windows::Forms::Button^ button7;
 			// 
 			this->groupBox1->Controls->Add(this->radioButton2);
 			this->groupBox1->Controls->Add(this->radioButton1);
-			this->groupBox1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->groupBox1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->groupBox1->Location = System::Drawing::Point(74, 48);
+			this->groupBox1->Location = System::Drawing::Point(91, 60);
 			this->groupBox1->Name = L"groupBox1";
-			this->groupBox1->Size = System::Drawing::Size(236, 79);
+			this->groupBox1->Size = System::Drawing::Size(288, 96);
 			this->groupBox1->TabIndex = 5;
 			this->groupBox1->TabStop = false;
 			this->groupBox1->Text = L"Sportkategorie";
@@ -455,11 +458,11 @@ private: System::Windows::Forms::Button^ button7;
 			this->groupBox2->Controls->Add(this->radioButton5);
 			this->groupBox2->Controls->Add(this->radioButton4);
 			this->groupBox2->Controls->Add(this->radioButton3);
-			this->groupBox2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->groupBox2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->groupBox2->Location = System::Drawing::Point(6, 134);
+			this->groupBox2->Location = System::Drawing::Point(6, 165);
 			this->groupBox2->Name = L"groupBox2";
-			this->groupBox2->Size = System::Drawing::Size(304, 100);
+			this->groupBox2->Size = System::Drawing::Size(373, 100);
 			this->groupBox2->TabIndex = 6;
 			this->groupBox2->TabStop = false;
 			this->groupBox2->Text = L"Fitnesskategorie";
@@ -470,11 +473,11 @@ private: System::Windows::Forms::Button^ button7;
 			// radioButton7
 			// 
 			this->radioButton7->AutoSize = true;
-			this->radioButton7->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->radioButton7->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->radioButton7->Location = System::Drawing::Point(8, 43);
 			this->radioButton7->Name = L"radioButton7";
-			this->radioButton7->Size = System::Drawing::Size(133, 20);
+			this->radioButton7->Size = System::Drawing::Size(158, 24);
 			this->radioButton7->TabIndex = 2;
 			this->radioButton7->TabStop = true;
 			this->radioButton7->Text = L"3. Amateursportler";
@@ -485,11 +488,11 @@ private: System::Windows::Forms::Button^ button7;
 			// radioButton6
 			// 
 			this->radioButton6->AutoSize = true;
-			this->radioButton6->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->radioButton6->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->radioButton6->Location = System::Drawing::Point(8, 66);
 			this->radioButton6->Name = L"radioButton6";
-			this->radioButton6->Size = System::Drawing::Size(168, 20);
+			this->radioButton6->Size = System::Drawing::Size(198, 24);
 			this->radioButton6->TabIndex = 4;
 			this->radioButton6->TabStop = true;
 			this->radioButton6->Text = L"5. Hochleistungssportler";
@@ -500,11 +503,11 @@ private: System::Windows::Forms::Button^ button7;
 			// radioButton5
 			// 
 			this->radioButton5->AutoSize = true;
-			this->radioButton5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->radioButton5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->radioButton5->Location = System::Drawing::Point(150, 43);
+			this->radioButton5->Location = System::Drawing::Point(198, 43);
 			this->radioButton5->Name = L"radioButton5";
-			this->radioButton5->Size = System::Drawing::Size(140, 20);
+			this->radioButton5->Size = System::Drawing::Size(166, 24);
 			this->radioButton5->TabIndex = 3;
 			this->radioButton5->TabStop = true;
 			this->radioButton5->Text = L"4. Leistungssportler";
@@ -515,11 +518,11 @@ private: System::Windows::Forms::Button^ button7;
 			// radioButton4
 			// 
 			this->radioButton4->AutoSize = true;
-			this->radioButton4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->radioButton4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->radioButton4->Location = System::Drawing::Point(150, 19);
+			this->radioButton4->Location = System::Drawing::Point(198, 19);
 			this->radioButton4->Name = L"radioButton4";
-			this->radioButton4->Size = System::Drawing::Size(132, 20);
+			this->radioButton4->Size = System::Drawing::Size(155, 24);
 			this->radioButton4->TabIndex = 1;
 			this->radioButton4->TabStop = true;
 			this->radioButton4->Text = L"2. normal sportlich";
@@ -530,11 +533,11 @@ private: System::Windows::Forms::Button^ button7;
 			// radioButton3
 			// 
 			this->radioButton3->AutoSize = true;
-			this->radioButton3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->radioButton3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->radioButton3->Location = System::Drawing::Point(8, 20);
 			this->radioButton3->Name = L"radioButton3";
-			this->radioButton3->Size = System::Drawing::Size(130, 20);
+			this->radioButton3->Size = System::Drawing::Size(153, 24);
 			this->radioButton3->TabIndex = 0;
 			this->radioButton3->TabStop = true;
 			this->radioButton3->Text = L"1. völlig untrainiert";
@@ -545,11 +548,11 @@ private: System::Windows::Forms::Button^ button7;
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label1->Location = System::Drawing::Point(12, 14);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(111, 17);
+			this->label1->Size = System::Drawing::Size(120, 20);
 			this->label1->TabIndex = 0;
 			this->label1->Text = L"Trainingspuls:";
 			this->toolTip1->SetToolTip(this->label1, L"Herzfrequenz, die ein effizientes Ausdauertraining ermöglicht,\r\num Übertraining u"
@@ -566,11 +569,10 @@ private: System::Windows::Forms::Button^ button7;
 			// label2
 			// 
 			this->label2->AutoSize = true;
-			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label2->Location = System::Drawing::Point(9, 360);
+			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.25F));
+			this->label2->Location = System::Drawing::Point(6, 436);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(274, 13);
+			this->label2->Size = System::Drawing::Size(343, 16);
 			this->label2->TabIndex = 11;
 			this->label2->Text = L"(Cursor auf Elementen positionieren für Beschreibungen.)";
 			this->toolTip1->SetToolTip(this->label2, L"Maus auf den Überschriften stehen lassen um Erklärungen zu lesen.");
@@ -579,11 +581,11 @@ private: System::Windows::Forms::Button^ button7;
 			// label5
 			// 
 			this->label5->AutoSize = true;
-			this->label5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->label5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label5->Location = System::Drawing::Point(6, 236);
+			this->label5->Location = System::Drawing::Point(6, 278);
 			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(246, 26);
+			this->label5->Size = System::Drawing::Size(371, 40);
 			this->label5->TabIndex = 7;
 			this->label5->Text = L"Formel: Ruhepuls + (220 - Ausdauersportkategorie \r\n* Lebensalter - Ruhepuls) * Fi"
 				L"tnesskategorie\r\n";
@@ -597,7 +599,7 @@ private: System::Windows::Forms::Button^ button7;
 			this->herz->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->herz->ForeColor = System::Drawing::Color::Crimson;
-			this->herz->Location = System::Drawing::Point(174, 12);
+			this->herz->Location = System::Drawing::Point(188, 14);
 			this->herz->Name = L"herz";
 			this->herz->Size = System::Drawing::Size(32, 22);
 			this->herz->TabIndex = 2;
@@ -609,11 +611,11 @@ private: System::Windows::Forms::Button^ button7;
 			// label6
 			// 
 			this->label6->AutoSize = true;
-			this->label6->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->label6->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label6->Location = System::Drawing::Point(6, 44);
+			this->label6->Location = System::Drawing::Point(6, 53);
 			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(67, 16);
+			this->label6->Size = System::Drawing::Size(81, 20);
 			this->label6->TabIndex = 1;
 			this->label6->Text = L"Ruhepuls:";
 			this->toolTip1->SetToolTip(this->label6, L"Ruhepuls im entspannten Zustand messen, etwa morgens vor dem Aufstehen.");
@@ -624,11 +626,11 @@ private: System::Windows::Forms::Button^ button7;
 			this->label7->AccessibleName = L"Name davon";
 			this->label7->AccessibleRole = System::Windows::Forms::AccessibleRole::ToolTip;
 			this->label7->AutoSize = true;
-			this->label7->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->label7->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label7->Location = System::Drawing::Point(6, 3);
 			this->label7->Name = L"label7";
-			this->label7->Size = System::Drawing::Size(261, 32);
+			this->label7->Size = System::Drawing::Size(313, 40);
 			this->label7->TabIndex = 0;
 			this->label7->Text = L"Ausdauerpuls-Berechnung nach Karvonen.\r\nBitte geben Sie Ihre Daten ein.";
 			this->toolTip1->SetToolTip(this->label7, L"Martti J. Karvonen hat eine Formel entwickelt, um die individuell\r\noptimale Herzf"
@@ -637,11 +639,11 @@ private: System::Windows::Forms::Button^ button7;
 			// label8
 			// 
 			this->label8->AutoSize = true;
-			this->label8->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->label8->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label8->Location = System::Drawing::Point(6, 83);
+			this->label8->Location = System::Drawing::Point(6, 105);
 			this->label8->Name = L"label8";
-			this->label8->Size = System::Drawing::Size(85, 16);
+			this->label8->Size = System::Drawing::Size(99, 20);
 			this->label8->TabIndex = 3;
 			this->label8->Text = L"Maximalpuls:";
 			this->toolTip1->SetToolTip(this->label8, L"Maximalpuls messtechnisch ermitteln (Ergometer)\r\noder theoretisch via Formel erre"
@@ -650,13 +652,12 @@ private: System::Windows::Forms::Button^ button7;
 			// label9
 			// 
 			this->label9->AutoSize = true;
-			this->label9->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label9->Location = System::Drawing::Point(6, 143);
+			this->label9->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12));
+			this->label9->Location = System::Drawing::Point(6, 161);
 			this->label9->Name = L"label9";
-			this->label9->Size = System::Drawing::Size(283, 13);
+			this->label9->Size = System::Drawing::Size(368, 20);
 			this->label9->TabIndex = 6;
-			this->label9->Text = L"Formel: Ruhepuls + (Maximalpuls - Ruhepuls) * Trainingsart";
+			this->label9->Text = L"Ruhepuls + (Maximalpuls - Ruhepuls) * Trainingsart";
 			this->toolTip1->SetToolTip(this->label9, L"Karvonen-Formel nach Martti J. Karvonen");
 			// 
 			// label10
@@ -666,7 +667,7 @@ private: System::Windows::Forms::Button^ button7;
 			this->label10->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label10->ForeColor = System::Drawing::Color::Crimson;
-			this->label10->Location = System::Drawing::Point(174, 12);
+			this->label10->Location = System::Drawing::Point(194, 15);
 			this->label10->Name = L"label10";
 			this->label10->Size = System::Drawing::Size(32, 22);
 			this->label10->TabIndex = 2;
@@ -677,11 +678,11 @@ private: System::Windows::Forms::Button^ button7;
 			// label11
 			// 
 			this->label11->AutoSize = true;
-			this->label11->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->label11->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label11->Location = System::Drawing::Point(12, 14);
+			this->label11->Location = System::Drawing::Point(12, 17);
 			this->label11->Name = L"label11";
-			this->label11->Size = System::Drawing::Size(111, 17);
+			this->label11->Size = System::Drawing::Size(120, 20);
 			this->label11->TabIndex = 0;
 			this->label11->Text = L"Trainingspuls:";
 			this->toolTip1->SetToolTip(this->label11, L"Herzfrequenz, die ein effizientes Ausdauertraining ermöglicht,\r\num Übertraining u"
@@ -691,11 +692,11 @@ private: System::Windows::Forms::Button^ button7;
 			// 
 			this->label12->AutoSize = true;
 			this->label12->BackColor = System::Drawing::Color::Yellow;
-			this->label12->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->label12->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label12->Location = System::Drawing::Point(126, 14);
+			this->label12->Location = System::Drawing::Point(135, 17);
 			this->label12->Name = L"label12";
-			this->label12->Size = System::Drawing::Size(128, 20);
+			this->label12->Size = System::Drawing::Size(154, 24);
 			this->label12->TabIndex = 1;
 			this->label12->Text = L"(wartet auf Eingabe)";
 			this->toolTip1->SetToolTip(this->label12, L"Ergebnis der Berechnung");
@@ -705,9 +706,8 @@ private: System::Windows::Forms::Button^ button7;
 			// button1
 			// 
 			this->button1->BackColor = System::Drawing::Color::Gainsboro;
-			this->button1->Font = (gcnew System::Drawing::Font(L"Carolingia", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->button1->Location = System::Drawing::Point(6, 312);
+			this->button1->Font = (gcnew System::Drawing::Font(L"Carolingia", 14.25F));
+			this->button1->Location = System::Drawing::Point(6, 389);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(101, 36);
 			this->button1->TabIndex = 9;
@@ -720,11 +720,10 @@ private: System::Windows::Forms::Button^ button7;
 			// label13
 			// 
 			this->label13->AutoSize = true;
-			this->label13->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label13->Location = System::Drawing::Point(9, 360);
+			this->label13->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.25F));
+			this->label13->Location = System::Drawing::Point(6, 436);
 			this->label13->Name = L"label13";
-			this->label13->Size = System::Drawing::Size(274, 13);
+			this->label13->Size = System::Drawing::Size(343, 16);
 			this->label13->TabIndex = 11;
 			this->label13->Text = L"(Cursor auf Elementen positionieren für Beschreibungen.)";
 			this->toolTip1->SetToolTip(this->label13, L"Maus auf den Überschriften stehen lassen um Erklärungen zu lesen.");
@@ -732,9 +731,8 @@ private: System::Windows::Forms::Button^ button7;
 			// button2
 			// 
 			this->button2->BackColor = System::Drawing::Color::Gainsboro;
-			this->button2->Font = (gcnew System::Drawing::Font(L"Carolingia", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->button2->Location = System::Drawing::Point(209, 312);
+			this->button2->Font = (gcnew System::Drawing::Font(L"Carolingia", 14.25F));
+			this->button2->Location = System::Drawing::Point(278, 389);
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(101, 36);
 			this->button2->TabIndex = 10;
@@ -746,9 +744,9 @@ private: System::Windows::Forms::Button^ button7;
 			// radioButton10
 			// 
 			this->radioButton10->AutoSize = true;
-			this->radioButton10->Location = System::Drawing::Point(7, 66);
+			this->radioButton10->Location = System::Drawing::Point(7, 68);
 			this->radioButton10->Name = L"radioButton10";
-			this->radioButton10->Size = System::Drawing::Size(164, 20);
+			this->radioButton10->Size = System::Drawing::Size(195, 24);
 			this->radioButton10->TabIndex = 2;
 			this->radioButton10->TabStop = true;
 			this->radioButton10->Text = L"Kraftausdauer (intensiv)";
@@ -759,9 +757,9 @@ private: System::Windows::Forms::Button^ button7;
 			// radioButton9
 			// 
 			this->radioButton9->AutoSize = true;
-			this->radioButton9->Location = System::Drawing::Point(7, 43);
+			this->radioButton9->Location = System::Drawing::Point(7, 45);
 			this->radioButton9->Name = L"radioButton9";
-			this->radioButton9->Size = System::Drawing::Size(143, 20);
+			this->radioButton9->Size = System::Drawing::Size(167, 24);
 			this->radioButton9->TabIndex = 1;
 			this->radioButton9->TabStop = true;
 			this->radioButton9->Text = L"Ausdauer (extensiv)";
@@ -772,9 +770,9 @@ private: System::Windows::Forms::Button^ button7;
 			// radioButton8
 			// 
 			this->radioButton8->AutoSize = true;
-			this->radioButton8->Location = System::Drawing::Point(7, 20);
+			this->radioButton8->Location = System::Drawing::Point(7, 22);
 			this->radioButton8->Name = L"radioButton8";
-			this->radioButton8->Size = System::Drawing::Size(122, 20);
+			this->radioButton8->Size = System::Drawing::Size(145, 24);
 			this->radioButton8->TabIndex = 0;
 			this->radioButton8->TabStop = true;
 			this->radioButton8->Text = L"Anfängertraining";
@@ -785,10 +783,11 @@ private: System::Windows::Forms::Button^ button7;
 			// label14
 			// 
 			this->label14->AutoSize = true;
-			this->label14->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F));
-			this->label14->Location = System::Drawing::Point(28, 18);
+			this->label14->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label14->Location = System::Drawing::Point(24, 22);
 			this->label14->Name = L"label14";
-			this->label14->Size = System::Drawing::Size(231, 52);
+			this->label14->Size = System::Drawing::Size(347, 80);
 			this->label14->TabIndex = 0;
 			this->label14->Text = L"Vor dem Messen der maximalen Herzfrequenz \r\nwird eine ärztliche Tauglichkeitsunte"
 				L"rsuchung \r\nempfohlen, um sicherzustellen, dass der Körper \r\nden Belastungen stan"
@@ -803,7 +802,7 @@ private: System::Windows::Forms::Button^ button7;
 			this->label15->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label15->ForeColor = System::Drawing::Color::Red;
-			this->label15->Location = System::Drawing::Point(5, 29);
+			this->label15->Location = System::Drawing::Point(2, 45);
 			this->label15->Name = L"label15";
 			this->label15->Size = System::Drawing::Size(25, 20);
 			this->label15->TabIndex = 1;
@@ -817,10 +816,11 @@ private: System::Windows::Forms::Button^ button7;
 			this->groupBox4->Controls->Add(this->radioButton10);
 			this->groupBox4->Controls->Add(this->radioButton9);
 			this->groupBox4->Controls->Add(this->radioButton8);
-			this->groupBox4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.25F));
-			this->groupBox4->Location = System::Drawing::Point(94, 44);
+			this->groupBox4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->groupBox4->Location = System::Drawing::Point(122, 53);
 			this->groupBox4->Name = L"groupBox4";
-			this->groupBox4->Size = System::Drawing::Size(219, 90);
+			this->groupBox4->Size = System::Drawing::Size(255, 99);
 			this->groupBox4->TabIndex = 5;
 			this->groupBox4->TabStop = false;
 			this->groupBox4->Text = L"Trainingsart";
@@ -830,10 +830,11 @@ private: System::Windows::Forms::Button^ button7;
 			// 
 			this->groupBox6->Controls->Add(this->label15);
 			this->groupBox6->Controls->Add(this->label14);
-			this->groupBox6->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.25F));
-			this->groupBox6->Location = System::Drawing::Point(6, 228);
+			this->groupBox6->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->groupBox6->Location = System::Drawing::Point(6, 253);
 			this->groupBox6->Name = L"groupBox6";
-			this->groupBox6->Size = System::Drawing::Size(304, 78);
+			this->groupBox6->Size = System::Drawing::Size(373, 111);
 			this->groupBox6->TabIndex = 8;
 			this->groupBox6->TabStop = false;
 			this->groupBox6->Text = L"Sicherheitshinweis";
@@ -848,7 +849,7 @@ private: System::Windows::Forms::Button^ button7;
 			this->label16->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label16->ForeColor = System::Drawing::Color::Crimson;
-			this->label16->Location = System::Drawing::Point(174, 12);
+			this->label16->Location = System::Drawing::Point(177, 12);
 			this->label16->Name = L"label16";
 			this->label16->Size = System::Drawing::Size(32, 22);
 			this->label16->TabIndex = 2;
@@ -859,11 +860,11 @@ private: System::Windows::Forms::Button^ button7;
 			// label17
 			// 
 			this->label17->AutoSize = true;
-			this->label17->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->label17->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label17->Location = System::Drawing::Point(12, 14);
 			this->label17->Name = L"label17";
-			this->label17->Size = System::Drawing::Size(92, 17);
+			this->label17->Size = System::Drawing::Size(102, 20);
 			this->label17->TabIndex = 0;
 			this->label17->Text = L"Tanaka HF:";
 			this->toolTip1->SetToolTip(this->label17, L"Herzfrequenz, die ein effizientes Ausdauertraining ermöglicht,\r\num Übertraining u"
@@ -873,11 +874,11 @@ private: System::Windows::Forms::Button^ button7;
 			// 
 			this->label18->AutoSize = true;
 			this->label18->BackColor = System::Drawing::Color::Yellow;
-			this->label18->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->label18->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label18->Location = System::Drawing::Point(126, 14);
 			this->label18->Name = L"label18";
-			this->label18->Size = System::Drawing::Size(128, 20);
+			this->label18->Size = System::Drawing::Size(154, 24);
 			this->label18->TabIndex = 1;
 			this->label18->Text = L"(wartet auf Eingabe)";
 			this->toolTip1->SetToolTip(this->label18, L"Ergebnis der Berechnung");
@@ -890,7 +891,7 @@ private: System::Windows::Forms::Button^ button7;
 			this->label19->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label19->ForeColor = System::Drawing::Color::Crimson;
-			this->label19->Location = System::Drawing::Point(174, 12);
+			this->label19->Location = System::Drawing::Point(177, 12);
 			this->label19->Name = L"label19";
 			this->label19->Size = System::Drawing::Size(32, 22);
 			this->label19->TabIndex = 2;
@@ -901,11 +902,11 @@ private: System::Windows::Forms::Button^ button7;
 			// label20
 			// 
 			this->label20->AutoSize = true;
-			this->label20->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->label20->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label20->Location = System::Drawing::Point(12, 14);
 			this->label20->Name = L"label20";
-			this->label20->Size = System::Drawing::Size(101, 17);
+			this->label20->Size = System::Drawing::Size(114, 20);
 			this->label20->TabIndex = 0;
 			this->label20->Text = L"Spanaus HF:";
 			this->toolTip1->SetToolTip(this->label20, L"Herzfrequenz, die ein effizientes Ausdauertraining ermöglicht,\r\num Übertraining u"
@@ -915,11 +916,11 @@ private: System::Windows::Forms::Button^ button7;
 			// 
 			this->label21->AutoSize = true;
 			this->label21->BackColor = System::Drawing::Color::Yellow;
-			this->label21->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->label21->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label21->Location = System::Drawing::Point(126, 14);
 			this->label21->Name = L"label21";
-			this->label21->Size = System::Drawing::Size(128, 20);
+			this->label21->Size = System::Drawing::Size(154, 24);
 			this->label21->TabIndex = 1;
 			this->label21->Text = L"(wartet auf Eingabe)";
 			this->toolTip1->SetToolTip(this->label21, L"Ergebnis der Berechnung");
@@ -928,9 +929,8 @@ private: System::Windows::Forms::Button^ button7;
 			// button3
 			// 
 			this->button3->BackColor = System::Drawing::Color::Gainsboro;
-			this->button3->Font = (gcnew System::Drawing::Font(L"Carolingia", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->button3->Location = System::Drawing::Point(6, 312);
+			this->button3->Font = (gcnew System::Drawing::Font(L"Carolingia", 14));
+			this->button3->Location = System::Drawing::Point(6, 389);
 			this->button3->Name = L"button3";
 			this->button3->Size = System::Drawing::Size(101, 36);
 			this->button3->TabIndex = 15;
@@ -943,9 +943,8 @@ private: System::Windows::Forms::Button^ button7;
 			// button4
 			// 
 			this->button4->BackColor = System::Drawing::Color::Gainsboro;
-			this->button4->Font = (gcnew System::Drawing::Font(L"Carolingia", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->button4->Location = System::Drawing::Point(209, 312);
+			this->button4->Font = (gcnew System::Drawing::Font(L"Carolingia", 14));
+			this->button4->Location = System::Drawing::Point(278, 389);
 			this->button4->Name = L"button4";
 			this->button4->Size = System::Drawing::Size(101, 36);
 			this->button4->TabIndex = 16;
@@ -960,43 +959,22 @@ private: System::Windows::Forms::Button^ button7;
 			this->label22->AccessibleName = L"Name davon";
 			this->label22->AccessibleRole = System::Windows::Forms::AccessibleRole::ToolTip;
 			this->label22->AutoSize = true;
-			this->label22->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->label22->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label22->Location = System::Drawing::Point(6, 3);
 			this->label22->Name = L"label22";
-			this->label22->Size = System::Drawing::Size(261, 32);
+			this->label22->Size = System::Drawing::Size(317, 40);
 			this->label22->TabIndex = 0;
 			this->label22->Text = L"Berechnung Ihrer maximalen Herzfrequenz.\r\nBitte geben Sie Ihre Daten ein.";
 			this->toolTip1->SetToolTip(this->label22, L"Die Berechnung der maximalen Herzfrequenz ist kein\r\nErsatz für eine tatsächliche "
 				L"Messung. Sie kann aber\r\neinen groben Orientierungswert liefern.");
 			// 
-			// label24
-			// 
-			this->label24->AutoSize = true;
-			this->label24->Location = System::Drawing::Point(6, 142);
-			this->label24->Name = L"label24";
-			this->label24->Size = System::Drawing::Size(41, 13);
-			this->label24->TabIndex = 7;
-			this->label24->Text = L"Formel:";
-			this->toolTip1->SetToolTip(this->label24, L"Formel zur Errechnung des Maximalpulses nach Hirofumi Tanaka");
-			// 
-			// label25
-			// 
-			this->label25->AutoSize = true;
-			this->label25->Location = System::Drawing::Point(6, 203);
-			this->label25->Name = L"label25";
-			this->label25->Size = System::Drawing::Size(41, 13);
-			this->label25->TabIndex = 10;
-			this->label25->Text = L"Formel:";
-			this->toolTip1->SetToolTip(this->label25, L"Formel zur Errechnung des Maximalpulses für trainierte Sportler nach Winfried Spa"
-				L"naus");
-			// 
 			// label26
 			// 
 			this->label26->AutoSize = true;
-			this->label26->Location = System::Drawing::Point(50, 203);
+			this->label26->Location = System::Drawing::Point(12, 43);
 			this->label26->Name = L"label26";
-			this->label26->Size = System::Drawing::Size(156, 26);
+			this->label26->Size = System::Drawing::Size(231, 40);
 			this->label26->TabIndex = 11;
 			this->label26->Text = L"Männer: 223 - 0,9 * Lebensalter\r\nFrauen: 226 - 1,0 * Lebensalter\r\n";
 			this->toolTip1->SetToolTip(this->label26, L"Formel zur Errechnung des Maximalpulses für trainierte Sportler nach Winfried Spa"
@@ -1005,11 +983,10 @@ private: System::Windows::Forms::Button^ button7;
 			// label27
 			// 
 			this->label27->AutoSize = true;
-			this->label27->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label27->Location = System::Drawing::Point(9, 360);
+			this->label27->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.25F));
+			this->label27->Location = System::Drawing::Point(6, 436);
 			this->label27->Name = L"label27";
-			this->label27->Size = System::Drawing::Size(274, 13);
+			this->label27->Size = System::Drawing::Size(343, 16);
 			this->label27->TabIndex = 17;
 			this->label27->Text = L"(Cursor auf Elementen positionieren für Beschreibungen.)";
 			this->toolTip1->SetToolTip(this->label27, L"Maus auf den Überschriften stehen lassen um Erklärungen zu lesen.");
@@ -1017,9 +994,9 @@ private: System::Windows::Forms::Button^ button7;
 			// label28
 			// 
 			this->label28->AutoSize = true;
-			this->label28->Location = System::Drawing::Point(53, 141);
+			this->label28->Location = System::Drawing::Point(12, 43);
 			this->label28->Name = L"label28";
-			this->label28->Size = System::Drawing::Size(114, 13);
+			this->label28->Size = System::Drawing::Size(169, 20);
 			this->label28->TabIndex = 8;
 			this->label28->Text = L"208 - 0,7 * Lebensalter";
 			this->toolTip1->SetToolTip(this->label28, L"Formel zur Errechnung des Maximalpulses nach Hirofumi Tanaka");
@@ -1028,11 +1005,11 @@ private: System::Windows::Forms::Button^ button7;
 			// 
 			this->groupBox9->Controls->Add(this->radioButton12);
 			this->groupBox9->Controls->Add(this->radioButton11);
-			this->groupBox9->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->groupBox9->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->groupBox9->Location = System::Drawing::Point(149, 43);
+			this->groupBox9->Location = System::Drawing::Point(149, 52);
 			this->groupBox9->Name = L"groupBox9";
-			this->groupBox9->Size = System::Drawing::Size(161, 50);
+			this->groupBox9->Size = System::Drawing::Size(230, 50);
 			this->groupBox9->TabIndex = 5;
 			this->groupBox9->TabStop = false;
 			this->groupBox9->Text = L"Geschlecht";
@@ -1042,9 +1019,11 @@ private: System::Windows::Forms::Button^ button7;
 			// radioButton12
 			// 
 			this->radioButton12->AutoSize = true;
-			this->radioButton12->Location = System::Drawing::Point(82, 20);
+			this->radioButton12->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->radioButton12->Location = System::Drawing::Point(94, 20);
 			this->radioButton12->Name = L"radioButton12";
-			this->radioButton12->Size = System::Drawing::Size(73, 20);
+			this->radioButton12->Size = System::Drawing::Size(82, 24);
 			this->radioButton12->TabIndex = 1;
 			this->radioButton12->TabStop = true;
 			this->radioButton12->Text = L"weiblich";
@@ -1055,9 +1034,11 @@ private: System::Windows::Forms::Button^ button7;
 			// radioButton11
 			// 
 			this->radioButton11->AutoSize = true;
+			this->radioButton11->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
 			this->radioButton11->Location = System::Drawing::Point(7, 20);
 			this->radioButton11->Name = L"radioButton11";
-			this->radioButton11->Size = System::Drawing::Size(78, 20);
+			this->radioButton11->Size = System::Drawing::Size(90, 24);
 			this->radioButton11->TabIndex = 0;
 			this->radioButton11->TabStop = true;
 			this->radioButton11->Text = L"männlich";
@@ -1068,11 +1049,11 @@ private: System::Windows::Forms::Button^ button7;
 			// label23
 			// 
 			this->label23->AutoSize = true;
-			this->label23->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->label23->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label23->Location = System::Drawing::Point(6, 43);
+			this->label23->Location = System::Drawing::Point(6, 52);
 			this->label23->Name = L"label23";
-			this->label23->Size = System::Drawing::Size(37, 16);
+			this->label23->Size = System::Drawing::Size(46, 20);
 			this->label23->TabIndex = 1;
 			this->label23->Text = L"Alter:";
 			this->toolTip1->SetToolTip(this->label23, L"Lebensalter in Jahren");
@@ -1084,7 +1065,7 @@ private: System::Windows::Forms::Button^ button7;
 			this->label29->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label29->ForeColor = System::Drawing::Color::Crimson;
-			this->label29->Location = System::Drawing::Point(174, 12);
+			this->label29->Location = System::Drawing::Point(177, 12);
 			this->label29->Name = L"label29";
 			this->label29->Size = System::Drawing::Size(32, 22);
 			this->label29->TabIndex = 2;
@@ -1095,11 +1076,11 @@ private: System::Windows::Forms::Button^ button7;
 			// label30
 			// 
 			this->label30->AutoSize = true;
-			this->label30->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->label30->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label30->Location = System::Drawing::Point(12, 14);
 			this->label30->Name = L"label30";
-			this->label30->Size = System::Drawing::Size(99, 17);
+			this->label30->Size = System::Drawing::Size(112, 20);
 			this->label30->TabIndex = 0;
 			this->label30->Text = L"Edwards HF:";
 			this->toolTip1->SetToolTip(this->label30, L"Herzfrequenz, die ein effizientes Ausdauertraining ermöglicht,\r\num Übertraining u"
@@ -1109,11 +1090,11 @@ private: System::Windows::Forms::Button^ button7;
 			// 
 			this->label31->AutoSize = true;
 			this->label31->BackColor = System::Drawing::Color::Yellow;
-			this->label31->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->label31->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label31->Location = System::Drawing::Point(126, 14);
 			this->label31->Name = L"label31";
-			this->label31->Size = System::Drawing::Size(128, 20);
+			this->label31->Size = System::Drawing::Size(154, 24);
 			this->label31->TabIndex = 1;
 			this->label31->Text = L"(wartet auf Eingabe)";
 			this->toolTip1->SetToolTip(this->label31, L"Ergebnis der Berechnung");
@@ -1122,32 +1103,22 @@ private: System::Windows::Forms::Button^ button7;
 			// label32
 			// 
 			this->label32->AutoSize = true;
-			this->label32->Location = System::Drawing::Point(50, 278);
+			this->label32->Location = System::Drawing::Point(6, 43);
 			this->label32->Name = L"label32";
-			this->label32->Size = System::Drawing::Size(251, 26);
+			this->label32->Size = System::Drawing::Size(333, 40);
 			this->label32->TabIndex = 14;
-			this->label32->Text = L"Männer: 214 - 0,5 * Alter - 0,11 * Körpergewicht (kg)\r\nFrauen: 210 - 0,5 * Alter "
-				L"- 0,11 * Körpergewicht (kg)";
+			this->label32->Text = L"Männer: 214 - 0,5 * Alter - 0,11 * Gewicht in kg\r\nFrauen: 210 - 0,5 * Alter - 0,1"
+				L"1 * Gewicht in kg";
 			this->toolTip1->SetToolTip(this->label32, L"Formel zur Errechnung des Maximalpulses nach Sally Edwards");
-			// 
-			// label33
-			// 
-			this->label33->AutoSize = true;
-			this->label33->Location = System::Drawing::Point(6, 278);
-			this->label33->Name = L"label33";
-			this->label33->Size = System::Drawing::Size(41, 13);
-			this->label33->TabIndex = 13;
-			this->label33->Text = L"Formel:";
-			this->toolTip1->SetToolTip(this->label33, L"Formel zur Errechnung des Maximalpulses nach Sally Edwards");
 			// 
 			// label34
 			// 
 			this->label34->AutoSize = true;
-			this->label34->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->label34->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label34->Location = System::Drawing::Point(75, 43);
+			this->label34->Location = System::Drawing::Point(75, 52);
 			this->label34->Name = L"label34";
-			this->label34->Size = System::Drawing::Size(57, 16);
+			this->label34->Size = System::Drawing::Size(71, 20);
 			this->label34->TabIndex = 3;
 			this->label34->Text = L"Gewicht:";
 			this->toolTip1->SetToolTip(this->label34, L"Gewicht in Kilogramm");
@@ -1156,26 +1127,28 @@ private: System::Windows::Forms::Button^ button7;
 			// 
 			this->radioButton15->AutoSize = true;
 			this->radioButton15->Enabled = false;
-			this->radioButton15->Location = System::Drawing::Point(7, 149);
+			this->radioButton15->Location = System::Drawing::Point(7, 184);
 			this->radioButton15->Name = L"radioButton15";
 			this->radioButton15->Size = System::Drawing::Size(14, 13);
 			this->radioButton15->TabIndex = 2;
 			this->radioButton15->TabStop = true;
 			this->toolTip1->SetToolTip(this->radioButton15, L"Edwards-Maximalpuls in die Karvonen-Formel einsetzen.\r\n");
 			this->radioButton15->UseVisualStyleBackColor = true;
+			this->radioButton15->Visible = false;
 			this->radioButton15->CheckedChanged += gcnew System::EventHandler(this, &Form1::radioButton15_CheckedChanged);
 			// 
 			// radioButton14
 			// 
 			this->radioButton14->AutoSize = true;
 			this->radioButton14->Enabled = false;
-			this->radioButton14->Location = System::Drawing::Point(7, 76);
+			this->radioButton14->Location = System::Drawing::Point(6, 87);
 			this->radioButton14->Name = L"radioButton14";
 			this->radioButton14->Size = System::Drawing::Size(14, 13);
 			this->radioButton14->TabIndex = 1;
 			this->radioButton14->TabStop = true;
 			this->toolTip1->SetToolTip(this->radioButton14, L"Spanaus-Maximalpuls in die Karvonen-Formel einsetzen.\r\n");
 			this->radioButton14->UseVisualStyleBackColor = true;
+			this->radioButton14->Visible = false;
 			this->radioButton14->CheckedChanged += gcnew System::EventHandler(this, &Form1::radioButton14_CheckedChanged);
 			// 
 			// radioButton13
@@ -1189,6 +1162,7 @@ private: System::Windows::Forms::Button^ button7;
 			this->radioButton13->TabStop = true;
 			this->toolTip1->SetToolTip(this->radioButton13, L"Tanaka-Maximalpuls in die Karvonen-Formel einsetzen.");
 			this->radioButton13->UseVisualStyleBackColor = true;
+			this->radioButton13->Visible = false;
 			this->radioButton13->CheckedChanged += gcnew System::EventHandler(this, &Form1::radioButton13_CheckedChanged);
 			// 
 			// groupBox11
@@ -1196,21 +1170,22 @@ private: System::Windows::Forms::Button^ button7;
 			this->groupBox11->Controls->Add(this->radioButton15);
 			this->groupBox11->Controls->Add(this->radioButton14);
 			this->groupBox11->Controls->Add(this->radioButton13);
-			this->groupBox11->Location = System::Drawing::Point(266, 97);
+			this->groupBox11->Location = System::Drawing::Point(347, 112);
 			this->groupBox11->Name = L"groupBox11";
-			this->groupBox11->Size = System::Drawing::Size(44, 176);
+			this->groupBox11->Size = System::Drawing::Size(32, 259);
 			this->groupBox11->TabIndex = 18;
 			this->groupBox11->TabStop = false;
-			this->toolTip1->SetToolTip(this->groupBox11, L"Ergebnis in die Karvonen-Formel zur Berechnung\r\ndes Trainingspulses einsetzen.");
+			this->toolTip1->SetToolTip(this->groupBox11, L"Jeweiliges Ergebnis in die Karvonen-Formel \r\nzur Berechnung des Trainingspulses e"
+				L"insetzen.");
 			// 
 			// button5
 			// 
 			this->button5->BackColor = System::Drawing::Color::Gainsboro;
-			this->button5->Font = (gcnew System::Drawing::Font(L"Carolingia", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->button5->Font = (gcnew System::Drawing::Font(L"Carolingia", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->button5->Location = System::Drawing::Point(113, 312);
+			this->button5->Location = System::Drawing::Point(145, 389);
 			this->button5->Name = L"button5";
-			this->button5->Size = System::Drawing::Size(90, 36);
+			this->button5->Size = System::Drawing::Size(101, 36);
 			this->button5->TabIndex = 12;
 			this->button5->Text = L"Speichern";
 			this->toolTip1->SetToolTip(this->button5, L"Berechnete Daten exportieren");
@@ -1220,11 +1195,10 @@ private: System::Windows::Forms::Button^ button7;
 			// button6
 			// 
 			this->button6->BackColor = System::Drawing::Color::Gainsboro;
-			this->button6->Font = (gcnew System::Drawing::Font(L"Carolingia", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->button6->Location = System::Drawing::Point(113, 312);
+			this->button6->Font = (gcnew System::Drawing::Font(L"Carolingia", 14.25F));
+			this->button6->Location = System::Drawing::Point(145, 389);
 			this->button6->Name = L"button6";
-			this->button6->Size = System::Drawing::Size(90, 36);
+			this->button6->Size = System::Drawing::Size(101, 36);
 			this->button6->TabIndex = 13;
 			this->button6->Text = L"Speichern";
 			this->toolTip1->SetToolTip(this->button6, L"Berechnete Daten exportieren");
@@ -1234,11 +1208,10 @@ private: System::Windows::Forms::Button^ button7;
 			// button7
 			// 
 			this->button7->BackColor = System::Drawing::Color::Gainsboro;
-			this->button7->Font = (gcnew System::Drawing::Font(L"Carolingia", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->button7->Location = System::Drawing::Point(113, 312);
+			this->button7->Font = (gcnew System::Drawing::Font(L"Carolingia", 14));
+			this->button7->Location = System::Drawing::Point(145, 389);
 			this->button7->Name = L"button7";
-			this->button7->Size = System::Drawing::Size(90, 36);
+			this->button7->Size = System::Drawing::Size(101, 36);
 			this->button7->TabIndex = 19;
 			this->button7->Text = L"Speichern";
 			this->toolTip1->SetToolTip(this->button7, L"Berechnete Daten exportieren");
@@ -1250,24 +1223,100 @@ private: System::Windows::Forms::Button^ button7;
 			this->groupBox3->Controls->Add(this->herz);
 			this->groupBox3->Controls->Add(this->label1);
 			this->groupBox3->Controls->Add(this->labelErgebnis);
-			this->groupBox3->Location = System::Drawing::Point(6, 265);
+			this->groupBox3->Location = System::Drawing::Point(6, 329);
 			this->groupBox3->Name = L"groupBox3";
-			this->groupBox3->Size = System::Drawing::Size(304, 41);
+			this->groupBox3->Size = System::Drawing::Size(373, 45);
 			this->groupBox3->TabIndex = 8;
 			this->groupBox3->TabStop = false;
 			this->groupBox3->Enter += gcnew System::EventHandler(this, &Form1::groupBox3_Enter);
 			// 
 			// tabControl1
 			// 
-			this->tabControl1->Controls->Add(this->tabLagerstrom);
-			this->tabControl1->Controls->Add(this->tabKarvonen);
 			this->tabControl1->Controls->Add(this->tabPageMaxpuls);
+			this->tabControl1->Controls->Add(this->tabKarvonen);
+			this->tabControl1->Controls->Add(this->tabLagerstrom);
 			this->tabControl1->Dock = System::Windows::Forms::DockStyle::Fill;
-			this->tabControl1->Location = System::Drawing::Point(0, 24);
+			this->tabControl1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->tabControl1->Location = System::Drawing::Point(0, 29);
 			this->tabControl1->Name = L"tabControl1";
 			this->tabControl1->SelectedIndex = 0;
-			this->tabControl1->Size = System::Drawing::Size(331, 384);
+			this->tabControl1->Size = System::Drawing::Size(396, 489);
 			this->tabControl1->TabIndex = 0;
+			// 
+			// tabPageMaxpuls
+			// 
+			this->tabPageMaxpuls->BackColor = System::Drawing::Color::DarkSeaGreen;
+			this->tabPageMaxpuls->Controls->Add(this->button7);
+			this->tabPageMaxpuls->Controls->Add(this->groupBox11);
+			this->tabPageMaxpuls->Controls->Add(this->label34);
+			this->tabPageMaxpuls->Controls->Add(this->textBox5);
+			this->tabPageMaxpuls->Controls->Add(this->groupBox10);
+			this->tabPageMaxpuls->Controls->Add(this->label27);
+			this->tabPageMaxpuls->Controls->Add(this->groupBox9);
+			this->tabPageMaxpuls->Controls->Add(this->label23);
+			this->tabPageMaxpuls->Controls->Add(this->textBox4);
+			this->tabPageMaxpuls->Controls->Add(this->label22);
+			this->tabPageMaxpuls->Controls->Add(this->button3);
+			this->tabPageMaxpuls->Controls->Add(this->button4);
+			this->tabPageMaxpuls->Controls->Add(this->groupBox8);
+			this->tabPageMaxpuls->Controls->Add(this->groupBox7);
+			this->tabPageMaxpuls->Location = System::Drawing::Point(4, 29);
+			this->tabPageMaxpuls->Name = L"tabPageMaxpuls";
+			this->tabPageMaxpuls->Padding = System::Windows::Forms::Padding(3);
+			this->tabPageMaxpuls->Size = System::Drawing::Size(388, 456);
+			this->tabPageMaxpuls->TabIndex = 2;
+			this->tabPageMaxpuls->Text = L"Maximalpuls";
+			// 
+			// textBox5
+			// 
+			this->textBox5->Location = System::Drawing::Point(86, 72);
+			this->textBox5->Name = L"textBox5";
+			this->textBox5->Size = System::Drawing::Size(42, 26);
+			this->textBox5->TabIndex = 4;
+			// 
+			// groupBox10
+			// 
+			this->groupBox10->Controls->Add(this->label29);
+			this->groupBox10->Controls->Add(this->label30);
+			this->groupBox10->Controls->Add(this->label31);
+			this->groupBox10->Controls->Add(this->label32);
+			this->groupBox10->Location = System::Drawing::Point(6, 278);
+			this->groupBox10->Name = L"groupBox10";
+			this->groupBox10->Size = System::Drawing::Size(345, 93);
+			this->groupBox10->TabIndex = 12;
+			this->groupBox10->TabStop = false;
+			// 
+			// textBox4
+			// 
+			this->textBox4->Location = System::Drawing::Point(6, 72);
+			this->textBox4->Name = L"textBox4";
+			this->textBox4->Size = System::Drawing::Size(42, 26);
+			this->textBox4->TabIndex = 2;
+			// 
+			// groupBox8
+			// 
+			this->groupBox8->Controls->Add(this->label19);
+			this->groupBox8->Controls->Add(this->label20);
+			this->groupBox8->Controls->Add(this->label21);
+			this->groupBox8->Controls->Add(this->label26);
+			this->groupBox8->Location = System::Drawing::Point(6, 183);
+			this->groupBox8->Name = L"groupBox8";
+			this->groupBox8->Size = System::Drawing::Size(345, 89);
+			this->groupBox8->TabIndex = 9;
+			this->groupBox8->TabStop = false;
+			// 
+			// groupBox7
+			// 
+			this->groupBox7->Controls->Add(this->label16);
+			this->groupBox7->Controls->Add(this->label17);
+			this->groupBox7->Controls->Add(this->label18);
+			this->groupBox7->Controls->Add(this->label28);
+			this->groupBox7->Location = System::Drawing::Point(6, 112);
+			this->groupBox7->Name = L"groupBox7";
+			this->groupBox7->Size = System::Drawing::Size(345, 72);
+			this->groupBox7->TabIndex = 6;
+			this->groupBox7->TabStop = false;
 			// 
 			// tabLagerstrom
 			// 
@@ -1285,10 +1334,10 @@ private: System::Windows::Forms::Button^ button7;
 			this->tabLagerstrom->Controls->Add(this->groupBox1);
 			this->tabLagerstrom->Controls->Add(this->label4);
 			this->tabLagerstrom->Controls->Add(this->beenden);
-			this->tabLagerstrom->Location = System::Drawing::Point(4, 22);
+			this->tabLagerstrom->Location = System::Drawing::Point(4, 29);
 			this->tabLagerstrom->Name = L"tabLagerstrom";
 			this->tabLagerstrom->Padding = System::Windows::Forms::Padding(3);
-			this->tabLagerstrom->Size = System::Drawing::Size(323, 358);
+			this->tabLagerstrom->Size = System::Drawing::Size(388, 456);
 			this->tabLagerstrom->TabIndex = 0;
 			this->tabLagerstrom->Text = L" Lagerstrøm";
 			// 
@@ -1309,10 +1358,10 @@ private: System::Windows::Forms::Button^ button7;
 			this->tabKarvonen->Controls->Add(this->label7);
 			this->tabKarvonen->Controls->Add(this->textBox1);
 			this->tabKarvonen->Controls->Add(this->label6);
-			this->tabKarvonen->Location = System::Drawing::Point(4, 22);
+			this->tabKarvonen->Location = System::Drawing::Point(4, 29);
 			this->tabKarvonen->Name = L"tabKarvonen";
 			this->tabKarvonen->Padding = System::Windows::Forms::Padding(3);
-			this->tabKarvonen->Size = System::Drawing::Size(323, 358);
+			this->tabKarvonen->Size = System::Drawing::Size(388, 456);
 			this->tabKarvonen->TabIndex = 1;
 			this->tabKarvonen->Text = L"Karvonen";
 			// 
@@ -1321,110 +1370,36 @@ private: System::Windows::Forms::Button^ button7;
 			this->groupBox5->Controls->Add(this->label10);
 			this->groupBox5->Controls->Add(this->label11);
 			this->groupBox5->Controls->Add(this->label12);
-			this->groupBox5->Location = System::Drawing::Point(6, 169);
+			this->groupBox5->Location = System::Drawing::Point(6, 184);
 			this->groupBox5->Name = L"groupBox5";
-			this->groupBox5->Size = System::Drawing::Size(304, 41);
+			this->groupBox5->Size = System::Drawing::Size(371, 47);
 			this->groupBox5->TabIndex = 7;
 			this->groupBox5->TabStop = false;
 			// 
 			// textBox3
 			// 
-			this->textBox3->Location = System::Drawing::Point(6, 99);
+			this->textBox3->Location = System::Drawing::Point(6, 126);
 			this->textBox3->Name = L"textBox3";
-			this->textBox3->Size = System::Drawing::Size(82, 20);
+			this->textBox3->Size = System::Drawing::Size(99, 26);
 			this->textBox3->TabIndex = 4;
 			this->textBox3->TextChanged += gcnew System::EventHandler(this, &Form1::textBox3_TextChanged);
 			// 
 			// textBox1
 			// 
-			this->textBox1->Location = System::Drawing::Point(6, 60);
+			this->textBox1->Location = System::Drawing::Point(6, 75);
 			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(82, 20);
+			this->textBox1->Size = System::Drawing::Size(99, 26);
 			this->textBox1->TabIndex = 2;
-			// 
-			// tabPageMaxpuls
-			// 
-			this->tabPageMaxpuls->BackColor = System::Drawing::Color::DarkSeaGreen;
-			this->tabPageMaxpuls->Controls->Add(this->button7);
-			this->tabPageMaxpuls->Controls->Add(this->groupBox11);
-			this->tabPageMaxpuls->Controls->Add(this->label34);
-			this->tabPageMaxpuls->Controls->Add(this->textBox5);
-			this->tabPageMaxpuls->Controls->Add(this->label32);
-			this->tabPageMaxpuls->Controls->Add(this->label33);
-			this->tabPageMaxpuls->Controls->Add(this->groupBox10);
-			this->tabPageMaxpuls->Controls->Add(this->label28);
-			this->tabPageMaxpuls->Controls->Add(this->label27);
-			this->tabPageMaxpuls->Controls->Add(this->label26);
-			this->tabPageMaxpuls->Controls->Add(this->label25);
-			this->tabPageMaxpuls->Controls->Add(this->label24);
-			this->tabPageMaxpuls->Controls->Add(this->groupBox9);
-			this->tabPageMaxpuls->Controls->Add(this->label23);
-			this->tabPageMaxpuls->Controls->Add(this->textBox4);
-			this->tabPageMaxpuls->Controls->Add(this->label22);
-			this->tabPageMaxpuls->Controls->Add(this->button3);
-			this->tabPageMaxpuls->Controls->Add(this->button4);
-			this->tabPageMaxpuls->Controls->Add(this->groupBox8);
-			this->tabPageMaxpuls->Controls->Add(this->groupBox7);
-			this->tabPageMaxpuls->Location = System::Drawing::Point(4, 22);
-			this->tabPageMaxpuls->Name = L"tabPageMaxpuls";
-			this->tabPageMaxpuls->Padding = System::Windows::Forms::Padding(3);
-			this->tabPageMaxpuls->Size = System::Drawing::Size(323, 358);
-			this->tabPageMaxpuls->TabIndex = 2;
-			this->tabPageMaxpuls->Text = L"Maximalpuls";
-			// 
-			// textBox5
-			// 
-			this->textBox5->Location = System::Drawing::Point(86, 63);
-			this->textBox5->Name = L"textBox5";
-			this->textBox5->Size = System::Drawing::Size(42, 20);
-			this->textBox5->TabIndex = 4;
-			// 
-			// groupBox10
-			// 
-			this->groupBox10->Controls->Add(this->label29);
-			this->groupBox10->Controls->Add(this->label30);
-			this->groupBox10->Controls->Add(this->label31);
-			this->groupBox10->Location = System::Drawing::Point(6, 232);
-			this->groupBox10->Name = L"groupBox10";
-			this->groupBox10->Size = System::Drawing::Size(277, 41);
-			this->groupBox10->TabIndex = 12;
-			this->groupBox10->TabStop = false;
-			// 
-			// textBox4
-			// 
-			this->textBox4->Location = System::Drawing::Point(6, 63);
-			this->textBox4->Name = L"textBox4";
-			this->textBox4->Size = System::Drawing::Size(42, 20);
-			this->textBox4->TabIndex = 2;
-			// 
-			// groupBox8
-			// 
-			this->groupBox8->Controls->Add(this->label19);
-			this->groupBox8->Controls->Add(this->label20);
-			this->groupBox8->Controls->Add(this->label21);
-			this->groupBox8->Location = System::Drawing::Point(6, 159);
-			this->groupBox8->Name = L"groupBox8";
-			this->groupBox8->Size = System::Drawing::Size(277, 41);
-			this->groupBox8->TabIndex = 9;
-			this->groupBox8->TabStop = false;
-			// 
-			// groupBox7
-			// 
-			this->groupBox7->Controls->Add(this->label16);
-			this->groupBox7->Controls->Add(this->label17);
-			this->groupBox7->Controls->Add(this->label18);
-			this->groupBox7->Location = System::Drawing::Point(6, 97);
-			this->groupBox7->Name = L"groupBox7";
-			this->groupBox7->Size = System::Drawing::Size(277, 41);
-			this->groupBox7->TabIndex = 6;
-			this->groupBox7->TabStop = false;
 			// 
 			// menuStrip1
 			// 
-			this->menuStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(1) { this->menüToolStripMenuItem });
+			this->menuStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(2) {
+				this->menüToolStripMenuItem,
+					this->ansichtToolStripMenuItem
+			});
 			this->menuStrip1->Location = System::Drawing::Point(0, 0);
 			this->menuStrip1->Name = L"menuStrip1";
-			this->menuStrip1->Size = System::Drawing::Size(331, 24);
+			this->menuStrip1->Size = System::Drawing::Size(396, 29);
 			this->menuStrip1->TabIndex = 1;
 			this->menuStrip1->Text = L"menuStrip1";
 			// 
@@ -1434,16 +1409,17 @@ private: System::Windows::Forms::Button^ button7;
 				this->speichernToolStripMenuItem,
 					this->beendenToolStripMenuItem
 			});
+			this->menüToolStripMenuItem->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12));
 			this->menüToolStripMenuItem->Name = L"menüToolStripMenuItem";
 			this->menüToolStripMenuItem->ShortcutKeys = static_cast<System::Windows::Forms::Keys>((System::Windows::Forms::Keys::Control | System::Windows::Forms::Keys::M));
-			this->menüToolStripMenuItem->Size = System::Drawing::Size(46, 20);
+			this->menüToolStripMenuItem->Size = System::Drawing::Size(58, 25);
 			this->menüToolStripMenuItem->Text = L"&Datei";
 			// 
 			// speichernToolStripMenuItem
 			// 
 			this->speichernToolStripMenuItem->Name = L"speichernToolStripMenuItem";
 			this->speichernToolStripMenuItem->ShortcutKeys = static_cast<System::Windows::Forms::Keys>((System::Windows::Forms::Keys::Control | System::Windows::Forms::Keys::S));
-			this->speichernToolStripMenuItem->Size = System::Drawing::Size(168, 22);
+			this->speichernToolStripMenuItem->Size = System::Drawing::Size(207, 26);
 			this->speichernToolStripMenuItem->Text = L"&Speichern";
 			this->speichernToolStripMenuItem->Click += gcnew System::EventHandler(this, &Form1::speichernToolStripMenuItem_Click);
 			// 
@@ -1451,9 +1427,34 @@ private: System::Windows::Forms::Button^ button7;
 			// 
 			this->beendenToolStripMenuItem->Name = L"beendenToolStripMenuItem";
 			this->beendenToolStripMenuItem->ShortcutKeys = static_cast<System::Windows::Forms::Keys>((System::Windows::Forms::Keys::Control | System::Windows::Forms::Keys::B));
-			this->beendenToolStripMenuItem->Size = System::Drawing::Size(168, 22);
+			this->beendenToolStripMenuItem->Size = System::Drawing::Size(207, 26);
 			this->beendenToolStripMenuItem->Text = L"&Beenden";
 			this->beendenToolStripMenuItem->Click += gcnew System::EventHandler(this, &Form1::beendenToolStripMenuItem_Click);
+			// 
+			// ansichtToolStripMenuItem
+			// 
+			this->ansichtToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(2) {
+				this->vergrößernToolStripMenuItem,
+					this->verkleinernToolStripMenuItem
+			});
+			this->ansichtToolStripMenuItem->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12));
+			this->ansichtToolStripMenuItem->Name = L"ansichtToolStripMenuItem";
+			this->ansichtToolStripMenuItem->Size = System::Drawing::Size(73, 25);
+			this->ansichtToolStripMenuItem->Text = L"&Ansicht";
+			// 
+			// vergrößernToolStripMenuItem
+			// 
+			this->vergrößernToolStripMenuItem->Name = L"vergrößernToolStripMenuItem";
+			this->vergrößernToolStripMenuItem->ShortcutKeys = static_cast<System::Windows::Forms::Keys>((System::Windows::Forms::Keys::Control | System::Windows::Forms::Keys::Oemplus));
+			this->vergrößernToolStripMenuItem->Size = System::Drawing::Size(271, 26);
+			this->vergrößernToolStripMenuItem->Text = L"Vergrößern";
+			this->vergrößernToolStripMenuItem->Click += gcnew System::EventHandler(this, &Form1::vergrößernToolStripMenuItem_Click);
+			// 
+			// verkleinernToolStripMenuItem
+			// 
+			this->verkleinernToolStripMenuItem->Name = L"verkleinernToolStripMenuItem";
+			this->verkleinernToolStripMenuItem->Size = System::Drawing::Size(271, 26);
+			this->verkleinernToolStripMenuItem->Text = L"Verkleinern";
 			// 
 			// saveFileDialog1
 			// 
@@ -1470,7 +1471,7 @@ private: System::Windows::Forms::Button^ button7;
 			this->AutoSize = true;
 			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(207)), static_cast<System::Int32>(static_cast<System::Byte>(235)),
 				static_cast<System::Int32>(static_cast<System::Byte>(224)));
-			this->ClientSize = System::Drawing::Size(331, 408);
+			this->ClientSize = System::Drawing::Size(396, 518);
 			this->Controls->Add(this->tabControl1);
 			this->Controls->Add(this->menuStrip1);
 			this->MainMenuStrip = this->menuStrip1;
@@ -1492,12 +1493,6 @@ private: System::Windows::Forms::Button^ button7;
 			this->groupBox3->ResumeLayout(false);
 			this->groupBox3->PerformLayout();
 			this->tabControl1->ResumeLayout(false);
-			this->tabLagerstrom->ResumeLayout(false);
-			this->tabLagerstrom->PerformLayout();
-			this->tabKarvonen->ResumeLayout(false);
-			this->tabKarvonen->PerformLayout();
-			this->groupBox5->ResumeLayout(false);
-			this->groupBox5->PerformLayout();
 			this->tabPageMaxpuls->ResumeLayout(false);
 			this->tabPageMaxpuls->PerformLayout();
 			this->groupBox10->ResumeLayout(false);
@@ -1506,6 +1501,12 @@ private: System::Windows::Forms::Button^ button7;
 			this->groupBox8->PerformLayout();
 			this->groupBox7->ResumeLayout(false);
 			this->groupBox7->PerformLayout();
+			this->tabLagerstrom->ResumeLayout(false);
+			this->tabLagerstrom->PerformLayout();
+			this->tabKarvonen->ResumeLayout(false);
+			this->tabKarvonen->PerformLayout();
+			this->groupBox5->ResumeLayout(false);
+			this->groupBox5->PerformLayout();
 			this->menuStrip1->ResumeLayout(false);
 			this->menuStrip1->PerformLayout();
 			this->ResumeLayout(false);
@@ -1548,6 +1549,7 @@ private: System::Windows::Forms::Button^ button7;
 				herz->Enabled = false;
 				herz->Visible = false;
 				labelErgebnis->BackColor = Color::Yellow;
+				labelErgebnis->ForeColor = Color::Black;
 				labelErgebnis->Text = "Eingabewert zu niedrig";
 			} else if (radioButton2->Checked || radioButton1->Checked) {
 				if (radioButton3->Checked || radioButton4->Checked || radioButton5->Checked || radioButton6->Checked || radioButton7->Checked) {
@@ -1559,13 +1561,14 @@ private: System::Windows::Forms::Button^ button7;
 								zwischenergebnis = ruhepuls + (220 - ausdauerkategorie * lebensalter - ruhepuls) * fitnesskategorie;
 
 								zwischenergebnis = Math::Round(zwischenergebnis, 2);
-								labelErgebnis->Font = gcnew System::Drawing::Font("Microsoft Sans Serif", 10, FontStyle::Bold, GraphicsUnit::Point);
+								labelErgebnis->Font = gcnew System::Drawing::Font("Microsoft Sans Serif", 12, FontStyle::Bold, GraphicsUnit::Point);
 
 
 								labelErgebnis->Text = Convert::ToString(zwischenergebnis);
 								herz->Enabled = true;
 								herz->Visible = true;
 								labelErgebnis->BackColor = Color::Green;
+								labelErgebnis->ForeColor = Color::White;
 							
 			
 						}
@@ -1788,6 +1791,7 @@ private: System::Void button1_Click_1(System::Object^ sender, System::EventArgs^
 				label10->Enabled = false;
 				label10->Visible = false;
 				label12->BackColor = Color::Yellow;
+				label12->ForeColor = Color::Black;
 				label12->Text = "Eingabewert zu niedrig";
 			}
 			else {
@@ -1797,11 +1801,12 @@ private: System::Void button1_Click_1(System::Object^ sender, System::EventArgs^
 					ergebnis = ruhePuls +(maxPuls-ruhePuls)*trainingsart;
 					// Ruhepuls + (Maximale Herzfrequenz - Ruhepuls) * Intensitäts-Faktor
 					ergebnis = Math::Round(ergebnis, 2);
-					label12->Font = gcnew System::Drawing::Font("Microsoft Sans Serif", 10, FontStyle::Bold, GraphicsUnit::Point);
+					label12->Font = gcnew System::Drawing::Font("Microsoft Sans Serif", 12, FontStyle::Bold, GraphicsUnit::Point);
 					label12->Text = Convert::ToString(ergebnis);
 					label10->Enabled = true;
 					label10->Visible = true;
 					label12->BackColor = Color::Green;
+					label12->ForeColor = Color::White;
 				}
 
 				catch (Exception^ e)
@@ -1858,15 +1863,18 @@ private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e
 			ergebnisTanaka = 208 - 0.7 * alter;
 			ergebnisTanaka = Math::Round(ergebnisTanaka, 2);
 
-			label18->Font = gcnew System::Drawing::Font("Microsoft Sans Serif", 10, FontStyle::Bold, GraphicsUnit::Point);
+			label18->Font = gcnew System::Drawing::Font("Microsoft Sans Serif", 12, FontStyle::Bold, GraphicsUnit::Point);
 			label18->Text = Convert::ToString(ergebnisTanaka);
 			textBox3->Text = Convert::ToString(ergebnisTanaka); //Zur Karvonen-Formel
 			label16->Enabled = true;
 			label16->Visible = true;
 			label18->BackColor = Color::Green;
+			label18->ForeColor = Color::White;
+
 
 			if (ergebnisTanaka > 0) {
 				radioButton13->Enabled = true;
+				radioButton13->Visible = true;
 			}
 
 		
@@ -1889,14 +1897,18 @@ private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e
 			ergebnisSpanaus = 223 - 0.9 * alter;
 			ergebnisSpanaus = Math::Round(ergebnisSpanaus, 2);
 
-			label21->Font = gcnew System::Drawing::Font("Microsoft Sans Serif", 10, FontStyle::Bold, GraphicsUnit::Point);
+			label21->Font = gcnew System::Drawing::Font("Microsoft Sans Serif", 12, FontStyle::Bold, GraphicsUnit::Point);
 			label21->Text = Convert::ToString(ergebnisSpanaus);
 			label19->Enabled = true;
 			label19->Visible = true;
 			label21->BackColor = Color::Green;
+			label21->ForeColor = Color::White;
+
 
 			if (ergebnisSpanaus > 0) {
 				radioButton14->Enabled = true;
+				radioButton14->Visible = true;
+
 			}
 
 
@@ -1921,14 +1933,18 @@ private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e
 			ergebnisSpanaus = 226 - 1.0 * alter;
 			ergebnisSpanaus = Math::Round(ergebnisSpanaus, 2);
 
-			label21->Font = gcnew System::Drawing::Font("Microsoft Sans Serif", 10, FontStyle::Bold, GraphicsUnit::Point);
+			label21->Font = gcnew System::Drawing::Font("Microsoft Sans Serif", 12, FontStyle::Bold, GraphicsUnit::Point);
 			label21->Text = Convert::ToString(ergebnisSpanaus);
 			label19->Enabled = true;
 			label19->Visible = true;
 			label21->BackColor = Color::Green;
+			label21->ForeColor = Color::White;
+
 
 			if (ergebnisSpanaus > 0) {
 				radioButton14->Enabled = true;
+				radioButton14->Visible = true;
+
 			}
 
 		}
@@ -1953,14 +1969,18 @@ private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e
 			ergebnisEdwards = 214 - 0.5 * alter - 0.11 * gewicht;
 			ergebnisEdwards = Math::Round(ergebnisEdwards, 2);
 
-			label31->Font = gcnew System::Drawing::Font("Microsoft Sans Serif", 10, FontStyle::Bold, GraphicsUnit::Point);
+			label31->Font = gcnew System::Drawing::Font("Microsoft Sans Serif", 12, FontStyle::Bold, GraphicsUnit::Point);
 			label31->Text = Convert::ToString(ergebnisEdwards);
 			label29->Enabled = true;
 			label29->Visible = true;
 			label31->BackColor = Color::Green;
+			label31->ForeColor = Color::White;
+
 
 			if (ergebnisEdwards > 0) {
 				radioButton15->Enabled = true;
+				radioButton15->Visible = true;
+
 			}
 
 		}
@@ -1986,14 +2006,18 @@ private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e
 		ergebnisEdwards = 210 - 0.5 * alter - 0.11 * gewicht;
 		ergebnisEdwards = Math::Round(ergebnisEdwards, 2);
 
-		label31->Font = gcnew System::Drawing::Font("Microsoft Sans Serif", 10, FontStyle::Bold, GraphicsUnit::Point);
+		label31->Font = gcnew System::Drawing::Font("Microsoft Sans Serif", 12, FontStyle::Bold, GraphicsUnit::Point);
 		label31->Text = Convert::ToString(ergebnisEdwards);
 		label29->Enabled = true;
 		label29->Visible = true;
 		label31->BackColor = Color::Green;
+		label31->ForeColor = Color::White;
+
 
 		if (ergebnisEdwards > 0) {
 			radioButton15->Enabled = true;
+			radioButton15->Visible = true;
+
 		}
 
 
@@ -2138,6 +2162,44 @@ private: System::Void button6_Click(System::Object^ sender, System::EventArgs^ e
 
 		);
 	}
+}
+private: System::Void vergrößernToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+
+	this->Width += 50;
+	this->Height += 50;
+
+
+	/*
+	this->Width = Width+20;
+	this->Height = Height + 20;
+	label22->Size = System::Drawing::Size(100, 100);
+	*/
+	/*
+//	label22
+	label23->Font = gcnew System::Drawing::Font(label23->Font->Name,
+		14, label23->Font->Style, label23->Font->Unit);		
+	label34
+		groupBox9
+		radioButton11
+		radioButton12
+		label17
+		label18
+		label24
+		label28
+		label20
+		label21
+		label25
+		label26
+		label30
+		label31
+		label33
+		label32
+		button3
+		button4
+		button7
+		label27*/
+
+	
 }
 };
 };
