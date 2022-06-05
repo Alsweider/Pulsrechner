@@ -547,7 +547,7 @@ private: System::Windows::Forms::Button^ button7;
 			this->label1->AutoSize = true;
 			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label1->Location = System::Drawing::Point(12, 14);
+			this->label1->Location = System::Drawing::Point(12, 17);
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(120, 20);
 			this->label1->TabIndex = 0;
@@ -664,7 +664,7 @@ private: System::Windows::Forms::Button^ button7;
 			this->label10->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label10->ForeColor = System::Drawing::Color::Crimson;
-			this->label10->Location = System::Drawing::Point(194, 15);
+			this->label10->Location = System::Drawing::Point(188, 14);
 			this->label10->Name = L"label10";
 			this->label10->Size = System::Drawing::Size(32, 22);
 			this->label10->TabIndex = 2;
@@ -691,7 +691,7 @@ private: System::Windows::Forms::Button^ button7;
 			this->label12->BackColor = System::Drawing::Color::Yellow;
 			this->label12->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label12->Location = System::Drawing::Point(135, 17);
+			this->label12->Location = System::Drawing::Point(132, 14);
 			this->label12->Name = L"label12";
 			this->label12->Size = System::Drawing::Size(154, 24);
 			this->label12->TabIndex = 1;
@@ -1369,7 +1369,7 @@ private: System::Windows::Forms::Button^ button7;
 			this->groupBox5->Controls->Add(this->label12);
 			this->groupBox5->Location = System::Drawing::Point(6, 329);
 			this->groupBox5->Name = L"groupBox5";
-			this->groupBox5->Size = System::Drawing::Size(371, 47);
+			this->groupBox5->Size = System::Drawing::Size(373, 45);
 			this->groupBox5->TabIndex = 7;
 			this->groupBox5->TabStop = false;
 			// 
