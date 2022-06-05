@@ -596,7 +596,7 @@ private: System::Windows::Forms::Button^ button7;
 			this->herz->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->herz->ForeColor = System::Drawing::Color::Crimson;
-			this->herz->Location = System::Drawing::Point(188, 14);
+			this->herz->Location = System::Drawing::Point(193, 14);
 			this->herz->Name = L"herz";
 			this->herz->Size = System::Drawing::Size(32, 22);
 			this->herz->TabIndex = 2;
@@ -664,7 +664,7 @@ private: System::Windows::Forms::Button^ button7;
 			this->label10->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label10->ForeColor = System::Drawing::Color::Crimson;
-			this->label10->Location = System::Drawing::Point(188, 14);
+			this->label10->Location = System::Drawing::Point(193, 14);
 			this->label10->Name = L"label10";
 			this->label10->Size = System::Drawing::Size(32, 22);
 			this->label10->TabIndex = 2;
