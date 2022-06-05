@@ -42,7 +42,7 @@ namespace CppCLRWinFormsProject {
 			//
 			//TODO: Add the constructor code here
 			//
-			this->Text = "Pulsrechner (v0.3.3)";
+			this->Text = "Pulsrechner (v0.3.4)";
 			
 		}
 
@@ -1430,7 +1430,7 @@ private: System::Windows::Forms::RadioButton^ radioButton4;
 			// beendenToolStripMenuItem
 			// 
 			this->beendenToolStripMenuItem->Name = L"beendenToolStripMenuItem";
-			this->beendenToolStripMenuItem->ShortcutKeys = static_cast<System::Windows::Forms::Keys>((System::Windows::Forms::Keys::Control | System::Windows::Forms::Keys::B));
+			this->beendenToolStripMenuItem->ShortcutKeys = static_cast<System::Windows::Forms::Keys>((System::Windows::Forms::Keys::Control | System::Windows::Forms::Keys::Q));
 			this->beendenToolStripMenuItem->Size = System::Drawing::Size(207, 26);
 			this->beendenToolStripMenuItem->Text = L"&Beenden";
 			this->beendenToolStripMenuItem->Click += gcnew System::EventHandler(this, &Form1::beendenToolStripMenuItem_Click);
@@ -1595,6 +1595,7 @@ private: System::Void beenden_Click(System::Object^ sender, System::EventArgs^ e
 	this->Close();
 }
 private: System::Void textBox1_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+	textBox1->Text = Convert::ToString(textBoxRuhepuls->Text);
 	
 	//Aktiviere Berechnen-Knopf, wenn alle Daten vorhanden sind:
 	if ((textBoxRuhepuls->Text != "" && textBoxLebensalter->Text != "") && (radioButton1->Checked == true || radioButton2->Checked == true) && (radioButton3->Checked == true || radioButton4->Checked == true || radioButton5->Checked == true || radioButton6->Checked == true || radioButton7->Checked == true)) {
@@ -1709,6 +1710,8 @@ private: System::Void textBox1_TextChanged(System::Object^ sender, System::Event
 
 private: System::Void textBox2_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 
+	textBox4->Text = Convert::ToString(textBoxLebensalter->Text);
+
 	//Aktiviere Berechnen-Knopf, wenn alle Daten vorhanden sind:
 	if ((textBoxRuhepuls->Text != "" && textBoxLebensalter->Text != "") && (radioButton1->Checked == true || radioButton2->Checked == true) && (radioButton3->Checked == true || radioButton4->Checked == true || radioButton5->Checked == true || radioButton6->Checked == true || radioButton7->Checked == true)) {
 		berechnen->Enabled = true;
@@ -1816,7 +1819,11 @@ private: System::Void textBox2_TextChanged(System::Object^ sender, System::Event
 private: System::Void listBox1_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void radioButton1_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
-
+/*
+	if (radioButton10->Checked == false) {
+		radioButton10->Checked = true;
+	}
+	*/
 	try {
 		ausdauerkategorie = static_cast<double>(3) / 4;
 	}
@@ -1922,7 +1929,11 @@ private: System::Void radioButton1_CheckedChanged(System::Object^ sender, System
 	
 }
 private: System::Void radioButton2_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
-
+/*
+	if (radioButton9->Checked == false) {
+		radioButton9->Checked = true;
+	}
+	*/
 	try {
 		ausdauerkategorie = static_cast<double>(2) / 3;
 	}
@@ -2030,7 +2041,12 @@ private: System::Void radioButton2_CheckedChanged(System::Object^ sender, System
 private: System::Void label3_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void radioButton3_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
-
+/*
+	if(radioButton8->Checked==false)
+	{
+		radioButton8->Checked = true;
+	}
+	*/
 	try {
 		fitnesskategorie = 0.55;
 	}
@@ -2634,6 +2650,10 @@ private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e
 }
 private: System::Void radioButton8_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
 	trainingsart = 0.5;
+	if (radioButton3->Checked == false) {
+		radioButton3->Checked = true;
+	}
+
 	if (textBox1->Text != "" && textBox3->Text != "") {
 		if (radioButton8->Checked == true || radioButton9->Checked == true || radioButton10->Checked == true) {
 			button1->Enabled = true;
@@ -2701,6 +2721,10 @@ private: System::Void radioButton8_CheckedChanged(System::Object^ sender, System
 }
 private: System::Void radioButton9_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
 	trainingsart = 0.6;
+	if (radioButton2->Checked == false) {
+		radioButton2->Checked = true;
+	}
+
 	if (textBox1->Text != "" && textBox3->Text != "") {
 		if (radioButton8->Checked == true || radioButton9->Checked == true || radioButton10->Checked == true) {
 			button1->Enabled = true;
@@ -2768,6 +2792,11 @@ private: System::Void radioButton9_CheckedChanged(System::Object^ sender, System
 }
 private: System::Void radioButton10_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
 	trainingsart = 0.8;
+
+	if (radioButton1->Checked == false) {
+		radioButton1->Checked = true;
+	}
+
 	if (textBox1->Text != "" && textBox3->Text != "") {
 		if (radioButton8->Checked == true || radioButton9->Checked == true || radioButton10->Checked == true) {
 			button1->Enabled = true;
@@ -3624,6 +3653,7 @@ private: System::Void vergrößernToolStripMenuItem_Click(System::Object^ sender
 	
 }
 private: System::Void textBox4_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+	textBoxLebensalter->Text = Convert::ToString(textBox4->Text);
 
 	if (textBox4->Text != "")
 	{
@@ -3826,7 +3856,7 @@ private: System::Void textBox4_TextChanged(System::Object^ sender, System::Event
 
 }
 private: System::Void textBox1_TextChanged_1(System::Object^ sender, System::EventArgs^ e) {
-
+	textBoxRuhepuls->Text = Convert::ToString(textBox1->Text);
 
 	if (textBox1->Text!="" && textBox3->Text!="") {
 		if (radioButton8->Checked==true || radioButton9->Checked==true || radioButton10->Checked==true) {
