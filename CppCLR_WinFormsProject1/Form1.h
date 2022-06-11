@@ -1,6 +1,6 @@
 ﻿#pragma once
-
 // https://github.com/Alsweider
+
 
 double rp = 0;
 double la = 0;
@@ -156,6 +156,8 @@ private: System::Windows::Forms::Button^ button5;
 private: System::Windows::Forms::Button^ button6;
 private: System::Windows::Forms::Button^ button7;
 private: System::Windows::Forms::RadioButton^ radioButton4;
+private: System::Windows::Forms::ToolStripMenuItem^ textdateiSpeichernToolStripMenuItem;
+private: System::Windows::Forms::ToolStripMenuItem^ cSVDateiSpeichernToolStripMenuItem;
 
 
 
@@ -278,6 +280,8 @@ private: System::Windows::Forms::RadioButton^ radioButton4;
 			this->menuStrip1 = (gcnew System::Windows::Forms::MenuStrip());
 			this->menüToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->speichernToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->textdateiSpeichernToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->cSVDateiSpeichernToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->beendenToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->saveFileDialog1 = (gcnew System::Windows::Forms::SaveFileDialog());
 			this->openFileDialog1 = (gcnew System::Windows::Forms::OpenFileDialog());
@@ -1421,11 +1425,29 @@ private: System::Windows::Forms::RadioButton^ radioButton4;
 			// 
 			// speichernToolStripMenuItem
 			// 
+			this->speichernToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(2) {
+				this->textdateiSpeichernToolStripMenuItem,
+					this->cSVDateiSpeichernToolStripMenuItem
+			});
 			this->speichernToolStripMenuItem->Name = L"speichernToolStripMenuItem";
 			this->speichernToolStripMenuItem->ShortcutKeys = static_cast<System::Windows::Forms::Keys>((System::Windows::Forms::Keys::Control | System::Windows::Forms::Keys::S));
 			this->speichernToolStripMenuItem->Size = System::Drawing::Size(207, 26);
 			this->speichernToolStripMenuItem->Text = L"&Speichern";
 			this->speichernToolStripMenuItem->Click += gcnew System::EventHandler(this, &Form1::speichernToolStripMenuItem_Click);
+			// 
+			// textdateiSpeichernToolStripMenuItem
+			// 
+			this->textdateiSpeichernToolStripMenuItem->Name = L"textdateiSpeichernToolStripMenuItem";
+			this->textdateiSpeichernToolStripMenuItem->Size = System::Drawing::Size(225, 26);
+			this->textdateiSpeichernToolStripMenuItem->Text = L"Textdatei speichern";
+			this->textdateiSpeichernToolStripMenuItem->Click += gcnew System::EventHandler(this, &Form1::textdateiSpeichernToolStripMenuItem_Click);
+			// 
+			// cSVDateiSpeichernToolStripMenuItem
+			// 
+			this->cSVDateiSpeichernToolStripMenuItem->Name = L"cSVDateiSpeichernToolStripMenuItem";
+			this->cSVDateiSpeichernToolStripMenuItem->Size = System::Drawing::Size(222, 26);
+			this->cSVDateiSpeichernToolStripMenuItem->Text = L"CSV-Datei speichern";
+			this->cSVDateiSpeichernToolStripMenuItem->Click += gcnew System::EventHandler(this, &Form1::cSVDateiSpeichernToolStripMenuItem_Click);
 			// 
 			// beendenToolStripMenuItem
 			// 
@@ -4223,6 +4245,61 @@ private: System::Void radioButton4_CheckedChanged_1(System::Object^ sender, Syst
 		berechnen->Enabled = false;
 	}
 
+}
+private: System::Void textdateiSpeichernToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+	saveFileDialog1->Filter = "Textdatei|*.txt";
+	saveFileDialog1->Title = "Berechnete Werte in Textdatei speichern";
+	if (saveFileDialog1->ShowDialog() ==
+		System::Windows::Forms::DialogResult::OK)
+	{
+
+
+		IO::File::WriteAllText(saveFileDialog1->FileName,
+			"Alter: " + textBoxLebensalter->Text + "\n"
+			+ "Gewicht: " + textBox5->Text + "\n"
+			// + "Geschlecht: "
+			+ "Ruhepuls: " + textBoxRuhepuls->Text + "\n"
+			+ "Trainingspuls (Lagerstrøm): " + labelErgebnis->Text + "\n"
+			+ "Trainingspuls (Karvonen): " + label12->Text + "\n"
+			+ "Maximalpuls (Tanaka): " + label18->Text + "\n"
+			+ "Maximalpuls (Spanaus): " + label21->Text + "\n"
+			+ "Maximalpuls (Edwards): " + label31->Text + "\n"
+
+		);
+	}
+}
+private: System::Void cSVDateiSpeichernToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+
+	try {
+
+		saveFileDialog1->Filter = "Comma-separated values (;)|*.csv";
+		saveFileDialog1->Title = "Berechnete Werte in .CSV-Datei speichern";
+		if (saveFileDialog1->ShowDialog() ==
+			System::Windows::Forms::DialogResult::OK)
+		{
+
+			IO::File::WriteAllText(saveFileDialog1->FileName,
+				"Alter;" + textBoxLebensalter->Text + "\n"
+				+ "Gewicht;" + textBox5->Text + "\n"
+				// + "Geschlecht: "
+				+ "Ruhepuls;" + textBoxRuhepuls->Text + "\n"
+				+ "Trainingspuls (Lagerstrøm);" + labelErgebnis->Text + "\n"
+				+ "Trainingspuls (Karvonen);" + label12->Text + "\n"
+				+ "Maximalpuls (Tanaka);" + label18->Text + "\n"
+				+ "Maximalpuls (Spanaus);" + label21->Text + "\n"
+				+ "Maximalpuls (Edwards);" + label31->Text + "\n"
+
+
+			);
+		}
+	}
+	catch (Exception^ e)
+	{
+		Console::WriteLine(e->ToString());
+		Console::WriteLine("An error occurred.");
+		Console::WriteLine(e->Message);
+		Console::WriteLine(e->StackTrace);
+	}
 }
 };
 };
