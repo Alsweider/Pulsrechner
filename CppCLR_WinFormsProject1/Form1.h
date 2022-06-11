@@ -42,7 +42,7 @@ namespace CppCLRWinFormsProject {
 			//
 			//TODO: Add the constructor code here
 			//
-			this->Text = "Pulsrechner (v0.3.4)";
+			this->Text = "Pulsrechner (v0.4.0)";
 			
 		}
 
@@ -3163,7 +3163,7 @@ private: System::Void ladenToolStripMenuItem_Click(System::Object^ sender, Syste
 	openFileDialog1->ShowDialog();
 }
 private: System::Void speichernToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
-
+	/*
 	saveFileDialog1->Filter = "Textdatei|*.txt";
 	saveFileDialog1->Title = "Berechnete Werte in Textdatei speichern";
 	if (saveFileDialog1->ShowDialog() ==
@@ -3184,6 +3184,7 @@ private: System::Void speichernToolStripMenuItem_Click(System::Object^ sender, S
 
 		);
 	}
+*/
 	
 }
 private: System::Void openFileDialog1_FileOk(System::Object^ sender, System::ComponentModel::CancelEventArgs^ e) {
