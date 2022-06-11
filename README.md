@@ -10,4 +10,5 @@ Neuste Version herunterladen: https://github.com/Alsweider/Pulsrechner/releases/
 # Hinweis zum Virenschutz 
 Neue Programme sind noch nicht in allen [Datenbanken von Sicherheitssoftware](https://www.virustotal.com/gui/file/996687e2fdf77cc4d0fd078652c7ae61f6f9b88633bec21de6853a448e06a0c8?nocache=1) als unbedenklich registriert, deshalb kann etwa der Windows Defender Smartscreen beim Programmstart eine Warnmeldung ausgeben. Das Programm lässt sich in diesem Fall starten, indem man auf "Weitere Informationen" und "Trotzdem ausführen" klickt. 
 
+![2022-06-06 14_40_33-](https://user-images.githubusercontent.com/30653982/172162775-9f351c89-f447-437b-a2c7-389d7b16b39b.jpg)
 ![2022-06-01 11_27_20-Window](https://user-images.githubusercontent.com/30653982/171373509-798b42cd-fd69-4915-be77-b037c8169fbf.jpg)
